@@ -1,30 +1,77 @@
 const defaultData = {
+  masterChecklist:[
+    "Marriage license: assign one named person to carry, protect and return it after the ceremony.",
+    "Cards + gifts: assign one named person to secure and transport them from City Park Pavilion.",
+    "Timeline coordination: Nessa owns ceremony flow; Tammy owns reception setup/flow; DJ owns MC/music cues.",
+    "Emergency kit: assign one person and keep it accessible, not buried in décor boxes.",
+    "Dress bustle: choose the person who knows how to bustle Melinda’s dress before the reception begins.",
+    "Family photo shot list: keep a printed copy with Nessa/photographer so the 4:05–4:35 photo window stays on time.",
+    "Cleanup oversight: Tammy/reception team checks every labeled décor zone, cards/gifts and personal items before final venue clear.",
+    "Vendor tips/payments: couple-only responsibility; amounts are never shown on coordinator, DJ, officiant or vendor-directory views."
+  ],
   note: "Private day-of binder. Keep passwords, private addresses, personal phone numbers and other sensitive details in Netlify environment variables rather than browser code.",
+  vendors:{
+    title:"Wedding Vendor Directory",
+    summary:"One private place for the full wedding-team roster. Payment amounts are deliberately excluded here; only Cory & Melinda can see money details when they use the separate couple access code.",
+    vendors:[
+      {role:"Ceremony Coordinator + Content",name:"Nessa Dover · Peaks and Promises Photography",status:"Confirmed",arrival:"Target 1:50 PM / venue access 2:00 PM",contactKey:"nessa",notes:"Ceremony coordination, content creation, lineup and ceremony-photo cue support."},
+      {role:"Violinist",name:"Vio",status:"Confirmed",arrival:"Target 2:20 PM for music check",contactKey:"vio",notes:"Ceremony musician; final arrival time to reconfirm."},
+      {role:"Guitarist",name:"Gio",status:"Confirmed",arrival:"Target 2:20 PM for music check",contactKey:"gio",notes:"Ceremony musician; final arrival time to reconfirm."},
+      {role:"Officiant",name:"Bertram Generlette · Cory’s dad",status:"Confirmed",arrival:"By 3:00 PM",contactKey:"bertram",notes:"Traditional vows; family joining; mother rose presentation; final blessing."},
+      {role:"Photographer",name:"Olivia M. Photography / O.M Creative LLC",status:"Confirmed",arrival:"Per final 5-hour coverage plan",contactKey:"photographer",notes:"Invoice on file shows 09/26/2026; couple should confirm correction to wedding date 09/28/2026."},
+      {role:"Reception Coordinator / Setup / Cleanup",name:"Tammy Murrie · Colorado Acclaimed Weddings",status:"Confirmed",arrival:"Reception setup before guests",contactKey:"tammy",notes:"Receives décor boxes, stages reception, brings/stages cake, oversees cleanup."},
+      {role:"DJ / MC",name:"Michael Lancaster · Colorado DJ",status:"Confirmed",arrival:"Setup target approximately 1.5 hours before reception program",contactKey:"dj",notes:"Use the current private DJ sheet, not the obsolete timing printed in the older contract."},
+      {role:"Bartender",name:"Alfredo Junior",status:"Confirmed",arrival:"Before 5:00 PM cocktail hour",contactKey:"bartender",notes:"Bar setup + Something Blue / Something Old service plan."},
+      {role:"Magician",name:"Name/contact still needed",status:"Booked / details incomplete",arrival:"Confirm cocktail-hour/reception set time",contactKey:"magician",notes:"Add exact name, contact and performance window."},
+      {role:"Hair",name:"Sara D Hair",status:"Confirmed",arrival:"Bride prep schedule",contactKey:"hair",notes:"Bridal hair, two bridesmaid services and one flower-girl service on invoice."},
+      {role:"Makeup",name:"Christina",status:"Details incomplete",arrival:"Confirm start time",contactKey:"makeup",notes:"Business name, contact, services and start time still need to be added."},
+      {role:"Italian Dinner",name:"Vendor name/contact still needed",status:"Menu planned / vendor details incomplete",arrival:"Target hot delivery 5:30–5:45 PM",contactKey:"italian",notes:"Grilled salmon, mashed potatoes, fettuccine Alfredo with Parmesan-crusted chicken, Caesar salad."},
+      {role:"Jamaican Dinner",name:"Not yet secured",status:"Needs vendor",arrival:"Before dinner service",contactKey:"jamaican",notes:"Planned jerk chicken + rice and peas."},
+      {role:"Cocktail-Hour Hors d’oeuvres",name:"Vendor/delivery still unresolved",status:"Needs vendor / delivery plan",arrival:"Target 4:40–4:50 PM",contactKey:"horsdoeuvres",notes:"Finalize menu, vendor and handoff location."}
+    ],
+    actionItems:[
+      "Add missing business/contact information for Christina, magician, Italian food, Jamaican food and hors d’oeuvres.",
+      "Confirm exact Vio + Gio arrival times and contact method.",
+      "Confirm photographer invoice/event date is corrected from 09/26/2026 to the wedding date 09/28/2026.",
+      "Finalize Jamaican caterer, cocktail-hour hors d’oeuvres and hot-food holding/serving plan.",
+      "Add private contacts in Netlify WEDDING_VENDOR_CONTACTS rather than committing phone numbers or emails to GitHub."
+    ]
+  },
   bride: {
     title: "Bride Day-of Guide · Melinda",
-    summary: "Bride-only timeline, personal reminders and the recovered floral-binder guide. The exact private getting-ready address stays server-side; the dashboard refers to it only as the Arvada getting-ready location.",
+    summary: "Bride-only timeline, personal reminders and the recovered floral-binder guide. Getting-ready location: 6005 Nelson St, Arvada, CO. Keep this address out of all guest-facing pages.",
     timeline: [
       {time:"7:30 AM",item:"Breakfast + hydrate",note:"Eat before hair and makeup starts. Set out water, snacks and medications/personal essentials."},
       {time:"8:00 AM",item:"Hair + makeup begins",note:"Sara D Hair is paid in full. Makeup artist: Christina; contact/time still needs final confirmation."},
       {time:"11:30 AM",item:"Lunch + reset",note:"Real food, water, restroom, then protect hair/makeup."},
       {time:"12:30 PM",item:"Detail / getting-ready photos",note:"Dress, shoes, jewelry, invitation suite, Daughter charms, bouquet details."},
       {time:"1:15 PM",item:"Get dressed + final beauty touch-ups",note:"Leave cushion instead of rushing."},
-      {time:"1:45 PM",item:"Private-item check",note:"Vows, Daughter Pandora charms, bouquet, phone, charger, touch-up kit, comfortable shoes, water."},
-      {time:"2:00 PM",item:"Depart Arvada getting-ready location",note:"Use about a 50–60 minute planning buffer and recheck Flagstaff Mountain traffic/parking that day."},
+      {time:"1:45 PM",item:"Private-item check",note:"Daughter Pandora charms, bouquet, phone, charger, touch-up kit, comfortable shoes, water."},
+      {time:"2:00 PM",item:"Depart 6005 Nelson St, Arvada",note:"Use about a 50–60 minute planning buffer and recheck Flagstaff Mountain traffic/parking that day."},
       {time:"2:50 PM",item:"Arrive near Sunrise Amphitheater",note:"Stay out of guest sightline; restroom and final touch-ups before lineup."},
       {time:"3:15 PM",item:"Processional lineup",note:"Nessa takes over the lineup and confirms music cues."},
       {time:"3:30 PM",item:"Ceremony begins",note:""},
       {time:"4:05–4:35 PM",item:"Family + wedding-party photos",note:"Then leave for City Park Pavilion."},
       {time:"~5:30 PM",item:"Arrive / freshen up at reception",note:"Target depends on Monday traffic."},
       {time:"5:50 PM",item:"Reception entrance lineup",note:"Wedding party first, then Cory & Melinda."},
-      {time:"6:00 PM",item:"Grand entrance",note:"Cory & Melinda enter to Lil Boo Thang."}
+      {time:"6:00 PM",item:"Grand entrance",note:"Couple entrance song/cue is on the private DJ sheet."}
+    ],
+    payments:[
+      "Nessa Dover — $125 still due",
+      "Tammy Murrie — $450 due day-of",
+      "Alfredo Junior — $200 due day-of",
+      "Known remaining day-of total currently documented: $775",
+      "Vio, Gio, magician and DJ — paid in full"
     ],
     reminders:[
       "Eat breakfast and lunch even if you are nervous.",
-      "Pack vows, Daughter charms, bouquet, touch-up kit, water, phone charger and comfortable travel shoes.",
+      "Pack Daughter charms, bouquet, touch-up kit, water, phone charger and comfortable travel shoes. Traditional vows will be led by Bertram; no personal vow cards are needed.",
       "Tammy will bring the couple-picked-up cake to City Park Pavilion.",
-      "Do not put the private getting-ready address in public pages or source code.",
+      "Getting-ready address: 6005 Nelson St, Arvada, CO. Share only with the wedding team / people who need it; do not place it on guest-facing pages.",
+      "Sunday rehearsal: meet at Chautauqua Park at 4:30 PM, then Sunrise Amphitheater around 6:00 PM.",
+      "Honeymoon: Costa Rica. Flight is at 5:00 AM the morning after the wedding; confirm airport, check-in and departure-from-lodging time during wedding week.",
       "Confirm Christina’s makeup arrival/start time and final services.",
+      "Confirm Olivia M. Photography invoice/event date is corrected from 09/26/2026 to the wedding date 09/28/2026.",
       "Use the included Wedding Flower Ordering Guide as the controlling count sheet for bouquets, flower-girl corsages and boutonnières; recheck counts against the final wedding-party roster before purchasing."
     ],
     florals:{
@@ -73,35 +120,45 @@ const defaultData = {
   },
   groom: {
     title: "Groom Day-of Guide · Cory",
-    summary: "A low-stress groom plan with ceremony responsibilities, family items and enough mountain-travel buffer.",
+    summary: "A low-stress groom plan with ceremony responsibilities, family items and enough mountain-travel buffer. Getting-ready location: 6005 Nelson St, Arvada, CO. Keep this address private from guests.",
     timeline:[
       {time:"8:30 AM",item:"Breakfast + easy morning",note:"Hydrate and keep the morning calm."},
       {time:"11:30 AM",item:"Lunch",note:"Do not skip it."},
-      {time:"12:30 PM",item:"Shower + get dressed",note:"Suit, shoes, accessories, boutonniere, vows."},
+      {time:"12:30 PM",item:"Shower + get dressed",note:"Suit, shoes, accessories and boutonniere."},
       {time:"1:15 PM",item:"Groom details / photos",note:"Confirm ring handoff and Daughter-charm plan with Melinda/Nessa."},
-      {time:"1:50 PM",item:"Load car + final check",note:"Phone, vows, water, emergency kit."},
-      {time:"2:00 PM",item:"Depart Arvada getting-ready location",note:"Recheck route to Flagstaff Mountain and parking conditions."},
+      {time:"1:50 PM",item:"Load car + final check",note:"Phone, water and emergency kit."},
+      {time:"2:00 PM",item:"Depart 6005 Nelson St, Arvada",note:"Recheck route to Flagstaff Mountain and parking conditions."},
       {time:"2:50 PM",item:"Arrive Sunrise Amphitheater",note:"Meet Nessa and Bertram before guest seating is complete."},
-      {time:"3:05 PM",item:"Ceremony check",note:"Vio/Gio cues, rings, vows, Daughter charms, mother escort."},
+      {time:"3:05 PM",item:"Ceremony check",note:"Vio/Gio cues, rings, traditional-vow plan, Daughter charms and mother escort."},
       {time:"3:15 PM",item:"Wedding party lineup",note:"Cory will escort his mother during the processional."},
       {time:"3:30 PM",item:"Ceremony begins",note:""},
       {time:"4:05–4:35 PM",item:"Photos",note:"Depart for Denver immediately after required portraits."},
-      {time:"5:50 PM",item:"Reception entrance lineup",note:"Be ready for Lil Boo Thang cue."},
+      {time:"5:50 PM",item:"Reception entrance lineup",note:"Be ready for the couple entrance; song details stay on the DJ sheet."},
       {time:"6:00 PM",item:"Grand entrance",note:""},
-      {time:"6:05 PM",item:"First Song",note:"Sing Heartbeat with Melinda using the backing track."}
+      {time:"6:05 PM",item:"Private couple music moment",note:"Song/playback details stay on the DJ sheet."}
+    ],
+    payments:[
+      "Nessa Dover — $125 still due",
+      "Tammy Murrie — $450 due day-of",
+      "Alfredo Junior — $200 due day-of",
+      "Known remaining day-of total currently documented: $775",
+      "Vio, Gio, magician and DJ — paid in full"
     ],
     reminders:[
       "Eat, hydrate and keep your phone charged.",
-      "Confirm vows and ring handoff.",
+      "Confirm ring handoff and review the traditional repeat-after-me vows with Bertram at rehearsal.",
       "Be ready to escort your mother in the processional.",
       "Confirm Daughter charms are with the couple/coordinator before ceremony.",
       "Check in with Bertram, Nessa, Vio and Gio before guests are fully seated.",
-      "Phone on silent before processional."
+      "Phone on silent before processional.",
+      "Confirm Olivia M. Photography event-date correction has been handled before wedding week.",
+      "Sunday rehearsal: meet at Chautauqua Park at 4:30 PM, then Sunrise Amphitheater around 6:00 PM.",
+      "Honeymoon: Costa Rica. Flight is at 5:00 AM the next morning; confirm airport, check-in, bags and departure-from-lodging time before wedding day."
     ]
   },
   ceremony: {
     title:"Ceremony Coordinator · Nessa Dover",
-    summary:"Nessa Dover · Peaks and Promises Photography · ceremony coordination + content creation. $125 still due. Sunrise Amphitheater reservation: 2:00–5:00 PM; ceremony starts 3:30 PM.",
+    summary:"Nessa Dover · Peaks and Promises Photography · ceremony coordination + content creation. Sunrise Amphitheater reservation: 2:00–5:00 PM; ceremony starts 3:30 PM.",
     timeline:[
       {time:"1:50 PM",item:"Nessa staged nearby",note:"Venue rental access starts at 2:00."},
       {time:"2:00 PM",item:"Venue access + ceremony setup",note:"Signs, reserved seating, florals, roses, Daughter charms, ceremony supplies."},
@@ -140,10 +197,12 @@ const defaultData = {
     ],
     ceremonyOrder:[
       "Welcome by Bertram Generlette",
-      "Rose presentation to mothers — REHEARSAL CONFIRMATION: older binder placed this after the kiss; Melinda recalled it earlier, before vows. Current speaking sheet stages it before vows unless the couple changes it.",
-      "Personal vows — Cory & Melinda",
+      "Optional opening prayer / reading if retained",
+      "Rose presentation to Patricia Generlette and Patricia Roberts — current working placement is before the vows; confirm at rehearsal because the older binder placed it after the kiss",
+      "Declaration of intent — traditional I Do questions",
+      "Traditional repeat-after-me vows — no personal vows",
       "Ring exchange",
-      "Cord of Three Strands — previously requested in the officiant binder; confirm at rehearsal whether it is still included",
+      "Cord of Three Strands — optional item from the earlier binder; confirm at rehearsal whether it remains",
       "Family joining ceremony — Cory and Melinda speak directly to Miah and Londyn and give each a Pandora charm that says Daughter",
       "Pronouncement",
       "Kiss",
@@ -158,19 +217,20 @@ const defaultData = {
       "If Cord of Three Strands remains in the ceremony, stage the cord/table and confirm Bertram’s transition language.",
       "Have vows, rings, tissues, water and marriage-license plan accounted for.",
       "Pit-latrine restrooms only; no changing rooms.",
+      "Sunrise Amphitheater parking is approximately 10 regular + 3 ADA spaces and is not guaranteed; Flagstaff Road vehicle-length limit is 30 feet.",
       "Keep 5:00 PM hard-clear deadline visible to setup/strike team."
     ],
     vendors:[
-      {role:"Ceremony Coordinator + Content",name:"Nessa Dover · Peaks and Promises Photography",arrival:"1:50 PM",payment:"$125 due",phone:"Store contact privately"},
-      {role:"Violinist",name:"Vio",arrival:"Target 2:20 PM",payment:"Paid in full",phone:"Store contact privately"},
-      {role:"Guitarist",name:"Gio",arrival:"Target 2:20 PM",payment:"Paid in full",phone:"Store contact privately"},
-      {role:"Officiant",name:"Bertram Generlette · Cory’s dad",arrival:"By 3:00 PM",payment:"Family",phone:"Store contact privately"},
-      {role:"Photographer",name:"Olivia M. Photography / O.M Creative LLC",arrival:"Per final coverage plan",payment:"Paid in full",phone:"303-214-8912 · omphoto88@gmail.com"}
+      {role:"Ceremony Coordinator + Content",name:"Nessa Dover · Peaks and Promises Photography",arrival:"1:50 PM",status:"Confirmed",contactKey:"nessa"},
+      {role:"Violinist",name:"Vio",arrival:"Target 2:20 PM",status:"Confirmed",contactKey:"vio"},
+      {role:"Guitarist",name:"Gio",arrival:"Target 2:20 PM",status:"Confirmed",contactKey:"gio"},
+      {role:"Officiant",name:"Bertram Generlette · Cory’s dad",arrival:"By 3:00 PM",status:"Confirmed",contactKey:"bertram"},
+      {role:"Photographer",name:"Olivia M. Photography / O.M Creative LLC",arrival:"Per final coverage plan",status:"Confirmed",contactKey:"photographer",notes:"Couple is confirming the invoice date discrepancy separately."}
     ]
   },
   reception: {
     title:"Reception Coordinator · Tammy Murrie",
-    summary:"Tammy Murrie · Colorado Acclaimed Weddings · reception setup/cleanup. $450 due day-of. Early arrivals may enter around 4:45 PM; official cocktail hour 5:00 PM; entrance 6:00 PM; dinner 6:20 PM.",
+    summary:"Tammy Murrie · Colorado Acclaimed Weddings · reception setup/cleanup. Early arrivals may enter around 4:45 PM; official cocktail hour 5:00 PM; entrance 6:00 PM; dinner 6:20 PM.",
     timeline:[
       {time:"2:00 PM",item:"Reception setup underway",note:"Guest tables, sweetheart table, welcome area, cake/dessert, bar, buffet, kids area, signs and lighting."},
       {time:"4:30 PM",item:"Full-room check",note:"Table signs, guestbook, camera/audio-message links, candles, bar signage, seating/table finder."},
@@ -179,9 +239,9 @@ const defaultData = {
       {time:"5:00 PM",item:"Official cocktail hour",note:"Bar + hors d’oeuvres + magician/guest entertainment as scheduled."},
       {time:"5:30–5:45 PM",item:"Italian hot-food delivery target",note:"Better than 5:00 for a 6:20 dinner; receive, hold hot and stage buffet."},
       {time:"5:30 PM",item:"Check couple ETA",note:"Adjust entrance only if mountain traffic is heavy."},
-      {time:"5:50 PM",item:"Wedding-party entrance lineup",note:"DJ confirms Rock With You and Lil Boo Thang cues."},
-      {time:"6:00 PM",item:"Grand entrance",note:"Wedding party to Rock With You; Cory & Melinda announced and enter to Lil Boo Thang."},
-      {time:"6:05 PM",item:"First Song",note:"Cory & Melinda sing Heartbeat; no traditional first dance."},
+      {time:"5:50 PM",item:"Wedding-party entrance lineup",note:"DJ confirms the private entrance-song cues; Tammy confirms people/order."},
+      {time:"6:00 PM",item:"Grand entrance",note:"DJ owns the private entrance-song cues; Tammy owns lineup and release."},
+      {time:"6:05 PM",item:"Private couple music moment",note:"DJ manages the private track and microphones; no traditional first dance."},
       {time:"6:15 PM",item:"Dinner blessing + remarks",note:"Frank Roberts, Melinda’s dad."},
       {time:"6:20 PM",item:"Dinner begins",note:"Italian buffet + Jamaican food if secured."},
       {time:"6:55–7:00 PM",item:"Toasts",note:"Shalee Adams → Michael Berghini → Miah & Londyn together."},
@@ -197,7 +257,7 @@ const defaultData = {
       "Assigned tables, not assigned individual seats.",
       "Confirm Signature Drinks signage: Something Blue — Blue Skies; Something Old — Old Fashioned.",
       "Confirm kids table, dessert area, guestbook, disposable-camera and Messages of Love links/QRs are visible.",
-      "Confirm First Song audio/backing track and microphone setup before guests arrive.",
+      "Confirm DJ has the private couple-song playback/microphone plan before guests arrive.",
       "Stage glow sticks before the final hour without announcing them too early.",
       "Decor will be packed in labeled boxes by setup zone. Suggested labels: Sweetheart Table; Welcome + Seating Chart; Guest Tables; Cake + Dessert; Bar + Signs; Buffet; Kids Table; Emergency/Extras.",
       "As the wedding gets closer, add real setup photos to the coordinator binder so Tammy can match each boxed décor zone exactly.",
@@ -259,27 +319,21 @@ const defaultData = {
       {item:"Cake",detail:"Picked up by Cory & Melinda; Tammy brings it to City Park Pavilion",status:"Confirm pickup/storage/transport plan"}
     ],
     vendors:[
-      {role:"Reception Coordinator / Setup / Cleanup",name:"Tammy Murrie · Colorado Acclaimed Weddings",arrival:"Setup before guests",payment:"$450 due day-of",phone:"Store contact privately"},
-      {role:"Bartender",name:"Alfredo Junior",arrival:"Before 5:00 PM",payment:"$200 due day-of",phone:"Store contact privately"},
-      {role:"DJ / MC",name:"Michael Lancaster · Colorado DJ",arrival:"Contract says setup 1.5 hrs before event start",payment:"Paid in full",phone:"303-503-1100"},
-      {role:"Magician",name:"Name/contact still needed",arrival:"Confirm cocktail/reception set time",payment:"Paid in full",phone:"Store contact privately"},
-      {role:"Photographer",name:"Olivia M. Photography / O.M Creative LLC",arrival:"Per final 5-hour coverage",payment:"Paid in full",phone:"303-214-8912 · omphoto88@gmail.com"},
-      {role:"Hair",name:"Sara D Hair",arrival:"Bride prep",payment:"Paid in full",phone:"817-360-3491 · sara.debusk@yahoo.com"},
-      {role:"Makeup",name:"Christina",arrival:"Confirm",payment:"Confirm",phone:"Contact still needed"},
-      {role:"Italian Food",name:"Vendor name/contact still needed",arrival:"Target 5:30–5:45 PM",payment:"Confirm",phone:"Store contact privately"},
-      {role:"Jamaican Food",name:"Not yet secured",arrival:"Before 6:00 PM",payment:"TBD",phone:"TBD"}
+      {role:"Reception Coordinator / Setup / Cleanup",name:"Tammy Murrie · Colorado Acclaimed Weddings",arrival:"Setup before guests",status:"Confirmed",contactKey:"tammy"},
+      {role:"Bartender",name:"Alfredo Junior",arrival:"Before 5:00 PM",status:"Confirmed",contactKey:"bartender"},
+      {role:"DJ / MC",name:"Michael Lancaster · Colorado DJ",arrival:"Setup target about 1.5 hrs before reception program",status:"Confirmed",contactKey:"dj"},
+      {role:"Magician",name:"Name/contact still needed",arrival:"Confirm cocktail/reception set time",status:"Details incomplete",contactKey:"magician"},
+      {role:"Photographer",name:"Olivia M. Photography / O.M Creative LLC",arrival:"Per final 5-hour coverage",status:"Confirmed",contactKey:"photographer"},
+      {role:"Hair",name:"Sara D Hair",arrival:"Bride prep",status:"Confirmed",contactKey:"hair"},
+      {role:"Makeup",name:"Christina",arrival:"Confirm",status:"Details incomplete",contactKey:"makeup"},
+      {role:"Italian Food",name:"Vendor name/contact still needed",arrival:"Target 5:30–5:45 PM",status:"Details incomplete",contactKey:"italian"},
+      {role:"Jamaican Food",name:"Not yet secured",arrival:"Before 6:00 PM",status:"Needs vendor",contactKey:"jamaican"},
+      {role:"Cocktail-Hour Hors d’oeuvres",name:"Vendor/delivery still unresolved",arrival:"Target 4:40–4:50 PM",status:"Needs vendor / delivery plan",contactKey:"horsdoeuvres"}
     ],
-    payments:[
-      "Nessa Dover — $125 still due",
-      "Tammy Murrie — $450 due day-of",
-      "Alfredo Junior — $200 due day-of",
-      "Known remaining day-of total currently documented: $775",
-      "Vio, Gio, magician and DJ — paid in full"
-    ]
   },
   dj:{
     title:"Print Sheet · DJ / MC",
-    summary:"Reception cue sheet for Michael Lancaster / Colorado DJ. DJ is paid in full. Current reception timing supersedes the older contract’s obsolete ceremony/start times.",
+    summary:"Reception cue sheet for Michael Lancaster / Colorado DJ. Current reception timing supersedes the older contract’s obsolete ceremony/start times. Entrance songs and the First Song are private DJ/team information and should not be announced or displayed on guest pages before their cues.",
     timeline:[
       {time:"Before 4:30 PM",item:"Sound + uplight setup complete",note:"Contract provides DJ/MC, sound equipment, microphones and 12 uplights; setup term was 1.5 hours before event start."},
       {time:"5:00 PM",item:"Cocktail hour music",note:"Keep volume conversational."},
@@ -296,6 +350,17 @@ const defaultData = {
       {time:"10:30 PM",item:"Private couple moment / last song",note:"Coordinate with Tammy before moving guests toward send-off."},
       {time:"10:40 PM",item:"Glow-stick send-off",note:"Final public cue."}
     ],
+    introductions:[
+      "Shalee Adams — Maid / Matron of Honor",
+      "Michael Berghini — Best Man",
+      "Adrian Chandler — Groomsman, with Danielle Hedges and Amber Antenor — Groomswomen / Cory’s sisters",
+      "Jonathan Roberts — Bridesman / Melinda’s brother, with Miah Smith and Londyn Smith — Bridesmaids / daughters",
+      "Shiloah Antenor — Junior Bridesmaid, with Isaac Antenor — Ring Bearer",
+      "Camden Adams — Flower Girl",
+      "Moriah Antenor — Flower Girl",
+      "Elise Hedges — Flower Girl",
+      "Final announcement: Cory & Melinda — couple entrance"
+    ],
     reminders:[
       "Wedding party reception entrance song: Rock With You — Michael Jackson.",
       "Couple entrance: Lil Boo Thang.",
@@ -308,49 +373,85 @@ const defaultData = {
   },
   officiant:{
     title:"Print Sheet · Officiant · Bertram Generlette",
-    summary:"Speaking/cue outline for Cory’s dad, Bertram. This uses the couple’s newest family-joining plan. Final rose placement and Cord of Three Strands should be confirmed at rehearsal.",
+    summary:"Detailed speaking and cue sheet for Cory’s dad, Bertram Generlette. The binder establishes the ceremony elements and sequence; the full sentences below are an expanded speaking draft built around those elements. The current ceremony uses traditional vows rather than personal vows. The family joining moment centers Miah and Londyn and the Daughter Pandora charms. The Cord of Three Strands remains optional until confirmed at rehearsal.",
     speaking:[
-      {heading:"Welcome",text:"Welcome everyone, acknowledge the families gathered, and briefly name the joy of Cory and Melinda choosing marriage and family together."},
-      {heading:"Rose presentation to mothers",text:"Current working placement: before personal vows. Invite Cory and Melinda to honor their mothers with roses and a brief expression of gratitude. NOTE: older binder placed this after the kiss; confirm final placement at rehearsal."},
-      {heading:"Personal vows",text:"Invite Cory and Melinda to share their personal vows to one another."},
-      {heading:"Ring exchange",text:"Transition to the rings and guide the couple through their ring promises."},
-      {heading:"Cord of Three Strands",text:"This was added to the prior officiant binder. If still included, explain that the three strands symbolize Cory, Melinda and God / faith woven together in marriage, then guide the couple through the action. Confirm at rehearsal whether this remains in the final ceremony."},
-      {heading:"Family joining with Miah + Londyn",text:"Invite Miah and Londyn forward. Introduce this as a promise not only between Cory and Melinda, but a celebration of the family they are building. Cory and Melinda speak directly to each daughter, then give each a Pandora charm that says Daughter. Pause for the moment before transitioning back to the marriage ceremony."},
-      {heading:"Pronouncement",text:"After vows, rings and family elements are complete, pronounce Cory and Melinda married."},
-      {heading:"Kiss",text:"Invite the couple to seal the marriage with a kiss."},
-      {heading:"Final introduction",text:"Present Cory and Melinda to the guests and cue the recessional."}
+      {heading:"Opening / welcome",text:"Suggested speaking prompt: ‘Good afternoon, family and friends. We are gathered here in this beautiful place to celebrate Cory and Melinda as they enter marriage surrounded by the people they love most. Today is not only about two people choosing one another; it is also about honoring the families who shaped them and celebrating the family they are continuing to build together.’ Pause, look to the couple, and keep the opening warm and brief."},
+      {heading:"Optional prayer or reading",text:"If Cory and Melinda keep an opening prayer or reading, introduce it here. If they decide not to include one, move directly into the rose presentation. Keep this marked as a rehearsal decision."},
+      {heading:"Rose presentation to the mothers",text:"Current working placement: before the vows. Confirm at rehearsal because the older binder placed the roses after the kiss. Suggested transition: ‘Before Cory and Melinda make their promises to one another, they would like to pause and honor two women whose love and guidance helped bring them to this moment.’ Invite Cory and Melinda to present roses to Patricia Generlette and Patricia Roberts. Suggested close: ‘These roses are a simple thank-you for the love, lessons and family that each of you has given them, and a symbol of two families being joined today.’ Allow a photo pause before everyone returns to position."},
+      {heading:"Words about marriage / transition to promises",text:"Suggested binder-style bridge: ‘Marriage is more than a single ceremony or a single promise. It is the choice to keep showing up, to listen, to laugh, to forgive, to grow, and to make a home together in all the ordinary days that follow this extraordinary one.’ Then turn to Cory and Melinda for the declaration of intent."},
+      {heading:"Declaration of intent — I Do",text:"Ask Cory: ‘Cory, do you take Melinda to be your wife, to share your life with her, to love and support her, to honor and cherish her, through the joys and challenges of life, for as long as you both shall live?’ Cory answers: ‘I do.’ Ask Melinda the same question, substituting Cory’s name and husband. Melinda answers: ‘I do.’"},
+      {heading:"Traditional vows — repeat after me",text:"There are no personal vows. Lead Cory first: ‘I, Cory, take you, Melinda, to be my wife; to have and to hold from this day forward; for better, for worse; for richer, for poorer; in sickness and in health; to love and to cherish; for as long as we both shall live.’ Then lead Melinda with the same traditional vow: ‘I, Melinda, take you, Cory, to be my husband…’ Pause naturally between phrases so each person can repeat comfortably."},
+      {heading:"Ring exchange",text:"Suggested transition: ‘The wedding ring is an outward symbol of an inward promise — a circle without end, representing the commitment you make today.’ Have the rings presented. Cory repeats: ‘Melinda, I give you this ring as a symbol of my love and my commitment to you. With this ring, I choose you today and every day.’ Melinda repeats the corresponding words to Cory."},
+      {heading:"Cord of Three Strands — optional / confirm at rehearsal",text:"If retained from the earlier binder, introduce it as a symbol of Cory, Melinda and their faith woven together. Suggested wording: ‘A cord of three strands is not quickly broken. As these strands are woven together, may your marriage be strengthened by your love for one another and by the faith that guides your home.’ Give the couple time to complete the action. If they remove this element, skip directly to the family joining ceremony."},
+      {heading:"Family joining ceremony — Miah and Londyn",text:"Invite Miah and Londyn forward. Suggested framing: ‘Today also celebrates a family. Cory and Melinda’s promises do not stop with one another; this moment recognizes Miah and Londyn and the love, trust, laughter and memories that make the four of them a family.’ Then step back and let Cory and Melinda speak directly to the girls in their own words. After they speak, cue the Daughter Pandora charms: ‘Cory and Melinda have chosen a small keepsake for each of you — a charm that says Daughter — as a reminder that you are not simply standing beside them today; you are part of the promises and the family being celebrated here.’ Pause for hugs/photos, then have Miah and Londyn return to position."},
+      {heading:"Pronouncement",text:"Suggested wording: ‘Cory and Melinda, you have declared your intentions, made your vows, exchanged rings, and celebrated the family you are building in the presence of everyone gathered here. By the authority entrusted to me, it is my great joy to pronounce you married.’"},
+      {heading:"The kiss",text:"Cue clearly and simply: ‘Cory, you may kiss your bride.’ Pause and let Nessa/photography capture the moment before moving on."},
+      {heading:"Final blessing",text:"Suggested closing blessing: ‘May your home be filled with laughter, patience and peace. May you continue choosing one another through every season, may Miah and Londyn always know the strength of the family surrounding them, and may all four of you leave this place carrying the love that brought you here today.’"},
+      {heading:"Presentation + recessional cue",text:"Suggested presentation: ‘Family and friends, it is my honor to present Cory and Melinda!’ Hold for applause, then step aside so the recessional begins cleanly. Recessional music cue: This Will Be (An Everlasting Love)."}
     ],
     processional:[
-      "Bertram enters first and takes place",
-      "Cory escorts his mother",
-      "Shalee Adams",
-      "Michael Berghini",
+      "Bertram enters first and takes his place",
+      "Cory escorts his mother, Patricia Generlette, then takes his place",
+      "Shalee Adams — Maid / Matron of Honor",
+      "Michael Berghini — Best Man",
       "Adrian Chandler with Danielle Hedges + Amber Antenor",
       "Jonathan Roberts with Miah Smith + Londyn Smith",
       "Isaac Antenor + Shiloah Antenor",
-      "Camden Adams",
-      "Moriah Antenor",
-      "Elise Hedges",
-      "Melinda"
+      "Camden Adams — Flower Girl",
+      "Moriah Antenor — Flower Girl",
+      "Elise Hedges — Flower Girl",
+      "Melinda — Bride"
+    ],
+    music:[
+      {cue:"Guest seating / prelude",song:"Birds of a Feather · 360 · Espresso · Positions · Ocean Eyes + compatible additions",who:"Vio + Gio / ceremony music plan"},
+      {cue:"Processional Part 1",song:"Into You — Tamia",who:"Cory; Shalee; Michael; Adrian/Danielle/Amber; Jonathan/Miah/Londyn"},
+      {cue:"Processional Part 2",song:"Stand by Me",who:"Isaac/Shiloah; Camden; Moriah; Elise"},
+      {cue:"Bride entrance",song:"Kissing You",who:"Melinda"},
+      {cue:"Recessional",song:"This Will Be (An Everlasting Love)",who:"Cory & Melinda + wedding party"}
     ],
     reminders:[
-      "Ceremony start: 3:30 PM.",
+      "Ceremony starts at 3:30 PM.",
+      "No personal vows — use the traditional repeat-after-me vows in this speaking sheet.",
+      "Rose presentation currently uses a before-the-vows working placement and names both mothers: Patricia Generlette and Patricia Roberts. Confirm placement at rehearsal; the older binder placed it after the kiss.",
       "Family joining gifts: one Daughter Pandora charm for Miah and one for Londyn.",
-      "Coordinate all pauses with Nessa so photographers/content creation can capture the moment without interrupting it.",
-      "Recessional song: This Will Be (An Everlasting Love).",
-      "Confirm at rehearsal: exact rose-presentation placement and whether Cord of Three Strands remains included."
+      "Coordinate pauses with Nessa so photography/content creation can capture roses, charms, rings and the kiss without interrupting the ceremony.",
+      "Confirm at rehearsal whether the optional Cord of Three Strands stays in the ceremony.",
+      "Recessional: This Will Be (An Everlasting Love)."
     ]
   }
 };
+
+function loadVendorContacts(){
+  if(!process.env.WEDDING_VENDOR_CONTACTS) return {};
+  try{return JSON.parse(process.env.WEDDING_VENDOR_CONTACTS)}catch{return {}}
+}
+function hydrateVendorLists(data,contacts){
+  Object.values(data).forEach(section=>{
+    if(!section || typeof section!=='object' || !Array.isArray(section.vendors)) return;
+    section.vendors=section.vendors.map(v=>{
+      const extra=v.contactKey ? (contacts[v.contactKey]||{}) : {};
+      return {...v,...extra};
+    });
+  });
+}
 
 export default async (req) => {
   if (req.method !== 'POST') return new Response('Method not allowed', {status:405});
   let body={};
   try{body=await req.json();}catch{}
-  const expected=process.env.WEDDING_PRIVATE_PASSCODE;
-  if(!expected) return Response.json({error:'Private dashboard not configured'}, {status:503});
-  if(!body.code || body.code!==expected) return Response.json({error:'Unauthorized'}, {status:401});
-  let data=defaultData;
+  const teamExpected=process.env.WEDDING_PRIVATE_PASSCODE;
+  const coupleExpected=process.env.WEDDING_COUPLE_PASSCODE;
+  if(!teamExpected && !coupleExpected) return Response.json({error:'Private dashboard not configured'}, {status:503});
+  const isCouple=Boolean(coupleExpected && body.code===coupleExpected);
+  const isTeam=Boolean(teamExpected && body.code===teamExpected);
+  if(!body.code || (!isCouple && !isTeam)) return Response.json({error:'Unauthorized'}, {status:401});
+  let data=JSON.parse(JSON.stringify(defaultData));
   if(process.env.WEDDING_PRIVATE_DATA){try{data=JSON.parse(process.env.WEDDING_PRIVATE_DATA)}catch{}}
+  hydrateVendorLists(data,loadVendorContacts());
+  data.accessLevel=isCouple?'couple':'team';
+  if(!isCouple){
+    if(data.bride) delete data.bride.payments;
+    if(data.groom) delete data.groom.payments;
+  }
   return Response.json(data,{headers:{'cache-control':'no-store'}});
 };

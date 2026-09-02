@@ -112,3 +112,29 @@ After deployment, add `WEDDING_PRIVATE_PASSCODE` in Netlify environment variable
 
 ## GitHub upload
 See `UPLOAD_TO_GITHUB.md` for the easiest upload sequence.
+
+
+## September 2 audit update
+- Added a private Vendor Directory tab.
+- Added separate team vs couple access; payment amounts are couple-only.
+- Expanded the Our Story + First Date pages with the Jenga/glass/puppy/Dave & Buster's story.
+- Mothers corrected to Patricia Roberts and Patricia Generlette.
+- Guest pages keep entrance-song and First Song titles private while showing the dinner menu.
+- Traditional vows replace personal vows.
+- DJ sheet includes named wedding-party introduction order.
+- Officiant sheet includes an expanded speaking draft around binder-supported ceremony elements.
+- Added binder-critical assignments: marriage license, cards/gifts, emergency kit, bustle, family-photo list and cleanup oversight.
+- Added Sunrise parking capacity and 30-foot vehicle-length reminder.
+
+
+## September 2 guest-hub expansion
+- Replaced the unreliable bouquet mini-game with Junior Wedding Explorers, a persistent real-world challenge + scavenger/trivia activities.
+- Added Wedding Weekend page: Sunday 4:30 PM Chautauqua Park, around 6:00 PM Sunrise Amphitheater rehearsal.
+- Added public Costa Rica honeymoon teaser while keeping the 5:00 AM flight and Arvada getting-ready address private.
+- Added Messages of Love written Netlify form plus existing voice guestbook and disposable camera links.
+- Added Gifts & Well Wishes page with Cash App/Venmo fields intentionally blank until the couple supplies the exact links.
+- Added Add-to-Calendar downloads for ceremony and reception.
+- Added larger-text accessibility toggle.
+- Expanded photo use and compressed story photos for better mobile load speed.
+- Added Colorado reception-place cards and richer wedding-party descriptions.
+- Bride/Groom private guides now include 6005 Nelson St, Arvada; Sunday rehearsal timing; and the 5:00 AM Costa Rica honeymoon flight reminder.

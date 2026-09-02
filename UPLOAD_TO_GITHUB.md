@@ -15,7 +15,12 @@ Repository: `Generlette-Wedding-Hub`
 ## After upload
 Before putting private vendor phone numbers, private addresses, or passwords into any source-controlled file, switch the repository back to **Private**.
 
-Then connect the repository to Netlify and set the environment variable `WEDDING_PRIVATE_PASSCODE` in Netlify rather than GitHub.
+Then connect the repository to Netlify and configure private values in **Netlify**, not GitHub:
+- `WEDDING_PRIVATE_PASSCODE` — wedding-team code (coordinators/DJ/officiant; no payment amounts)
+- `WEDDING_COUPLE_PASSCODE` — a different Cory & Melinda code (payment sections visible)
+- `WEDDING_VENDOR_CONTACTS` — optional JSON with private vendor phone/email details
+
+After adding/changing any Netlify environment variable, trigger a new deploy.
 
 ## Important image check
 After upload, confirm these appear under `public/images`:
@@ -28,3 +33,23 @@ After upload, confirm these appear under `public/images`:
 
 Closer to the wedding, add your real staged sweetheart-table photo as:
 `public/images/final-sweetheart-setup.jpg`
+
+
+## Private vendor directory
+The app now has `/day-of/vendors`. Vendor names, roles, arrival targets and unresolved tasks are included in the project. Real phone numbers/emails are intentionally not committed to source. Add them in Netlify using `WEDDING_VENDOR_CONTACTS`.
+
+## Couple-only money
+Use a separate `WEDDING_COUPLE_PASSCODE`. If someone signs in with the wedding-team code, the server removes the `payments` sections before sending the private dashboard data to the browser.
+
+
+## September 2 guest-hub expansion
+- Replaced the unreliable bouquet mini-game with Junior Wedding Explorers, a persistent real-world challenge + scavenger/trivia activities.
+- Added Wedding Weekend page: Sunday 4:30 PM Chautauqua Park, around 6:00 PM Sunrise Amphitheater rehearsal.
+- Added public Costa Rica honeymoon teaser while keeping the 5:00 AM flight and Arvada getting-ready address private.
+- Added Messages of Love written Netlify form plus existing voice guestbook and disposable camera links.
+- Added Gifts & Well Wishes page with Cash App/Venmo fields intentionally blank until the couple supplies the exact links.
+- Added Add-to-Calendar downloads for ceremony and reception.
+- Added larger-text accessibility toggle.
+- Expanded photo use and compressed story photos for better mobile load speed.
+- Added Colorado reception-place cards and richer wedding-party descriptions.
+- Bride/Groom private guides now include 6005 Nelson St, Arvada; Sunday rehearsal timing; and the 5:00 AM Costa Rica honeymoon flight reminder.
