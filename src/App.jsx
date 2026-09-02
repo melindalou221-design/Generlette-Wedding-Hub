@@ -1,0 +1,137 @@
+import React, {useEffect, useMemo, useState} from 'react';
+import {Routes, Route, Link, NavLink, useLocation, useNavigate} from 'react-router-dom';
+import { wedding, schedule, gallery, coloradoQuestions, weddingParty, thankYou } from './data';
+
+const nav = [['/','Home'],['/schedule','Schedule'],['/passport','Passport'],['/directions','Directions'],['/more','More']];
+const stampLabels=['Mountain Morning','City Celebration','Captured a Moment','Left a Message','Trivia Master','Met the Crew','Cheers','Dancing Queen'];
+
+function Layout({children}){
+  const loc=useLocation();
+  useEffect(()=>window.scrollTo({top:0, behavior:'instant'}),[loc.pathname]);
+  return <div className="app-shell">
+    <main>{children}</main>
+    <nav className="bottom-nav" aria-label="Main navigation">
+      {nav.map(([to,label])=><NavLink key={to} to={to} className={({isActive})=>isActive?'active':''}><span>{label}</span></NavLink>)}
+    </nav>
+  </div>
+}
+
+const SectionTitle=({eyebrow,title,sub})=><header className="section-title"><span>{eyebrow}</span><h2>{title}</h2>{sub&&<p>{sub}</p>}<div className="gold-heart">— ♥ —</div></header>;
+const Card=({children,className=''})=><div className={'card '+className}>{children}</div>;
+const External=({href,children,className=''})=><a className={'button '+className} href={href}>{children}</a>;
+const AppLink=({to,children,className=''})=><Link className={'button '+className} to={to}>{children}</Link>;
+
+function Home(){
+  return <>
+    <section className="hero" style={{backgroundImage:"linear-gradient(180deg,rgba(6,31,54,.18),rgba(6,31,54,.78)),url('/images/IMG_5958.jpg')"}}>
+      <div className="hero-copy"><span className="kicker">SEPTEMBER 28, 2026</span><h1>Cory <em>&</em> Melinda</h1><p>A mountain day. A lifetime to celebrate.</p><Countdown/></div>
+    </section>
+    <section className="page quick-grid">
+      <External href={wedding.links.disposableCamera} className="feature-btn camera"><b>📸 Disposable Camera</b><small>Capture the night · {wedding.hashtag}</small></External>
+      <External href={wedding.links.audioGuestbook} className="feature-btn phone"><b>☎️ Leave a Voice Message</b><small>Say something sweet, funny, or unforgettable</small></External>
+    </section>
+    <section className="page"><NowCard/></section>
+    <section className="mountain-divider"><div><span>COLORADO WEDDING ADVENTURE</span><b>From the ceremony view to the dance floor</b></div></section>
+    <section className="page"><Gallery/></section>
+    <section className="page"><ColoradoQuiz compact/></section>
+    <section className="page"><SectionTitle eyebrow="Explore" title="Everything in one place"/><div className="tile-grid">
+      {[["/ceremony","The Ceremony","Mountain parking, order & what to expect"],["/reception","The Reception","Timeline, First Song, drinks & dancing"],["/first-date","Our First Date","A win, three glasses & one suspicious puppy"],["/family","Our Crew","Miah, Londyn & family adventures"],["/wedding-party","Our People","Parents and wedding party"],["/thank-you","A Note From Us","A thank-you from Cory & Melinda"],["/weather-parking","Weather + Parking","Live event forecast & how to pay"],["/drinks","Something Old + Blue","Signature drinks and dessert" ]].map(([to,t,d])=><Link to={to} className="info-tile" key={to}><b>{t}</b><span>{d}</span></Link>)}
+    </div></section>
+  </>
+}
+
+function Countdown(){
+  const [now,setNow]=useState(new Date()); useEffect(()=>{const t=setInterval(()=>setNow(new Date()),60000);return()=>clearInterval(t)},[]);
+  const target=new Date('2026-09-28T15:30:00-06:00'); const days=Math.max(0,Math.ceil((target-now)/86400000));
+  return <div className="countdown">{now.toDateString()===target.toDateString()?<b>Happening Today ✨</b>:<><strong>{days}</strong><span>days to go</span></>}</div>
+}
+
+function NowCard(){
+  return <Card className="now-card"><span className="badge">WEDDING DAY</span><h3>What’s happening?</h3><p>Use the Schedule on September 28 and the current event will highlight automatically.</p><AppLink to="/schedule">Open the day-of schedule</AppLink></Card>
+}
+
+function Gallery(){return <><SectionTitle eyebrow="Our Story in Photos" title="Mountain memories, date nights & our crew" sub="A little scrapbook of us — swipe on your phone."/><div className="filmstrip">{gallery.map(([src,cap],i)=><figure className={'polaroid p'+(i%3)} key={src}><img src={'/images/'+src} alt={`Cory and Melinda wedding story photo ${i+1}`}/><figcaption>{cap}</figcaption></figure>)}</div></>}
+
+function Schedule(){
+  const [now,setNow]=useState(new Date()); useEffect(()=>{const t=setInterval(()=>setNow(new Date()),60000);return()=>clearInterval(t)},[]);
+  const weddingDay=now.getFullYear()===2026&&now.getMonth()===8&&now.getDate()===28;
+  let current=-1; if(weddingDay){const mins=now.getHours()*60+now.getMinutes(); schedule.forEach((x,i)=>{const [tm]=x; const m=tm.match(/(\d+):(\d+)\s(PM|AM)/); if(m){let h=+m[1]%12+(m[3]==='PM'?12:0); if(h*60+(+m[2])<=mins) current=i;}})}
+  return <PageHero title="Wedding Day Schedule" sub="Monday · September 28, 2026"><AppLink to="/weather-parking">Weather + parking</AppLink></PageHero>
+  || null;
+}
+
+function SchedulePage(){
+  const [now,setNow]=useState(new Date()); useEffect(()=>{const t=setInterval(()=>setNow(new Date()),60000);return()=>clearInterval(t)},[]);
+  const weddingDay=now.getFullYear()===2026&&now.getMonth()===8&&now.getDate()===28;
+  let current=-1;if(weddingDay){const mins=now.getHours()*60+now.getMinutes();schedule.forEach((x,i)=>{const m=x[0].match(/(\d+):(\d+)\s(PM|AM)/);if(m){let h=+m[1]%12+(m[3]==='PM'?12:0);if(h*60+(+m[2])<=mins)current=i}})}
+  return <><PageHero title="Wedding Day Schedule" sub="Monday · September 28, 2026"/><section className="page"><div className="timeline">{schedule.map((s,i)=><div key={s[0]+s[1]} className={'timeline-row '+(i===current?'current':'')}><time>{s[0]}</time><div><h3>{s[1]}</h3>{s[2]&&<p>{s[2]}</p>}</div></div>)}</div><div className="actions"><AppLink to="/ceremony">Ceremony details</AppLink><AppLink to="/reception" className="secondary">Reception details</AppLink></div></section></>
+}
+
+function PageHero({title,sub,children}){return <section className="mini-hero"><span>— ♥ —</span><h1>{title}</h1>{sub&&<p>{sub}</p>}{children}</section>}
+
+function Ceremony(){return <><PageHero title="The Ceremony" sub="Sunrise Amphitheater · 3:30 PM"/><section className="page two-col"><Card><h3>Ceremony flow</h3><ol className="pretty-list">{['Processional','Welcome','Optional reading / prayer','Personal vows','Ring exchange','Family joining ceremony with Miah & Londyn','Pronouncement & kiss','Rose presentation to mothers','Final blessing','Recessional'].map(x=><li key={x}>{x}</li>)}</ol></Card><ParkingCard/></section></>}
+function Reception(){return <><PageHero title="The Reception" sub="Cocktail hour 5:00 PM · Grand entrance 6:00 PM · Denver"/><section className="page"><Card><h3>First Song, not a first dance 🎤</h3><p>Cory & Melinda will sing <b>“Heartbeat” by Carrie Underwood</b> together using the original track as backing. No traditional first dance.</p></Card><div className="timeline compact">{schedule.slice(5).map(s=><div className="timeline-row" key={s[0]+s[1]}><time>{s[0]}</time><div><h3>{s[1]}</h3><p>{s[2]}</p></div></div>)}</div></section></>}
+
+function Directions(){return <><PageHero title="Directions" sub="Two stops. One very good day."/><section className="page two-col"><VenueCard kind="Ceremony" data={wedding.ceremony}/><VenueCard kind="Reception" data={wedding.reception}/></section></>}
+function VenueCard({kind,data}){const q=encodeURIComponent(data.mapsQuery);return <Card><span className="badge">{kind}</span><h3>{data.name}</h3><p>{data.address||data.city}</p><div className="actions"><External href={`https://maps.google.com/?q=${q}`}>Google Maps</External><External href={`https://maps.apple.com/?q=${q}`} className="secondary">Apple Maps</External></div></Card>}
+
+function ParkingCard(){return <Card className="parking"><span className="badge">FLAGSTAFF MOUNTAIN PARKING</span><h3>Pay before you head up</h3><p>Vehicles <b>not registered in Boulder County</b> need a <b>$5 daily OSMP permit</b>.</p><ul><li>ParkMobile zone: <b>24700</b></li><li>Pay in the ParkMobile app/web, or at self-service stations with exact cash/check.</li><li>Cell service can be spotty, so paying before driving up is smart.</li><li>The permit does not guarantee a space. Carpooling is strongly encouraged.</li></ul><div className="actions"><External href={wedding.links.parkMobile}>Open ParkMobile</External><External href={wedding.links.boulderParking} className="secondary">Official Boulder info</External></div></Card>}
+
+function Passport(){const [name,setName]=useState(()=>localStorage.getItem('wg-name')||'');const [stamps,setStamps]=useState(()=>JSON.parse(localStorage.getItem('wg-stamps')||'[]'));const [draft,setDraft]=useState(name);useEffect(()=>{localStorage.setItem('wg-stamps',JSON.stringify(stamps))},[stamps]);const toggle=i=>setStamps(s=>s.includes(i)?s.filter(x=>x!==i):[...s,i]);
+  if(!name)return <><PageHero title="Wedding Passport" sub="Collect 8 stamps. Unlock stories, snacks & bragging rights."/><section className="page"><Card className="passport-start"><label>Your name or nickname<input value={draft} onChange={e=>setDraft(e.target.value)} placeholder="e.g., Aunt Lisa"/></label><button className="button" disabled={!draft.trim()} onClick={()=>{setName(draft.trim());localStorage.setItem('wg-name',draft.trim())}}>Start Collecting</button></Card></section></>;
+  return <><PageHero title={`${name}’s Wedding Passport`} sub={`${stamps.length}/8 stamps collected`}/><section className="page"><div className="progress"><span style={{width:`${stamps.length/8*100}%`}}/></div><div className="stamp-grid">{stampLabels.map((x,i)=><button className={'stamp '+(stamps.includes(i)?'earned':'')} onClick={()=>toggle(i)} key={x}><span>{stamps.includes(i)?'✓':'○'}</span><b>{x}</b></button>)}</div><div className="unlock-grid"><Card className={stamps.length>=4?'unlocked':'locked'}><b>4 stamps · Funny Story</b><p>{stamps.length>=4?'Unlocked!':'Keep collecting…'}</p>{stamps.length>=4&&<AppLink to="/first-date">Read it</AppLink>}</Card><Card className={stamps.length>=6?'unlocked':'locked'}><b>6 stamps · Duet Energy</b><p>{stamps.length>=6?'Karaoke twice → First Song live duet.':'Locked'}</p></Card><Card className={stamps.length>=7?'unlocked':'locked'}><b>7 stamps · Snack Secret</b>{stamps.length>=7?<><p>Late-night snacks arrive at <b>9:30 PM</b>. Head to the snack station and refuel before the final dance-floor stretch.</p></>:<p>Locked</p>}</Card></div>{stamps.length===8&&<div className="complete">🏔️ PASSPORT COMPLETE 🏔️<small>Show Cory or Melinda for a high-five.</small></div>}</section></>
+}
+
+function Story(){return <><PageHero title="Our Story" sub="East Coast roots. Colorado Springs beginning. Mountain love."/><section className="page"><div className="journey"><Card><b>Melinda</b><span>Wilmington, North Carolina</span></Card><div>✦</div><Card><b>Cory</b><span>Silver Spring, Maryland</span></Card><div>✦</div><Card><b>The beginning</b><span>Colorado Springs, Colorado</span></Card></div><AppLink to="/first-date">Read the first-date story</AppLink></section></>}
+
+function FirstDate(){return <><PageHero title="A Win, Three Glasses & One Suspicious Puppy" sub="Our first date, apparently."/><section className="page story-beats">{[['🏆','Melinda won','They played a game. Melinda won. Important historical fact.'],['🥂🥂🥂','The glasses did not survive','About three very flimsy glasses broke. Cory politely returned them to the waiter and made absolutely no production out of it.'],['🐶🦴','The puppy plot twist','A puppy seemed to love them — until Melinda went to pet it while it had a bone. The puppy snarled. Message received.'],['🎤','Encore','They have since sung karaoke together twice, which feels like excellent preparation for singing “Heartbeat” at the wedding.']].map(([icon,t,d])=><Card key={t}><div className="story-icon">{icon}</div><h3>{t}</h3><p>{d}</p></Card>)}<blockquote>Apparently, that was enough chaos for a second date.</blockquote></section></>}
+
+function Family(){return <><PageHero title="Our Crew" sub="The family at the heart of the celebration"/><section className="page"><div className="family-hero"><img src="/images/IMG_1089.jpg" alt="Cory, Melinda, Miah and Londyn in the Colorado mountains"/></div><div className="two-col"><Card><h3>Londyn</h3><p>Rock climbing 🧗 · anime 🎬 · mountain adventure energy</p></Card><Card><h3>Miah</h3><p>Golf ⛳ · family adventure energy</p></Card></div><p className="center-note">Miah and Londyn love Cory, and this celebration is about the family all four of them are building together.</p></section></>}
+
+function WeddingParty(){const any=[...weddingParty.parents,...weddingParty.party].some(x=>x.name||x.names);return <><PageHero title="Our People" sub="Parents, wedding party & the people standing beside us"/><section className="page"><Card><h3>Parents & family</h3>{weddingParty.parents.map(x=><div className="role-row" key={x.role}><b>{x.role}</b><span>{x.names||'Name coming soon'}</span></div>)}</Card><Card><h3>Wedding party</h3>{weddingParty.party.map(x=><div className="role-row" key={x.role}><b>{x.role}</b><span>{x.name||'Name coming soon'}</span></div>)}</Card>{!any&&<p className="center-note">The structure is ready — add names in the wedding data file before publishing.</p>}</section></>}
+function ThankYou(){return <><PageHero title="A Note From Us" sub="To everyone celebrating with us"/><section className="page"><Card className="letter"><div className="gold-heart">— ♥ —</div><p>{thankYou}</p><strong>With all our love,<br/>Cory & Melinda</strong></Card></section></>}
+
+function Drinks(){return <><PageHero title="Treat Yourself" sub="Something old, something blue & something sweet"/><section className="page drink-grid"><img src="/images/something-old.jpg" alt="Something Old — Old Fashioned sign"/><img src="/images/something-blue.jpg" alt="Something Blue — Blue Skies sign"/><img src="/images/desserts-sign.jpg" alt="Desserts — treat yourself sign"/></section></>}
+
+function WeatherParking(){return <><PageHero title="Weather + Parking" sub="Plan the mountain ceremony and Denver evening"/><section className="page"><WeatherCards/><ParkingCard/><Card><span className="badge">RECEPTION PARKING</span><h3>City Park Pavilion</h3><p>Use designated parking spaces or other legal parking areas and follow posted signs. We have not found an official special event parking fee for the Pavilion itself, so the app does not claim one.</p></Card></section></>}
+
+const codeText={0:'Clear',1:'Mostly clear',2:'Partly cloudy',3:'Cloudy',45:'Fog',48:'Fog',51:'Light drizzle',53:'Drizzle',55:'Drizzle',61:'Light rain',63:'Rain',65:'Heavy rain',71:'Light snow',73:'Snow',75:'Heavy snow',80:'Rain showers',81:'Rain showers',82:'Heavy showers',95:'Thunderstorms'};
+function WeatherCards(){const [data,setData]=useState({loading:true});useEffect(()=>{let alive=true;async function run(){try{const date='2026-09-28';const spots=[['Ceremony · 3:30 PM',...wedding.ceremony.coordinates,15],['Reception · 6:00 PM',...wedding.reception.coordinates,18],['Reception · 8:30 PM',...wedding.reception.coordinates,21]];const rows=[];for(const [label,lat,lon,h] of spots){const u=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_2m,precipitation_probability,weather_code,wind_speed_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America%2FDenver&forecast_days=16`;const j=await fetch(u).then(r=>r.json());const stamp=`${date}T${String(h).padStart(2,'0')}:00`;const idx=j.hourly?.time?.indexOf(stamp)??-1;if(idx>=0)rows.push({label,temp:Math.round(j.hourly.temperature_2m[idx]),rain:j.hourly.precipitation_probability[idx],wind:Math.round(j.hourly.wind_speed_10m[idx]),desc:codeText[j.hourly.weather_code[idx]]||'Weather'});}if(alive)setData({loading:false,rows});}catch(e){if(alive)setData({loading:false,rows:[]})}}run();return()=>{alive=false}},[]);
+  if(data.loading)return <Card><h3>Wedding-day weather</h3><p>Checking forecast availability…</p></Card>;
+  if(!data.rows?.length)return <Card className="weather-wait"><span className="badge">WEATHER WATCH</span><h3>The exact forecast is not reliable yet.</h3><p>The app will automatically show time-specific weather for the ceremony and reception once September 28 enters the live forecast window.</p><div className="normals"><div><b>Boulder planning baseline</b><span>Sept. 28 normal high/low: about 74° / 44°F</span></div><div><b>Denver planning baseline</b><span>Sept. 28 normal high/low: about 74° / 45°F</span></div></div><p className="tiny">These are climate normals, not the 2026 forecast. Mountain conditions can feel cooler and change quickly.</p></Card>;
+  return <div className="weather-grid">{data.rows.map(r=><Card key={r.label}><span className="badge">LIVE FORECAST</span><h3>{r.label}</h3><div className="temp">{r.temp}°F</div><p>{r.desc} · {r.rain}% precip · wind {r.wind} mph</p></Card>)}</div>
+}
+
+function ColoradoQuiz({compact=false}){const [i,setI]=useState(0),[score,setScore]=useState(0),[picked,setPicked]=useState(null);const q=coloradoQuestions[i];const choose=n=>{if(picked!==null)return;setPicked(n);if(n===q.a)setScore(s=>s+1)};const next=()=>{if(i===coloradoQuestions.length-1){setI(0);setScore(0);setPicked(null)}else{setI(x=>x+1);setPicked(null)}};return <Card className="quiz"><span className="badge">GUESS THE COLORADO FACT</span><h3>{q.q}</h3><div className="quiz-choices">{q.choices.map((c,n)=><button key={c} onClick={()=>choose(n)} className={picked===null?'':n===q.a?'correct':n===picked?'wrong':''}>{c}</button>)}</div>{picked!==null&&<div className="fact"><b>{picked===q.a?'Correct! 🏔️':'Good guess!'}</b><p>{q.fact}</p><button className="button" onClick={next}>{i===coloradoQuestions.length-1?'Play again': 'Next fact'}</button></div>}{!compact&&<p className="tiny">Score: {score}/{coloradoQuestions.length}</p>}</Card>}
+
+function Kids(){return <><PageHero title="Little Guests, Big Celebration" sub="Games, photos & a little Colorado fun"/><section className="page"><BouquetGame/><ColoradoQuiz/><Card><h3>Photo scavenger hunt 📷</h3><ul><li>Find something blue</li><li>Photograph the biggest smile</li><li>Find someone dancing funny</li><li>Spot a beautiful flower</li><li>Find the coolest hat or tie</li></ul></Card></section></>}
+function BouquetGame(){const [pos,setPos]=useState(50),[msg,setMsg]=useState('Tap Toss, then try to catch the bouquet!');const toss=()=>{setMsg('Tap the bouquet when it lands!');setPos(10+Math.round(Math.random()*80))};const caught=()=>setMsg('You caught it! 💐✨');return <Card className="bouquet"><span className="badge">KIDS GAME</span><h3>Catch the Bouquet</h3><div className="bouquet-field"><button aria-label="Catch bouquet" onClick={caught} style={{left:`${pos}%`}}>💐</button></div><p>{msg}</p><button className="button" onClick={toss}>Toss!</button></Card>}
+
+function Tables(){return <><PageHero title="Find My Table" sub="Assigned tables are planned · individual seats are not"/><section className="page"><Card><h3>Table assignments coming soon</h3><p>This page is ready for your final guest-to-table list. Once added, guests will be able to type their name and instantly find their Colorado-inspired table.</p></Card></section></>}
+function Snack(){return <><PageHero title="Late-Night Snack" sub="Passport secret"/><section className="page"><Card><h3>Unlock at 7 Passport stamps</h3><p>Late-night snacks arrive at 9:30 PM — head to the snack station and refuel before the final dance-floor stretch.</p></Card></section></>}
+function More(){return <><PageHero title="More to Explore" sub="Stories, games & guest favorites"/><section className="page tile-grid">{[["/story","Our Story"],["/first-date","First Date"],["/family","Our Crew"],["/wedding-party","Our People"],["/thank-you","A Note From Us"],["/kids","Kids Corner"],["/weather-parking","Weather + Parking"],["/drinks","Drinks + Dessert"],["/tables","Find My Table"],["/snack","Snack Secret"]].map(([t,l])=><Link className="info-tile" to={t} key={t}><b>{l}</b><span>Open →</span></Link>)}</section><section className="page team-access-wrap"><Link className="team-access" to="/day-of">Day-of team access</Link></section></>}
+
+function PrivateDayOf({view='home'}){
+  const navigate=useNavigate();
+  const [code,setCode]=useState(()=>sessionStorage.getItem('wg-private-code')||'');
+  const [draft,setDraft]=useState('');
+  const [data,setData]=useState(null);
+  const [error,setError]=useState('');
+  const [loading,setLoading]=useState(false);
+  const load=async(pass)=>{setLoading(true);setError('');try{const r=await fetch('/.netlify/functions/private-dashboard',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({code:pass})});if(!r.ok){throw new Error(r.status===401?'That access code is not correct.':'Private dashboard is not configured yet.');}const j=await r.json();sessionStorage.setItem('wg-private-code',pass);setCode(pass);setData(j);}catch(e){setError(e.message);sessionStorage.removeItem('wg-private-code');setCode('');}finally{setLoading(false)}};
+  useEffect(()=>{if(code&&!data)load(code)},[]);
+  if(!data)return <><PageHero title="Day-of Team" sub="Bride · Groom · Ceremony · Reception"/><section className="page"><Card className="private-login"><span className="badge">PRIVATE PLANNING AREA</span><h3>Enter the day-of access code</h3><p>This area is intentionally kept out of the main guest navigation. Vendor contacts and private logistics are served only after access is verified.</p><label>Access code<input type="password" value={draft} onChange={e=>setDraft(e.target.value)} onKeyDown={e=>e.key==='Enter'&&draft&&load(draft)} /></label>{error&&<p className="private-error">{error}</p>}<button className="button" disabled={!draft||loading} onClick={()=>load(draft)}>{loading?'Checking…':'Open day-of pages'}</button></Card></section></>;
+  const sections=[['home','Overview','/day-of'],['bride','Bride','/day-of/bride'],['groom','Groom','/day-of/groom'],['ceremony','Ceremony Coordinator','/day-of/ceremony'],['reception','Reception Coordinator','/day-of/reception']];
+  const current=view==='home'?null:data[view];
+  return <><PageHero title={view==='home'?'Day-of Team Dashboard':current?.title||'Day-of Team'} sub="Private planning area"/><section className="page private-page"><div className="private-tabs">{sections.map(([id,label,to])=><button key={id} className={view===id?'active':''} onClick={()=>navigate(to)}>{label}</button>)}</div>{view==='home'?<PrivateOverview data={data}/>:<PrivateSection data={current}/>}<button className="team-access" onClick={()=>{sessionStorage.removeItem('wg-private-code');setCode('');setData(null);}}>Lock private area</button></section></>
+}
+
+function PrivateOverview({data}){return <><Card><span className="badge">RECOMMENDED FLOW</span><h3>3:30 ceremony → 5:00 cocktails → 6:00 entrance → 6:20 dinner</h3><p>That timing gives guests a realistic cushion to leave Flagstaff Mountain, travel to City Park Pavilion, park, and settle in. It also gives Cory & Melinda time to finish family photos, travel separately, freshen up, and still make a 6:00 PM entrance.</p><p className="tiny">Planning assumption: allow roughly 50–65 minutes door-to-door between the mountain ceremony and City Park on a Monday afternoon. Actual traffic can vary, so the coordinator should re-check the route on the wedding day.</p></Card><div className="tile-grid">{[['Bride','/day-of/bride'],['Groom','/day-of/groom'],['Ceremony Coordinator','/day-of/ceremony'],['Reception Coordinator','/day-of/reception']].map(([l,to])=><Link className="info-tile" to={to} key={to}><b>{l}</b><span>Private timeline →</span></Link>)}</div>{data.note&&<Card><h3>Private-data status</h3><p>{data.note}</p></Card>}</>}
+
+function PrivateSection({data}){if(!data)return <Card><h3>Section not configured</h3></Card>;return <>{data.summary&&<Card><p>{data.summary}</p></Card>}{data.timeline&&<Card><h3>Timeline</h3><div className="private-timeline">{data.timeline.map(x=><div key={x.time+x.item}><time>{x.time}</time><div><b>{x.item}</b>{x.note&&<span>{x.note}</span>}</div></div>)}</div></Card>}{data.processional&&<Card><h3>Processional order</h3><ol className="pretty-list">{data.processional.map(x=><li key={x}>{x}</li>)}</ol></Card>}{data.setup&&<Card><h3>Setup + reminders</h3><ul>{data.setup.map(x=><li key={x}>{x}</li>)}</ul></Card>}{data.vendors&&<Card><h3>Vendors + contacts</h3>{data.vendors.map(v=><div className="vendor-row" key={v.role}><div><b>{v.role}</b><span>{v.name||'Add vendor name after repo is private'}</span></div><div><span>{v.arrival||''}</span><span>{v.phone||'Contact stored privately later'}</span></div></div>)}</Card>}{data.reminders&&<Card><h3>Reminders</h3><ul>{data.reminders.map(x=><li key={x}>{x}</li>)}</ul></Card>}</>}
+
+function NotFound(){return <><PageHero title="That page wandered off the trail"/><section className="page"><AppLink to="/">Back home</AppLink></section></>}
+
+export default function App(){return <Layout><Routes>
+  <Route path="/" element={<Home/>}/><Route path="/schedule" element={<SchedulePage/>}/><Route path="/ceremony" element={<Ceremony/>}/><Route path="/reception" element={<Reception/>}/><Route path="/directions" element={<Directions/>}/><Route path="/passport" element={<Passport/>}/><Route path="/story" element={<Story/>}/><Route path="/first-date" element={<FirstDate/>}/><Route path="/family" element={<Family/>}/><Route path="/wedding-party" element={<WeddingParty/>}/><Route path="/thank-you" element={<ThankYou/>}/><Route path="/drinks" element={<Drinks/>}/><Route path="/weather-parking" element={<WeatherParking/>}/><Route path="/kids" element={<Kids/>}/><Route path="/tables" element={<Tables/>}/><Route path="/snack" element={<Snack/>}/><Route path="/more" element={<More/>}/><Route path="/day-of" element={<PrivateDayOf view="home"/>}/><Route path="/day-of/bride" element={<PrivateDayOf view="bride"/>}/><Route path="/day-of/groom" element={<PrivateDayOf view="groom"/>}/><Route path="/day-of/ceremony" element={<PrivateDayOf view="ceremony"/>}/><Route path="/day-of/reception" element={<PrivateDayOf view="reception"/>}/><Route path="*" element={<NotFound/>}/>
+</Routes></Layout>}
