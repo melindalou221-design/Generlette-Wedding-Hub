@@ -33,11 +33,11 @@ export const schedule = [
   ['5:00 PM', 'Cocktail Hour', 'City Park Pavilion · built-in travel buffer from Flagstaff Mountain'],
   ['6:00 PM', 'Grand Entrance', 'Wedding party: “Rock With You” · Cory & Melinda: “Lil Boo Thang”'],
   ['6:05 PM', 'First Song', 'Cory & Melinda sing “Heartbeat” together — no traditional first dance'],
-  ['6:15 PM', 'Welcome + Blessing', ''],
+  ['6:15 PM', 'Dinner Blessing + Remarks', 'Frank Roberts · father of the bride'],
   ['6:20 PM', 'Dinner', ''],
-  ['7:00 PM', 'Speeches & Toasts', ''],
-  ['7:35 PM', 'Cake & Dessert', 'Treat yourself'],
-  ['7:45 PM', 'Open Dancing', ''],
+  ['6:55 PM', 'Speeches & Toasts', 'Shalee Adams → Michael Berghini → Miah & Londyn together'],
+  ['7:30 PM', 'Cake & Dessert', 'Treat yourself'],
+  ['7:40 PM', 'Open Dancing', ''],
   ['9:30 PM', 'Late-Night Snack', 'Passport secret unlock'],
   ['10:30 PM', 'Private Couple Moment & Last Song', ''],
   ['10:40 PM', 'Glow-Stick Send-Off', ''],
@@ -69,16 +69,21 @@ export const coloradoQuestions = [
 
 export const weddingParty = {
   parents: [
-    {role:"Cory’s Parents", names:""},
-    {role:"Melinda’s Mother", names:""},
-    {role:"Melinda’s Father / Special Family Figure", names:""},
+    {role:"Groom’s Father + Officiant", names:"Bertram Generlette"},
+    {role:"Groom’s Mother", names:"Name coming soon"},
+    {role:"Bride’s Father", names:"Frank Roberts"},
+    {role:"Bride’s Mother", names:"Name coming soon"},
   ],
   party: [
-    {role:'Maid / Matron of Honor', name:''},
-    {role:'Best Man', name:''},
-    {role:'Bridesmaids', name:''},
-    {role:'Groomsmen', name:''},
-    {role:"Cory’s Sisters", name:''},
+    {role:'Maid / Matron of Honor', name:'Shalee Adams'},
+    {role:'Bridesmaids + Daughters', name:'Londyn Smith & Miah Smith'},
+    {role:'Bridesman + Bride’s Brother', name:'Jonathan Roberts'},
+    {role:'Best Man', name:'Michael Berghini'},
+    {role:'Groomsman', name:'Adrian Chandler'},
+    {role:'Groomswomen + Groom’s Sisters', name:'Danielle Hedges & Amber Antenor'},
+    {role:'Junior Bridesmaid', name:'Shiloah Antenor'},
+    {role:'Ring Bearer', name:'Isaac Antenor'},
+    {role:'Flower Girls', name:'Camden Adams · Moriah Antenor · Elise Hedges'},
   ]
 };
 
