@@ -1,98 +1,80 @@
 # Generlette Wedding Hub
 
-Cory & Melinda’s interactive wedding hub for September 28, 2026.
+Cory & Melinda · September 28, 2026 · #FinallyGenerlette
 
-## What is included
+A mobile-first wedding guest hub plus a protected day-of binder for Cory, Melinda, coordinators, DJ/MC and officiant.
 
-### Guest-facing hub
-- Ceremony and reception information
-- Wedding-day schedule
-- Directions and Sunrise Amphitheater parking-payment guidance
-- Wedding-day weather planning/live forecast behavior
-- Wedding Passport and unlocks
-- Cory & Melinda story pages and real photo scrapbook
-- Wedding party / parents page
-- Thank-you note
-- Signature drinks and dessert signage
-- Kids Corner with Catch the Bouquet, Colorado trivia and photo scavenger hunt
-- Disposable Camera: https://finallygenerlette2026.netlify.app/
-- Messages of Love: https://messages-of-love-melinda-cory.netlify.app/
+## Guest experience
+- Persistent Back + Menu navigation and five-button mobile quick bar
+- Know Before You Go guest FAQ
+- Wedding-day schedule with Colorado-time “Happening Now” behavior
+- Ceremony details, directions, weather + Flagstaff Mountain parking guidance
+- Reception food menu while surprise music cues stay off guest pages
+- Find My Table: search by guest name, actual seating-chart image, Colorado table-sign visuals and Table 9 fallback
+- Our Story + full First Date story
+- Our Crew + Our People
+- Wedding Passport, Colorado trivia, Junior Wedding Explorers and Catch the Bouquet
+- Signature drinks, dessert signage, Messages of Love, disposable camera and honeymoon pages
+- Add-to-calendar links for ceremony/reception
+- Larger-text accessibility option
+- Installable PWA / offline shell after first load
 
-### Protected day-of binder
-Routes are intentionally kept out of the main guest navigation:
+## Protected day-of binder
+Private routes:
 - `/day-of`
+- `/day-of/vendors`
 - `/day-of/bride`
 - `/day-of/groom`
 - `/day-of/ceremony`
 - `/day-of/reception`
 - `/day-of/dj`
 - `/day-of/officiant`
+- `/day-of/money` — couple-code only
 
-The private binder includes bride/groom timelines, ceremony processional + music cues, coordinator checklists, vendors/payment reminders, food delivery plan, printable DJ/MC sheet, Bertram’s officiant outline, floral guides and reception décor visuals.
+The private binder includes quick-mode day-of cues, vendor directory, bride/groom plans, ceremony processional + music cues, reception setup/decor guide, floral guides, DJ/MC introduction order, and Bertram’s expanded officiant speaking sheet.
 
-## Current reception planning flow
-- 3:30 PM ceremony at Sunrise Amphitheater
-- approximately 4:00–4:05 PM ceremony end
-- 4:05–4:35 PM family/wedding-party photos
-- 4:45 PM early reception arrivals if setup is ready
-- 5:00 PM official cocktail hour
-- 6:00 PM grand entrance
-- 6:05 PM First Song
-- 6:15 PM Frank Roberts dinner blessing + remarks
-- 6:20 PM dinner
-- about 6:55–7:00 PM toasts: Shalee → Michael → Miah & Londyn together
+### Ceremony decisions reflected here
+- Traditional repeat-after-me vows; no personal vows
+- Opening reflection / blessing addressed to everyone gathered
+- Mother rose presentation names Patricia Generlette and Patricia Roberts; current working placement is before the vows and should be confirmed at rehearsal
+- Family joining moment with Miah + Londyn and Daughter Pandora charms
 
-Recheck actual Monday traffic on the wedding day.
-
-## Included coordinator décor references
-The project now contains the current visual binder assets in `public/images`:
-- `decor-reception-vision.jpg`
-- `decor-welcome-seating.jpg`
-- `decor-reception-shopping-list.jpg`
-- `decor-sweetheart-table.png` — **current final mockup**
-- `bridal-bouquet-guide.jpg`
-- `wedding-flower-ordering-guide.jpg`
-
-### Current sweetheart-table direction
-- Gold **Mr & Mrs** tabletop sign
+### Reception decor direction
+- Gold **Mr & Mrs** sign
 - Ivory/champagne linen
 - Hydrangea-forward white + soft-blue florals
-- White roses + baby’s breath
-- Only a few light-blue delphinium stems
-- Light eucalyptus/greenery across the front
-- Warm-gold vine fairy lights woven through the front greenery
-- Restrained floating LED cylinders/votives
-- No fairy-light backdrop behind the table
-- Less greenery and fewer candles than the original concept
+- White roses + baby’s breath, only a few light-blue delphinium stems
+- Light greenery across the front
+- Warm-gold vine fairy lights woven through the front greenery only
+- Restrained LED floating cylinders/votives
+- No light backdrop behind the sweetheart table
+- No photo booth currently planned
+- Decor packed in labeled boxes by setup zone; real setup photos can be added closer to the wedding
 
-Closer to the wedding, stage the real décor and add a photo named `final-sweetheart-setup.jpg` to `public/images`. The Reception Coordinator page already contains a placeholder for that photo.
+## Security — important
+**Keep the GitHub repository Private before uploading this package.** The protected binder is served through a Netlify Function, but the function source contains wedding-team planning details that should not live in a public repository.
 
-### Decoration boxes
-The private Reception Coordinator binder recommends packing and labeling décor by setup zone:
-- Sweetheart Table
-- Welcome + Seating Chart
-- Guest Tables
-- Cake + Dessert
-- Bar + Signs
-- Buffet
-- Kids Table
-- Emergency / Extras
+Configure in Netlify:
+- `WEDDING_PRIVATE_PASSCODE` — wedding-team access
+- `WEDDING_COUPLE_PASSCODE` — separate Cory & Melinda access; unlocks the couple-only Money + Payments page
+- `WEDDING_VENDOR_CONTACTS` — optional JSON containing private vendor phone/email information
+- `WEDDING_GUEST_ALERT` — optional guest-facing alert banner; leave blank normally
+- `WEDDING_GUEST_ALERT_LINK` — optional link paired with the alert
 
-A photo booth is **not currently planned** and is excluded from the active setup plan.
+After changing Netlify environment variables, trigger a new deploy.
 
-## Floral binder
-The Bride page now displays the uploaded **Bridal Bouquet Complete Guide** and **Wedding Flower Ordering Guide**. The written bouquet recipe and wearable notes have been reconciled to those current guides rather than the older estimated counts.
+## Current visual assets
+Optimized images live under `public/images`, including:
+- `decor-sweetheart-table.webp`
+- `decor-reception-vision.webp`
+- `decor-welcome-seating.webp`
+- `decor-reception-shopping-list.webp`
+- `bridal-bouquet-guide.webp`
+- `wedding-flower-ordering-guide.webp`
+- `city-park-pavilion-seating-chart.webp`
+- `table-signs/table-1.webp` through `table-9.webp`
 
-## Private access / Netlify
-The browser does **not** contain the access code. Authentication is performed by the Netlify Function `private-dashboard`.
-
-In Netlify, add the environment variable:
-
-`WEDDING_PRIVATE_PASSCODE`
-
-Use a long passcode that is not reused anywhere else. Do not commit the real passcode to GitHub.
-
-Sensitive phone numbers, private addresses and credentials should remain server-side or in Netlify environment variables rather than React/browser source.
+Closer to the wedding, add a real staged sweetheart-table photo and update the Reception Coordinator visual reference.
 
 ## Local development
 ```bash
@@ -100,41 +82,11 @@ npm install
 npm run dev
 ```
 
-For private-area testing, use Netlify Dev so the function is available.
+For private-area testing, use Netlify Dev so serverless functions are available.
 
 ## Netlify deployment
-Connect the GitHub repository to Netlify. `netlify.toml` already contains the build configuration.
-
+`netlify.toml` is included.
 - Build command: `npm run build`
 - Publish directory: `dist`
 
-After deployment, add `WEDDING_PRIVATE_PASSCODE` in Netlify environment variables and redeploy.
-
-## GitHub upload
-See `UPLOAD_TO_GITHUB.md` for the easiest upload sequence.
-
-
-## September 2 audit update
-- Added a private Vendor Directory tab.
-- Added separate team vs couple access; payment amounts are couple-only.
-- Expanded the Our Story + First Date pages with the Jenga/glass/puppy/Dave & Buster's story.
-- Mothers corrected to Patricia Roberts and Patricia Generlette.
-- Guest pages keep entrance-song and First Song titles private while showing the dinner menu.
-- Traditional vows replace personal vows.
-- DJ sheet includes named wedding-party introduction order.
-- Officiant sheet includes an expanded speaking draft around binder-supported ceremony elements.
-- Added binder-critical assignments: marriage license, cards/gifts, emergency kit, bustle, family-photo list and cleanup oversight.
-- Added Sunrise parking capacity and 30-foot vehicle-length reminder.
-
-
-## September 2 guest-hub expansion
-- Replaced the unreliable bouquet mini-game with Junior Wedding Explorers, a persistent real-world challenge + scavenger/trivia activities.
-- Added Wedding Weekend page: Sunday 4:30 PM Chautauqua Park, around 6:00 PM Sunrise Amphitheater rehearsal.
-- Added public Costa Rica honeymoon teaser while keeping the 5:00 AM flight and Arvada getting-ready address private.
-- Added Messages of Love written Netlify form plus existing voice guestbook and disposable camera links.
-- Added Gifts & Well Wishes page with Cash App/Venmo fields intentionally blank until the couple supplies the exact links.
-- Added Add-to-Calendar downloads for ceremony and reception.
-- Added larger-text accessibility toggle.
-- Expanded photo use and compressed story photos for better mobile load speed.
-- Added Colorado reception-place cards and richer wedding-party descriptions.
-- Bride/Groom private guides now include 6005 Nelson St, Arvada; Sunday rehearsal timing; and the 5:00 AM Costa Rica honeymoon flight reminder.
+See `UPLOAD_TO_GITHUB.md` for the upload checklist.

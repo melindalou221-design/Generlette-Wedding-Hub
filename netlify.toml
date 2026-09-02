@@ -12,3 +12,15 @@
   [headers.values]
     X-Robots-Tag = "noindex, nofollow, noarchive"
     Cache-Control = "no-store"
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+    Service-Worker-Allowed = "/"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Content-Type-Options = "nosniff"

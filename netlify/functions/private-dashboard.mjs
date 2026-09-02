@@ -10,6 +10,33 @@ const defaultData = {
     "Vendor tips/payments: couple-only responsibility; amounts are never shown on coordinator, DJ, officiant or vendor-directory views."
   ],
   note: "Private day-of binder. Keep passwords, private addresses, personal phone numbers and other sensitive details in Netlify environment variables rather than browser code.",
+  finalDecisions:[
+    {item:"Opening reflection / blessing",status:"FINAL - included",detail:"A brief inclusive opening addressed to everyone gathered; not a separate reader."},
+    {item:"Vows",status:"FINAL - traditional",detail:"Repeat-after-me traditional vows only; no personal vow cards."},
+    {item:"Sweetheart table",status:"FINAL direction",detail:"Hydrangea-forward blue/white florals, light greenery, gold Mr & Mrs sign, warm gold vine fairy lights on the front, restrained candles, no light backdrop."},
+    {item:"Photo booth",status:"FINAL - not planned",detail:"Do not reserve space or decor for a photo booth."},
+    {item:"Rose presentation placement",status:"CONFIRM AT REHEARSAL",detail:"Current working placement is before the vows; older binder placed it after the kiss."},
+    {item:"Jamaican caterer",status:"OPEN",detail:"Secure vendor for jerk chicken and rice and peas or update the menu."},
+    {item:"Cocktail-hour hors d'oeuvres",status:"OPEN",detail:"Finalize menu, vendor, delivery and handoff."},
+    {item:"Late-night snack menu",status:"OPEN",detail:"9:30 PM timing is set; final food still needs confirmation."},
+    {item:"Photographer event date",status:"OPEN",detail:"Confirm invoice/coverage reflects Monday, September 28, 2026."}
+  ],
+  money:{
+    title:"Couple Only · Money + Payments",
+    summary:"Visible only when Cory or Melinda uses the separate couple access code. Keep payment amounts off coordinator, DJ, officiant and vendor-directory pages.",
+    payments:[
+      "Nessa Dover — $125 still due",
+      "Tammy Murrie — $450 due day-of",
+      "Alfredo Junior — $200 due day-of",
+      "Known remaining day-of total currently documented: $775",
+      "Vio, Gio, magician and DJ — paid in full"
+    ],
+    reminders:[
+      "Reconfirm every balance 7 days before the wedding and mark the payment method/envelope owner.",
+      "Do not hand payment envelopes to coordinators unless Cory or Melinda intentionally assigns that task.",
+      "Keep contracts/invoices with the couple; vendors only need their own service details and arrival instructions."
+    ]
+  },
   vendors:{
     title:"Wedding Vendor Directory",
     summary:"One private place for the full wedding-team roster. Payment amounts are deliberately excluded here; only Cory & Melinda can see money details when they use the separate couple access code.",
@@ -56,13 +83,6 @@ const defaultData = {
       {time:"5:50 PM",item:"Reception entrance lineup",note:"Wedding party first, then Cory & Melinda."},
       {time:"6:00 PM",item:"Grand entrance",note:"Couple entrance song/cue is on the private DJ sheet."}
     ],
-    payments:[
-      "Nessa Dover — $125 still due",
-      "Tammy Murrie — $450 due day-of",
-      "Alfredo Junior — $200 due day-of",
-      "Known remaining day-of total currently documented: $775",
-      "Vio, Gio, magician and DJ — paid in full"
-    ],
     reminders:[
       "Eat breakfast and lunch even if you are nervous.",
       "Pack Daughter charms, bouquet, touch-up kit, water, phone charger and comfortable travel shoes. Traditional vows will be led by Bertram; no personal vow cards are needed.",
@@ -78,8 +98,8 @@ const defaultData = {
       title:"Bride Floral Binder",
       sourceNote:"Recovered from the latest Bridal Bouquet Complete Guide and wedding floral collection boards created September 2, 2026.",
       visualAssets:[
-        {label:"Bridal Bouquet Complete Guide · prep, styling + exact bridal recipe",file:"bridal-bouquet-guide.jpg",path:"/images/bridal-bouquet-guide.jpg",status:"Included"},
-        {label:"Wedding Flower Ordering Guide · corrected stem counts + buy list",file:"wedding-flower-ordering-guide.jpg",path:"/images/wedding-flower-ordering-guide.jpg",status:"Included"}
+        {label:"Bridal Bouquet Complete Guide · prep, styling + exact bridal recipe",file:"bridal-bouquet-guide.jpg",path:"/images/bridal-bouquet-guide.webp",status:"Included"},
+        {label:"Wedding Flower Ordering Guide · corrected stem counts + buy list",file:"wedding-flower-ordering-guide.jpg",path:"/images/wedding-flower-ordering-guide.webp",status:"Included"}
       ],
       bouquetOrder:[
         ["White roses","8 stems","Exact bridal bouquet recipe"],
@@ -137,13 +157,6 @@ const defaultData = {
       {time:"6:00 PM",item:"Grand entrance",note:""},
       {time:"6:05 PM",item:"Private couple music moment",note:"Song/playback details stay on the DJ sheet."}
     ],
-    payments:[
-      "Nessa Dover — $125 still due",
-      "Tammy Murrie — $450 due day-of",
-      "Alfredo Junior — $200 due day-of",
-      "Known remaining day-of total currently documented: $775",
-      "Vio, Gio, magician and DJ — paid in full"
-    ],
     reminders:[
       "Eat, hydrate and keep your phone charged.",
       "Confirm ring handoff and review the traditional repeat-after-me vows with Bertram at rehearsal.",
@@ -197,12 +210,11 @@ const defaultData = {
     ],
     ceremonyOrder:[
       "Welcome by Bertram Generlette",
-      "Optional opening prayer / reading if retained",
+      "Opening reflection / blessing addressed to everyone gathered",
       "Rose presentation to Patricia Generlette and Patricia Roberts — current working placement is before the vows; confirm at rehearsal because the older binder placed it after the kiss",
       "Declaration of intent — traditional I Do questions",
       "Traditional repeat-after-me vows — no personal vows",
       "Ring exchange",
-      "Cord of Three Strands — optional item from the earlier binder; confirm at rehearsal whether it remains",
       "Family joining ceremony — Cory and Melinda speak directly to Miah and Londyn and give each a Pandora charm that says Daughter",
       "Pronouncement",
       "Kiss",
@@ -214,7 +226,6 @@ const defaultData = {
       "Confirm $5 OSMP permit / ParkMobile zone 24700 parking messaging is visible.",
       "Stage roses for mothers where they can be reached without crossing the ceremony space.",
       "Stage both Daughter Pandora charms and any presentation boxes before guests arrive.",
-      "If Cord of Three Strands remains in the ceremony, stage the cord/table and confirm Bertram’s transition language.",
       "Have vows, rings, tissues, water and marriage-license plan accounted for.",
       "Pit-latrine restrooms only; no changing rooms.",
       "Sunrise Amphitheater parking is approximately 10 regular + 3 ADA spaces and is not guaranteed; Flagstaff Road vehicle-length limit is 30 feet.",
@@ -255,6 +266,7 @@ const defaultData = {
     setup:[
       "Reception design: romantic ivory + soft blue with navy and gold accents; warm LED candlelight; elegant, airy and conversation-friendly.",
       "Assigned tables, not assigned individual seats.",
+      "Seating-chart fallback: if a guest does not see their name on the chart, direct them to Table 9. Keep Table 9 available for those guests.",
       "Confirm Signature Drinks signage: Something Blue — Blue Skies; Something Old — Old Fashioned.",
       "Confirm kids table, dessert area, guestbook, disposable-camera and Messages of Love links/QRs are visible.",
       "Confirm DJ has the private couple-song playback/microphone plan before guests arrive.",
@@ -299,16 +311,16 @@ const defaultData = {
         "Avoid large arrangements that interfere with serving."
       ],
       inspirationImages:[
-        {label:"Something Blue sign",path:"/images/something-blue.jpg"},
-        {label:"Something Old sign",path:"/images/something-old.jpg"},
-        {label:"Desserts sign",path:"/images/desserts-sign.jpg"},
-        {label:"Kids Table sign",path:"/images/kids-sign.png"}
+        {label:"Something Blue sign",path:"/images/something-blue.webp"},
+        {label:"Something Old sign",path:"/images/something-old.webp"},
+        {label:"Desserts sign",path:"/images/desserts-sign.webp"},
+        {label:"Kids Table sign",path:"/images/kids-sign.webp"}
       ],
       visualAssets:[
-        {label:"Reception vision + guest-table reference",file:"decor-reception-vision.jpg",path:"/images/decor-reception-vision.jpg",status:"Included"},
-        {label:"Welcome area + seating chart reference",file:"decor-welcome-seating.jpg",path:"/images/decor-welcome-seating.jpg",status:"Included"},
-        {label:"FINAL sweetheart-table mockup · hydrangeas + gold vine fairy lights",file:"decor-sweetheart-table.png",path:"/images/decor-sweetheart-table.png",status:"Included"},
-        {label:"Reception shopping list + layout reference",file:"decor-reception-shopping-list.jpg",path:"/images/decor-reception-shopping-list.jpg",status:"Included"},
+        {label:"Reception vision + guest-table reference",file:"decor-reception-vision.jpg",path:"/images/decor-reception-vision.webp",status:"Included"},
+        {label:"Welcome area + seating chart reference",file:"decor-welcome-seating.jpg",path:"/images/decor-welcome-seating.webp",status:"Included"},
+        {label:"FINAL sweetheart-table mockup · hydrangeas + gold vine fairy lights",file:"decor-sweetheart-table.png",path:"/images/decor-sweetheart-table.webp",status:"Included"},
+        {label:"Reception shopping list + layout reference",file:"decor-reception-shopping-list.jpg",path:"/images/decor-reception-shopping-list.webp",status:"Included"},
         {label:"Final actual sweetheart-table setup photo · add closer to wedding",file:"final-sweetheart-setup.jpg",status:"Take a real photo after staging the decorations and add it here for Tammy."}
       ]
     },
@@ -373,17 +385,16 @@ const defaultData = {
   },
   officiant:{
     title:"Print Sheet · Officiant · Bertram Generlette",
-    summary:"Detailed speaking and cue sheet for Cory’s dad, Bertram Generlette. The binder establishes the ceremony elements and sequence; the full sentences below are an expanded speaking draft built around those elements. The current ceremony uses traditional vows rather than personal vows. The family joining moment centers Miah and Londyn and the Daughter Pandora charms. The Cord of Three Strands remains optional until confirmed at rehearsal.",
+    summary:"Detailed speaking and cue sheet for Cory’s dad, Bertram Generlette. The binder establishes the ceremony elements and sequence; the full sentences below are an expanded speaking draft built around those elements. The current ceremony uses traditional vows rather than personal vows. The family joining moment centers Miah and Londyn and the Daughter Pandora charms.",
     speaking:[
       {heading:"Opening / welcome",text:"Suggested speaking prompt: ‘Good afternoon, family and friends. We are gathered here in this beautiful place to celebrate Cory and Melinda as they enter marriage surrounded by the people they love most. Today is not only about two people choosing one another; it is also about honoring the families who shaped them and celebrating the family they are continuing to build together.’ Pause, look to the couple, and keep the opening warm and brief."},
-      {heading:"Optional prayer or reading",text:"If Cory and Melinda keep an opening prayer or reading, introduce it here. If they decide not to include one, move directly into the rose presentation. Keep this marked as a rehearsal decision."},
+      {heading:"Opening reflection / blessing to everyone",text:"After the welcome, invite everyone into the moment: ‘Before we continue, I’d like to ask everyone here to take a moment and be fully present. Look around at the family and friends who traveled, supported, encouraged and loved Cory and Melinda into this day. May we bring patience, joy, grace and good humor into this ceremony, and may Cory and Melinda feel the strength of this room around them. May the love we celebrate here today continue long after we leave this mountain.’ Pause briefly, then transition into the rose presentation."},
       {heading:"Rose presentation to the mothers",text:"Current working placement: before the vows. Confirm at rehearsal because the older binder placed the roses after the kiss. Suggested transition: ‘Before Cory and Melinda make their promises to one another, they would like to pause and honor two women whose love and guidance helped bring them to this moment.’ Invite Cory and Melinda to present roses to Patricia Generlette and Patricia Roberts. Suggested close: ‘These roses are a simple thank-you for the love, lessons and family that each of you has given them, and a symbol of two families being joined today.’ Allow a photo pause before everyone returns to position."},
       {heading:"Words about marriage / transition to promises",text:"Suggested binder-style bridge: ‘Marriage is more than a single ceremony or a single promise. It is the choice to keep showing up, to listen, to laugh, to forgive, to grow, and to make a home together in all the ordinary days that follow this extraordinary one.’ Then turn to Cory and Melinda for the declaration of intent."},
       {heading:"Declaration of intent — I Do",text:"Ask Cory: ‘Cory, do you take Melinda to be your wife, to share your life with her, to love and support her, to honor and cherish her, through the joys and challenges of life, for as long as you both shall live?’ Cory answers: ‘I do.’ Ask Melinda the same question, substituting Cory’s name and husband. Melinda answers: ‘I do.’"},
       {heading:"Traditional vows — repeat after me",text:"There are no personal vows. Lead Cory first: ‘I, Cory, take you, Melinda, to be my wife; to have and to hold from this day forward; for better, for worse; for richer, for poorer; in sickness and in health; to love and to cherish; for as long as we both shall live.’ Then lead Melinda with the same traditional vow: ‘I, Melinda, take you, Cory, to be my husband…’ Pause naturally between phrases so each person can repeat comfortably."},
       {heading:"Ring exchange",text:"Suggested transition: ‘The wedding ring is an outward symbol of an inward promise — a circle without end, representing the commitment you make today.’ Have the rings presented. Cory repeats: ‘Melinda, I give you this ring as a symbol of my love and my commitment to you. With this ring, I choose you today and every day.’ Melinda repeats the corresponding words to Cory."},
-      {heading:"Cord of Three Strands — optional / confirm at rehearsal",text:"If retained from the earlier binder, introduce it as a symbol of Cory, Melinda and their faith woven together. Suggested wording: ‘A cord of three strands is not quickly broken. As these strands are woven together, may your marriage be strengthened by your love for one another and by the faith that guides your home.’ Give the couple time to complete the action. If they remove this element, skip directly to the family joining ceremony."},
-      {heading:"Family joining ceremony — Miah and Londyn",text:"Invite Miah and Londyn forward. Suggested framing: ‘Today also celebrates a family. Cory and Melinda’s promises do not stop with one another; this moment recognizes Miah and Londyn and the love, trust, laughter and memories that make the four of them a family.’ Then step back and let Cory and Melinda speak directly to the girls in their own words. After they speak, cue the Daughter Pandora charms: ‘Cory and Melinda have chosen a small keepsake for each of you — a charm that says Daughter — as a reminder that you are not simply standing beside them today; you are part of the promises and the family being celebrated here.’ Pause for hugs/photos, then have Miah and Londyn return to position."},
+            {heading:"Family joining ceremony — Miah and Londyn",text:"Invite Miah and Londyn forward. Suggested framing: ‘Today also celebrates a family. Cory and Melinda’s promises do not stop with one another; this moment recognizes Miah and Londyn and the love, trust, laughter and memories that make the four of them a family.’ Then step back and let Cory and Melinda speak directly to the girls in their own words. After they speak, cue the Daughter Pandora charms: ‘Cory and Melinda have chosen a small keepsake for each of you — a charm that says Daughter — as a reminder that you are not simply standing beside them today; you are part of the promises and the family being celebrated here.’ Pause for hugs/photos, then have Miah and Londyn return to position."},
       {heading:"Pronouncement",text:"Suggested wording: ‘Cory and Melinda, you have declared your intentions, made your vows, exchanged rings, and celebrated the family you are building in the presence of everyone gathered here. By the authority entrusted to me, it is my great joy to pronounce you married.’"},
       {heading:"The kiss",text:"Cue clearly and simply: ‘Cory, you may kiss your bride.’ Pause and let Nessa/photography capture the moment before moving on."},
       {heading:"Final blessing",text:"Suggested closing blessing: ‘May your home be filled with laughter, patience and peace. May you continue choosing one another through every season, may Miah and Londyn always know the strength of the family surrounding them, and may all four of you leave this place carrying the love that brought you here today.’"},
@@ -412,10 +423,10 @@ const defaultData = {
     reminders:[
       "Ceremony starts at 3:30 PM.",
       "No personal vows — use the traditional repeat-after-me vows in this speaking sheet.",
+      "Opening reflection is included: address the whole gathering with the short blessing/reflection in this speaking sheet.",
       "Rose presentation currently uses a before-the-vows working placement and names both mothers: Patricia Generlette and Patricia Roberts. Confirm placement at rehearsal; the older binder placed it after the kiss.",
       "Family joining gifts: one Daughter Pandora charm for Miah and one for Londyn.",
       "Coordinate pauses with Nessa so photography/content creation can capture roses, charms, rings and the kiss without interrupting the ceremony.",
-      "Confirm at rehearsal whether the optional Cord of Three Strands stays in the ceremony.",
       "Recessional: This Will Be (An Everlasting Love)."
     ]
   }
@@ -449,9 +460,6 @@ export default async (req) => {
   if(process.env.WEDDING_PRIVATE_DATA){try{data=JSON.parse(process.env.WEDDING_PRIVATE_DATA)}catch{}}
   hydrateVendorLists(data,loadVendorContacts());
   data.accessLevel=isCouple?'couple':'team';
-  if(!isCouple){
-    if(data.bride) delete data.bride.payments;
-    if(data.groom) delete data.groom.payments;
-  }
+  if(!isCouple && data.money) delete data.money;
   return Response.json(data,{headers:{'cache-control':'no-store'}});
 };

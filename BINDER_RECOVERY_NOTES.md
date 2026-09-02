@@ -31,7 +31,7 @@ The newest instruction supersedes the earlier heavy-greenery/head-table concept.
 - Restrained floating LED cylinders/votives
 - No light-wall or fairy-light backdrop behind the table
 - Keep the arrangement low and uncluttered
-- Current visual: `decor-sweetheart-table.png`
+- Current visual: `decor-sweetheart-table.webp`
 - Later replace/supplement with a real staged photo named `final-sweetheart-setup.jpg`
 
 ### Cake / dessert / buffet
@@ -43,7 +43,7 @@ Pack by zone and label each box for Tammy: Sweetheart; Welcome + Seating; Guest 
 ## Bride floral binder — current
 
 Included source images:
-- `bridal-bouquet-guide.jpg`
-- `wedding-flower-ordering-guide.jpg`
+- `bridal-bouquet-guide.webp`
+- `wedding-flower-ordering-guide.webp`
 
 The Bridal Bouquet Complete Guide provides the exact bridal bouquet recipe and prep treatment. The Wedding Flower Ordering Guide provides the corrected total buy list and recipes for flower-girl corsages and boutonnières. Use those images as the controlling shopping/assembly references.
