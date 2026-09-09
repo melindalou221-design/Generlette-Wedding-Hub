@@ -28,21 +28,21 @@ export const wedding = {
 
 export const schedule = [
   ['2:45 PM', 'Guest Arrival', 'Sunrise Amphitheater · allow extra time for mountain parking'],
-  ['3:00 PM', 'Prelude Begins', 'Settle in and enjoy the mountain views'],
-  ['3:15 PM', 'Wedding Party Lines Up', ''],
+  ['3:00 PM', 'Prelude Begins', 'Settle in, find your seat and enjoy the mountain views'],
+  ['3:20 PM', 'Please Be Seated', 'The ceremony begins promptly at 3:30 PM'],
   ['3:30 PM', 'Ceremony', 'Traditional vows, family joining ceremony, rings, kiss & blessing'],
-  ['4:05 PM', 'Family & Wedding Party Photos', 'Guests may begin making their way to Denver'],
-  ['5:00 PM', 'Cocktail Hour', 'City Park Pavilion · built-in travel buffer from Flagstaff Mountain'],
+  ['4:05 PM', 'Guests Depart for Denver', 'Family and wedding party remain briefly for photos · reception at City Park Pavilion'],
+  ['5:00 PM', 'Cocktail Hour', 'City Park Pavilion · early arrivals may enter around 4:45 PM if setup is complete'],
   ['6:00 PM', 'Grand Entrance', 'The wedding party and newlyweds join the celebration'],
-  ['6:05 PM', 'A Little Surprise', 'A special newlywed moment — we’re keeping this one a surprise'],
+  ['6:05 PM', 'First Dance', 'Cory & Melinda take the dance floor · song choice stays a surprise until the moment'],
   ['6:15 PM', 'Dinner Blessing + Remarks', 'Frank Roberts · father of the bride'],
   ['6:20 PM', 'Dinner', ''],
   ['6:55 PM', 'Speeches & Toasts', 'Shalee Adams → Michael Berghini → Miah & Londyn together'],
   ['7:30 PM', 'Cake & Dessert', 'Treat yourself'],
-  ['7:40 PM', 'Open Dancing', ''],
-  ['9:30 PM', 'Late-Night Snack', 'Passport secret unlock'],
-  ['10:30 PM', 'Private Couple Moment & Last Song', ''],
-  ['10:40 PM', 'Glow-Stick Send-Off', ''],
+  ['7:40 PM', 'Open Dancing', 'Join us on the dance floor'],
+  ['9:30 PM', 'Late-Night Snack', 'Refuel for the final dance-floor stretch'],
+  ['10:30 PM', 'Get Ready for the Send-Off', 'Grab a glow stick and follow the wedding team to the send-off area'],
+  ['10:40 PM', 'Glow-Stick Send-Off', 'One last celebration before we say goodnight'],
 ];
 
 export const receptionMenu = {
