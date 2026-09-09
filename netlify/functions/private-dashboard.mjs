@@ -1,4 +1,13 @@
+const gettingReadyAddress = process.env.WEDDING_GETTING_READY_ADDRESS || 'Arvada getting-ready location';
+
 const defaultData = {
+  lastUpdated:"September 9, 2026",
+  commandCenter:{
+    ceremony:{label:"Ceremony",time:"3:30 PM",venue:"Sunrise Amphitheater",window:"2:00–5:00 PM",lead:"Nessa Dover"},
+    reception:{label:"Reception",time:"5:00 PM cocktails",venue:"City Park Pavilion",window:"Venue clear by 11:00 PM",lead:"Tammy Murrie"},
+    music:{label:"DJ / MC",time:"6:00 PM entrances",venue:"City Park Pavilion",window:"First dance 6:05 PM",lead:"Michael Lancaster"},
+    travel:{label:"Travel Buffer",time:"50–65 min",venue:"Flagstaff Mountain → Denver",window:"Recheck Monday traffic day-of",lead:"Couple + coordinators"}
+  },
   masterChecklist:[
     "Marriage license: assign one named person to carry, protect and return it after the ceremony.",
     "Cards + gifts: assign one named person to secure and transport them from City Park Pavilion.",
@@ -61,12 +70,13 @@ const defaultData = {
       "Confirm exact Vio + Gio arrival times and contact method.",
       "Confirm photographer invoice/event date is corrected from 09/26/2026 to the wedding date 09/28/2026.",
       "Finalize Jamaican caterer, cocktail-hour hors d’oeuvres and hot-food holding/serving plan.",
-      "Add private contacts in Netlify WEDDING_VENDOR_CONTACTS rather than committing phone numbers or emails to GitHub."
+      "Add private contacts in Netlify WEDDING_VENDOR_CONTACTS rather than committing phone numbers or emails to GitHub.",
+      "For every day-of vendor, confirm final arrival time, exact setup location, primary contact method and who receives them onsite."
     ]
   },
   bride: {
     title: "Bride Day-of Guide · Melinda",
-    summary: "Bride-only timeline, personal reminders and the recovered floral-binder guide. Getting-ready location: 6005 Nelson St, Arvada, CO. Keep this address out of all guest-facing pages.",
+    summary: `Bride-only timeline, personal reminders and the recovered floral-binder guide. Getting-ready location: ${gettingReadyAddress}. Keep this location out of all guest-facing pages.`,
     timeline: [
       {time:"7:30 AM",item:"Breakfast + hydrate",note:"Eat before hair and makeup starts. Set out water, snacks and medications/personal essentials."},
       {time:"8:00 AM",item:"Hair + makeup begins",note:"Sara D Hair is paid in full. Makeup artist: Christina; contact/time still needs final confirmation."},
@@ -74,7 +84,7 @@ const defaultData = {
       {time:"12:30 PM",item:"Detail / getting-ready photos",note:"Dress, shoes, jewelry, invitation suite, Daughter charms, bouquet details."},
       {time:"1:15 PM",item:"Get dressed + final beauty touch-ups",note:"Leave cushion instead of rushing."},
       {time:"1:45 PM",item:"Private-item check",note:"Daughter Pandora charms, bouquet, phone, charger, touch-up kit, comfortable shoes, water."},
-      {time:"2:00 PM",item:"Depart 6005 Nelson St, Arvada",note:"Use about a 50–60 minute planning buffer and recheck Flagstaff Mountain traffic/parking that day."},
+      {time:"2:00 PM",item:`Depart ${gettingReadyAddress}`,note:"Use about a 50–60 minute planning buffer and recheck Flagstaff Mountain traffic/parking that day."},
       {time:"2:50 PM",item:"Arrive near Sunrise Amphitheater",note:"Stay out of guest sightline; restroom and final touch-ups before lineup."},
       {time:"3:15 PM",item:"Processional lineup",note:"Nessa takes over the lineup and confirms music cues."},
       {time:"3:30 PM",item:"Ceremony begins",note:""},
@@ -87,7 +97,7 @@ const defaultData = {
       "Eat breakfast and lunch even if you are nervous.",
       "Pack Daughter charms, bouquet, touch-up kit, water, phone charger and comfortable travel shoes. Traditional vows will be led by Bertram; no personal vow cards are needed.",
       "Tammy will bring the couple-picked-up cake to City Park Pavilion.",
-      "Getting-ready address: 6005 Nelson St, Arvada, CO. Share only with the wedding team / people who need it; do not place it on guest-facing pages.",
+      `Getting-ready location: ${gettingReadyAddress}. Share only with the wedding team / people who need it; do not place it on guest-facing pages.` ,
       "Sunday rehearsal: meet at Chautauqua Park at 4:30 PM, then Sunrise Amphitheater around 6:00 PM.",
       "Honeymoon: Costa Rica. Flight is at 5:00 AM the morning after the wedding; confirm airport, check-in and departure-from-lodging time during wedding week.",
       "Confirm Christina’s makeup arrival/start time and final services.",
@@ -140,14 +150,14 @@ const defaultData = {
   },
   groom: {
     title: "Groom Day-of Guide · Cory",
-    summary: "A low-stress groom plan with ceremony responsibilities, family items and enough mountain-travel buffer. Getting-ready location: 6005 Nelson St, Arvada, CO. Keep this address private from guests.",
+    summary: `A low-stress groom plan with ceremony responsibilities, family items and enough mountain-travel buffer. Getting-ready location: ${gettingReadyAddress}. Keep this location private from guests.`,
     timeline:[
       {time:"8:30 AM",item:"Breakfast + easy morning",note:"Hydrate and keep the morning calm."},
       {time:"11:30 AM",item:"Lunch",note:"Do not skip it."},
       {time:"12:30 PM",item:"Shower + get dressed",note:"Suit, shoes, accessories and boutonniere."},
       {time:"1:15 PM",item:"Groom details / photos",note:"Confirm ring handoff and Daughter-charm plan with Melinda/Nessa."},
       {time:"1:50 PM",item:"Load car + final check",note:"Phone, water and emergency kit."},
-      {time:"2:00 PM",item:"Depart 6005 Nelson St, Arvada",note:"Recheck route to Flagstaff Mountain and parking conditions."},
+      {time:"2:00 PM",item:`Depart ${gettingReadyAddress}`,note:"Recheck route to Flagstaff Mountain and parking conditions."},
       {time:"2:50 PM",item:"Arrive Sunrise Amphitheater",note:"Meet Nessa and Bertram before guest seating is complete."},
       {time:"3:05 PM",item:"Ceremony check",note:"Vio/Gio cues, rings, traditional-vow plan, Daughter charms and mother escort."},
       {time:"3:15 PM",item:"Wedding party lineup",note:"Cory will escort his mother during the processional."},
@@ -155,7 +165,7 @@ const defaultData = {
       {time:"4:05–4:35 PM",item:"Photos",note:"Depart for Denver immediately after required portraits."},
       {time:"5:50 PM",item:"Reception entrance lineup",note:"Be ready for the couple entrance; song details stay on the DJ sheet."},
       {time:"6:00 PM",item:"Grand entrance",note:""},
-      {time:"6:05 PM",item:"Private couple music moment",note:"Song/playback details stay on the DJ sheet."}
+      {time:"6:05 PM",item:"First dance",note:"Song choice stays on the private DJ sheet."}
     ],
     reminders:[
       "Eat, hydrate and keep your phone charged.",
@@ -252,7 +262,7 @@ const defaultData = {
       {time:"5:30 PM",item:"Check couple ETA",note:"Adjust entrance only if mountain traffic is heavy."},
       {time:"5:50 PM",item:"Wedding-party entrance lineup",note:"DJ confirms the private entrance-song cues; Tammy confirms people/order."},
       {time:"6:00 PM",item:"Grand entrance",note:"DJ owns the private entrance-song cues; Tammy owns lineup and release."},
-      {time:"6:05 PM",item:"Private couple music moment",note:"DJ manages the private track and microphones; no traditional first dance."},
+      {time:"6:05 PM",item:"First dance",note:"DJ starts the private first-dance track; Tammy clears the dance floor and confirms photographer is ready."},
       {time:"6:15 PM",item:"Dinner blessing + remarks",note:"Frank Roberts, Melinda’s dad."},
       {time:"6:20 PM",item:"Dinner begins",note:"Italian buffet + Jamaican food if secured."},
       {time:"6:55–7:00 PM",item:"Toasts",note:"Shalee Adams → Michael Berghini → Miah & Londyn together."},
@@ -345,19 +355,19 @@ const defaultData = {
   },
   dj:{
     title:"Print Sheet · DJ / MC",
-    summary:"Reception cue sheet for Michael Lancaster / Colorado DJ. Current reception timing supersedes the older contract’s obsolete ceremony/start times. Entrance songs and the First Song are private DJ/team information and should not be announced or displayed on guest pages before their cues.",
+    summary:"Reception cue sheet for Michael Lancaster / Colorado DJ. Current reception timing supersedes the older contract’s obsolete ceremony/start times. Entrance songs and the first-dance song are private DJ/team information and should not be displayed on guest pages before their cues.",
     timeline:[
       {time:"Before 4:30 PM",item:"Sound + uplight setup complete",note:"Contract provides DJ/MC, sound equipment, microphones and 12 uplights; setup term was 1.5 hours before event start."},
       {time:"5:00 PM",item:"Cocktail hour music",note:"Keep volume conversational."},
       {time:"5:50 PM",item:"Line up wedding party / confirm names",note:"Tammy coordinates physical lineup; DJ confirms pronunciation/order."},
       {time:"6:00 PM",item:"Wedding-party entrance",note:"Play Rock With You — Michael Jackson."},
       {time:"Immediately after party",item:"Announce Cory & Melinda",note:"Play Lil Boo Thang for couple entrance."},
-      {time:"6:05 PM",item:"First Song",note:"Heartbeat — Carrie Underwood. Cory & Melinda sing live with original track as backing; lower lead vocal slightly if the playback setup allows. No traditional first dance."},
+      {time:"6:05 PM",item:"First Dance",note:"Heartbeat — Carrie Underwood. Play as the couple’s first dance; no live singing or vocal-mix adjustment needed. Confirm photographer and Tammy are ready before starting."},
       {time:"6:15 PM",item:"Hand mic to Frank Roberts",note:"Dinner blessing + brief father-of-the-bride remarks."},
       {time:"6:20 PM",item:"Dinner music",note:"Background level; coordinate buffet release with Tammy."},
       {time:"6:55–7:00 PM",item:"Formal toasts",note:"Shalee Adams → Michael Berghini → Miah & Londyn together."},
       {time:"7:30 PM",item:"Cake / dessert transition",note:"Announce only when Tammy confirms cake area ready."},
-      {time:"7:40 PM",item:"Open dance floor",note:"No mother-son or father-daughter dance; no traditional first dance."},
+      {time:"7:40 PM",item:"Open dance floor",note:"No mother-son or father-daughter dances are planned."},
       {time:"9:30 PM",item:"Late-night snack announcement",note:"Do not name food until final menu is confirmed."},
       {time:"10:30 PM",item:"Private couple moment / last song",note:"Coordinate with Tammy before moving guests toward send-off."},
       {time:"10:40 PM",item:"Glow-stick send-off",note:"Final public cue."}
@@ -376,8 +386,8 @@ const defaultData = {
     reminders:[
       "Wedding party reception entrance song: Rock With You — Michael Jackson.",
       "Couple entrance: Lil Boo Thang.",
-      "First Song: Heartbeat — Carrie Underwood, sung by Cory & Melinda.",
-      "No traditional first dance. No mother-son or father-daughter dance.",
+      "First dance: Heartbeat — Carrie Underwood. Keep the song private until the 6:05 PM cue.",
+      "No mother-son or father-daughter dances are planned.",
       "Confirm exact pronunciation and entrance grouping before 5:50 PM.",
       "Keep speeches under about five minutes each where possible.",
       "Do not use the old DJ-contract ceremony timing; current ceremony is at Sunrise Amphitheater at 3:30 PM and reception guest flow starts around 5:00 PM."
