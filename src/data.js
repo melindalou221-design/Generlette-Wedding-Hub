@@ -23,7 +23,6 @@ export const wedding = {
     venmo: '',
     boulderParking: 'https://bouldercolorado.gov/services/osmp-parking-permits-and-fees',
     parkMobile: 'https://app.parkmobile.io/zone/start',
-    cityParkAdventureHub: 'https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Parks-Recreation/Recreation-Centers-Pools-Activities/Adventure-Hub-Bike-and-Boat-Rentals',
   },
 };
 
@@ -33,7 +32,7 @@ export const schedule = [
   ['3:20 PM', 'Please Be Seated', 'The ceremony begins promptly at 3:30 PM'],
   ['3:30 PM', 'Ceremony', 'Traditional vows, family joining ceremony, rings, kiss & blessing'],
   ['4:05 PM', 'Guests Depart for Denver', 'Family and wedding party remain briefly for photos · reception at City Park Pavilion'],
-  ['5:00 PM', 'Cocktail Hour', 'City Park Pavilion · enjoy Ferril Lake swan boats and make your way to the garden area for a little entertainment surprise'],
+  ['5:00 PM', 'Cocktail Hour', 'City Park Pavilion · early arrivals may enter around 4:45 PM if setup is complete'],
   ['6:00 PM', 'Grand Entrance', 'The wedding party and newlyweds join the celebration'],
   ['6:05 PM', 'First Dance', 'Cory & Melinda take the dance floor · song choice stays a surprise until the moment'],
   ['6:15 PM', 'Dinner Blessing + Remarks', 'Frank Roberts · father of the bride'],
@@ -41,6 +40,7 @@ export const schedule = [
   ['6:55 PM', 'Speeches & Toasts', 'Shalee Adams → Michael Berghini → Miah & Londyn together'],
   ['7:30 PM', 'Cake & Dessert', 'Treat yourself'],
   ['7:40 PM', 'Open Dancing', 'Join us on the dance floor'],
+  ['8:15 PM', 'Anniversary Dance', 'All couples are invited to the dance floor — the longest-married couple stays for the final spotlight.'],
   ['9:30 PM', 'Late-Night Snack', 'Refuel for the final dance-floor stretch'],
   ['10:30 PM', 'Get Ready for the Send-Off', 'Grab a glow stick and follow the wedding team to the send-off area'],
   ['10:40 PM', 'Glow-Stick Send-Off', 'One last celebration before we say goodnight'],
@@ -57,7 +57,7 @@ export const receptionMenu = {
     'Jerk chicken',
     'Rice and peas',
   ],
-  cocktail: 'Cocktail-hour hors d’oeuvres are still being finalized.',
+  cocktail: 'Cocktail-hour hors d’oeuvres are still being finalized. Italian delivery from Maggiano’s is scheduled for 5:00 PM.',
   dessert: 'Wedding cake and dessert follow dinner.',
 };
 
@@ -161,9 +161,9 @@ export const guestFaq = [
   ['What are the restroom facilities like?', 'Sunrise Amphitheater has pit-latrine restrooms and no changing rooms.'],
   ['What happens after the ceremony?', 'Most guests can begin heading to City Park Pavilion after the ceremony. Family and wedding-party photos will continue on the mountain until about 4:35 PM. Official cocktail hour begins at 5:00 PM.'],
   ['How long is the drive to the reception?', 'Plan roughly an hour between Flagstaff Mountain and City Park Pavilion, with extra time for Monday traffic and getting down the mountain.'],
+  ['Where do I park for the reception?', 'Event staff advised us that guests may park in the lot beside City Park Pavilion and, if needed, may leave vehicles there overnight to avoid drinking and driving. Please use only legal designated spaces and retrieve your vehicle the following day.'],
   ['Is reception seating assigned?', 'Tables are assigned, but individual seats are not. Use Find My Table in the app or the seating chart at the Pavilion.'],
   ["What if my name isn't on the seating chart?", 'Table 9 is intentionally available as the fallback table.'],
-  ['Can we ride the swan boats during cocktail hour?', 'Yes. City Park’s Adventure Hub near the Pavilion rents 4-person swan pedal boats for $35 per hour. On Monday, September 28, fall hours are 3:30–8:00 PM, with the last rental issued at 7:00 PM. Rentals are first-come, first-served and paid on-site by cash, card or Apple Pay. Life jackets are included, and alcohol is not allowed on rentals. Please plan to be back by 5:50 PM for the 6:00 PM grand entrance.'],
   ['Are children welcome?', 'Yes. We are celebrating with family and children, and the app includes Junior Wedding Explorers activities for them.'],
   ['Can I take and share photos?', 'Absolutely. Use the wedding disposable-camera link in the app to add your view of the day.'],
   ['How can I leave Cory & Melinda a message?', 'Open Messages of Love to write a note or use the audio guestbook to leave a voice message.'],
