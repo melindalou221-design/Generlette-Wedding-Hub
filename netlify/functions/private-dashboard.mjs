@@ -1,7 +1,7 @@
 const gettingReadyAddress = process.env.WEDDING_GETTING_READY_ADDRESS || 'Arvada getting-ready location';
 
 const defaultData = {
-  lastUpdated:"September 9, 2026",
+  lastUpdated:"September 10, 2026",
   commandCenter:{
     ceremony:{label:"Ceremony",time:"3:30 PM",venue:"Sunrise Amphitheater",window:"2:00–5:00 PM",lead:"Nessa Dover"},
     reception:{label:"Reception",time:"5:00 PM cocktails",venue:"City Park Pavilion",window:"Venue clear by 11:00 PM",lead:"Tammy Murrie"},
@@ -25,7 +25,7 @@ const defaultData = {
     {item:"Sweetheart table",status:"FINAL direction",detail:"Hydrangea-forward blue/white florals, light greenery, gold Mr & Mrs sign, warm gold vine fairy lights on the front, restrained candles, no light backdrop."},
     {item:"Photo booth",status:"FINAL - not planned",detail:"Do not reserve space or decor for a photo booth."},
     {item:"Rose presentation placement",status:"CONFIRM AT REHEARSAL",detail:"Current working placement is before the vows; older binder placed it after the kiss."},
-    {item:"Jamaican caterer",status:"OPEN",detail:"Secure vendor for jerk chicken and rice and peas or update the menu."},
+    {item:"Jamaican caterer",status:"FINAL - vendor chosen",detail:"Kool Jamaican Kitchen for jerk chicken and rice and peas."},
     {item:"Cocktail-hour hors d'oeuvres",status:"OPEN",detail:"Finalize menu, vendor, delivery and handoff."},
     {item:"Late-night snack menu",status:"OPEN",detail:"9:30 PM timing is set; final food still needs confirmation."},
     {item:"Photographer event date",status:"OPEN",detail:"Confirm invoice/coverage reflects Monday, September 28, 2026."}
@@ -60,9 +60,9 @@ const defaultData = {
       {role:"Bartender",name:"Alfredo Junior",status:"Confirmed",arrival:"Before 5:00 PM cocktail hour",contactKey:"bartender",notes:"Bar setup + Something Blue / Something Old service plan."},
       {role:"Magician",name:"Name/contact still needed",status:"Booked / details incomplete",arrival:"Confirm cocktail-hour/reception set time",contactKey:"magician",notes:"Add exact name, contact and performance window."},
       {role:"Hair",name:"Sara D Hair",status:"Confirmed",arrival:"Bride prep schedule",contactKey:"hair",notes:"Bridal hair, two bridesmaid services and one flower-girl service on invoice."},
-      {role:"Makeup",name:"Christina",status:"Details incomplete",arrival:"Confirm start time",contactKey:"makeup",notes:"Business name, contact, services and start time still need to be added."},
-      {role:"Italian Dinner",name:"Vendor name/contact still needed",status:"Menu planned / vendor details incomplete",arrival:"Target hot delivery 5:30–5:45 PM",contactKey:"italian",notes:"Grilled salmon, mashed potatoes, fettuccine Alfredo with Parmesan-crusted chicken, Caesar salad."},
-      {role:"Jamaican Dinner",name:"Not yet secured",status:"Needs vendor",arrival:"Before dinner service",contactKey:"jamaican",notes:"Planned jerk chicken + rice and peas."},
+      {role:"Makeup",name:"Christian",status:"Confirmed",arrival:"Confirm final start time",contactKey:"makeup",notes:"Makeup artist is Christian. Add direct contact and final start time in the private contacts configuration."},
+      {role:"Italian Dinner",name:"Maggiano’s",status:"Confirmed",arrival:"5:00 PM delivery",contactKey:"italian",notes:"Grilled salmon, mashed potatoes, fettuccine Alfredo with Parmesan-crusted chicken, Caesar salad. Delivery is set for 5:00 PM."},
+      {role:"Jamaican Dinner",name:"Kool Jamaican Kitchen",status:"Confirmed",arrival:"Before dinner service",contactKey:"jamaican",notes:"Jerk chicken + rice and peas."},
       {role:"Cocktail-Hour Hors d’oeuvres",name:"Vendor/delivery still unresolved",status:"Needs vendor / delivery plan",arrival:"Target 4:40–4:50 PM",contactKey:"horsdoeuvres",notes:"Finalize menu, vendor and handoff location."}
     ],
     actionItems:[
@@ -79,7 +79,7 @@ const defaultData = {
     summary: `Bride-only timeline, personal reminders and the recovered floral-binder guide. Getting-ready location: ${gettingReadyAddress}. Keep this location out of all guest-facing pages.`,
     timeline: [
       {time:"7:30 AM",item:"Breakfast + hydrate",note:"Eat before hair and makeup starts. Set out water, snacks and medications/personal essentials."},
-      {time:"8:00 AM",item:"Hair + makeup begins",note:"Sara D Hair is paid in full. Makeup artist: Christina; contact/time still needs final confirmation."},
+      {time:"8:00 AM",item:"Hair + makeup begins",note:"Sara D Hair is paid in full. Makeup artist: Christian; add direct contact and final start time."},
       {time:"11:30 AM",item:"Lunch + reset",note:"Real food, water, restroom, then protect hair/makeup."},
       {time:"12:30 PM",item:"Detail / getting-ready photos",note:"Dress, shoes, jewelry, invitation suite, Daughter charms, bouquet details."},
       {time:"1:15 PM",item:"Get dressed + final beauty touch-ups",note:"Leave cushion instead of rushing."},
@@ -251,14 +251,14 @@ const defaultData = {
   },
   reception: {
     title:"Reception Coordinator · Tammy Murrie",
-    summary:"Tammy Murrie · Colorado Acclaimed Weddings · reception setup/cleanup. Early arrivals may enter around 4:45 PM; official cocktail hour 5:00 PM; entrance 6:00 PM; dinner 6:20 PM.",
+    summary:"Tammy Murrie · Colorado Acclaimed Weddings · reception setup/cleanup. Early arrivals may enter around 4:45 PM; official cocktail hour 5:00 PM; entrance 6:00 PM; first dance 6:05 PM; dinner 6:20 PM.",
     timeline:[
       {time:"2:00 PM",item:"Reception setup underway",note:"Guest tables, sweetheart table, welcome area, cake/dessert, bar, buffet, kids area, signs and lighting."},
-      {time:"4:30 PM",item:"Full-room check",note:"Table signs, guestbook, camera/audio-message links, candles, bar signage, seating/table finder."},
+      {time:"4:30 PM",item:"Full-room check",note:"Table signs, guestbook, camera/audio-message links, candles, bar signage and guest-memory prompts."},
       {time:"4:40–4:50 PM",item:"Cocktail hors d’oeuvres target arrival",note:"Delivery/vendor still needs to be finalized."},
       {time:"4:45 PM",item:"Early guest arrival window",note:"Open if setup/bar team is ready."},
       {time:"5:00 PM",item:"Official cocktail hour",note:"Bar + hors d’oeuvres + magician/guest entertainment as scheduled."},
-      {time:"5:30–5:45 PM",item:"Italian hot-food delivery target",note:"Better than 5:00 for a 6:20 dinner; receive, hold hot and stage buffet."},
+      {time:"5:00 PM",item:"Maggiano’s delivery",note:"Receive Italian delivery, hold hot as needed and stage buffet for dinner service."},
       {time:"5:30 PM",item:"Check couple ETA",note:"Adjust entrance only if mountain traffic is heavy."},
       {time:"5:50 PM",item:"Wedding-party entrance lineup",note:"DJ confirms the private entrance-song cues; Tammy confirms people/order."},
       {time:"6:00 PM",item:"Grand entrance",note:"DJ owns the private entrance-song cues; Tammy owns lineup and release."},
@@ -268,6 +268,7 @@ const defaultData = {
       {time:"6:55–7:00 PM",item:"Toasts",note:"Shalee Adams → Michael Berghini → Miah & Londyn together."},
       {time:"7:30 PM",item:"Cake + dessert",note:"Tammy brings cake from the couple’s pickup to the venue and stages it."},
       {time:"7:40 PM",item:"Open dancing",note:""},
+      {time:"8:15 PM",item:"Anniversary Dance",note:"Invite all couples to the floor, then dismiss couples by years married until the longest-married couple remains."},
       {time:"9:30 PM",item:"Late-night snack",note:"Menu still finalizing; Passport secret reveal."},
       {time:"10:30 PM",item:"Private couple moment / last song",note:"Begin guest send-off staging."},
       {time:"10:40 PM",item:"Glow-stick send-off",note:""},
@@ -276,12 +277,15 @@ const defaultData = {
     setup:[
       "Reception design: romantic ivory + soft blue with navy and gold accents; warm LED candlelight; elegant, airy and conversation-friendly.",
       "Assigned tables, not assigned individual seats.",
-      "Seating-chart fallback: if a guest does not see their name on the chart, direct them to Table 9. Keep Table 9 available for those guests.",
       "Confirm Signature Drinks signage: Something Blue — Blue Skies; Something Old — Old Fashioned.",
-      "Confirm kids table, dessert area, guestbook, disposable-camera and Messages of Love links/QRs are visible.",
+      "City Park guest parking: Denver Parks & Recreation says Pavilion parking is first come, first served; easiest vehicle access is from E 23rd Ave. or E 22nd Ave. The guest app links the official Denver access map.",
+      "Venue-staff safety note: guests were advised they may leave a vehicle in the Pavilion lot overnight if needed rather than drive after drinking. Do not present that as text from the Denver parking PDF; it is venue guidance.",
+      "Pavilion restrooms: direct guests to the restroom facilities inside the Pavilion; the guest app includes the provided Pavilion floor plan.",
+      "Ferril Lake / swan boats: Adventure Hub rentals are near the Pavilion. Guests may ask about them; direct them to same-day availability rather than promising rental hours.",
+      "Confirm kids table, dessert area, guestbook, and especially the disposable-camera and Messages of Love links/QRs are visible and prominent.",
       "Confirm DJ has the private couple-song playback/microphone plan before guests arrive.",
       "Stage glow sticks before the final hour without announcing them too early.",
-      "Decor will be packed in labeled boxes by setup zone. Suggested labels: Sweetheart Table; Welcome + Seating Chart; Guest Tables; Cake + Dessert; Bar + Signs; Buffet; Kids Table; Emergency/Extras.",
+      "Decor will be packed in labeled boxes by setup zone. Suggested labels: Sweetheart Table; Welcome Area; Guest Tables; Cake + Dessert; Bar + Signs; Buffet; Kids Table; Emergency/Extras.",
       "As the wedding gets closer, add real setup photos to the coordinator binder so Tammy can match each boxed décor zone exactly.",
       "Photo booth is not currently planned; do not reserve setup space or décor for one unless the plan changes."
     ],
@@ -307,7 +311,6 @@ const defaultData = {
       ],
       welcome:[
         "Welcome sign and thank-you message at the entrance.",
-        "Seating chart / Find My Table prompt.",
         "Guestbook plus Disposable Camera and Messages of Love QR/link cards.",
         "Card box / gift area positioned nearby but not blocking guest flow.",
         "Use 3 bud vases, 1 floating LED cylinder, 2 blue hobnail LED candles and simple greenery as the binder’s gift/welcome-table base."
@@ -328,15 +331,14 @@ const defaultData = {
       ],
       visualAssets:[
         {label:"Reception vision + guest-table reference",file:"decor-reception-vision.jpg",path:"/images/decor-reception-vision.webp",status:"Included"},
-        {label:"Welcome area + seating chart reference",file:"decor-welcome-seating.jpg",path:"/images/decor-welcome-seating.webp",status:"Included"},
         {label:"FINAL sweetheart-table mockup · hydrangeas + gold vine fairy lights",file:"decor-sweetheart-table.png",path:"/images/decor-sweetheart-table.webp",status:"Included"},
         {label:"Reception shopping list + layout reference",file:"decor-reception-shopping-list.jpg",path:"/images/decor-reception-shopping-list.webp",status:"Included"},
         {label:"Final actual sweetheart-table setup photo · add closer to wedding",file:"final-sweetheart-setup.jpg",status:"Take a real photo after staging the decorations and add it here for Tammy."}
       ]
     },
     food:[
-      {item:"Italian dinner",detail:"Grilled salmon · mashed potatoes · fettuccine Alfredo with Parmesan-crusted chicken · Caesar salad",status:"Target hot delivery 5:30–5:45 PM"},
-      {item:"Jamaican dinner",detail:"Jerk chicken · rice and peas",status:"Vendor still needs to be secured"},
+      {item:"Italian dinner",detail:"Maggiano’s · grilled salmon · mashed potatoes · fettuccine Alfredo with Parmesan-crusted chicken · Caesar salad",status:"5:00 PM delivery"},
+      {item:"Jamaican dinner",detail:"Kool Jamaican Kitchen · jerk chicken · rice and peas",status:"Vendor chosen"},
       {item:"Cocktail-hour hors d’oeuvres",detail:"Menu/delivery still unresolved",status:"Target delivery 4:40–4:50 PM"},
       {item:"Cake",detail:"Picked up by Cory & Melinda; Tammy brings it to City Park Pavilion",status:"Confirm pickup/storage/transport plan"}
     ],
@@ -347,27 +349,28 @@ const defaultData = {
       {role:"Magician",name:"Name/contact still needed",arrival:"Confirm cocktail/reception set time",status:"Details incomplete",contactKey:"magician"},
       {role:"Photographer",name:"Olivia M. Photography / O.M Creative LLC",arrival:"Per final 5-hour coverage",status:"Confirmed",contactKey:"photographer"},
       {role:"Hair",name:"Sara D Hair",arrival:"Bride prep",status:"Confirmed",contactKey:"hair"},
-      {role:"Makeup",name:"Christina",arrival:"Confirm",status:"Details incomplete",contactKey:"makeup"},
-      {role:"Italian Food",name:"Vendor name/contact still needed",arrival:"Target 5:30–5:45 PM",status:"Details incomplete",contactKey:"italian"},
-      {role:"Jamaican Food",name:"Not yet secured",arrival:"Before 6:00 PM",status:"Needs vendor",contactKey:"jamaican"},
+      {role:"Makeup",name:"Christian",arrival:"Confirm final start time",status:"Confirmed",contactKey:"makeup"},
+      {role:"Italian Food",name:"Maggiano’s",arrival:"5:00 PM delivery",status:"Confirmed",contactKey:"italian"},
+      {role:"Jamaican Food",name:"Kool Jamaican Kitchen",arrival:"Before 6:00 PM",status:"Confirmed",contactKey:"jamaican"},
       {role:"Cocktail-Hour Hors d’oeuvres",name:"Vendor/delivery still unresolved",arrival:"Target 4:40–4:50 PM",status:"Needs vendor / delivery plan",contactKey:"horsdoeuvres"}
     ],
   },
   dj:{
     title:"Print Sheet · DJ / MC",
-    summary:"Reception cue sheet for Michael Lancaster / Colorado DJ. Current reception timing supersedes the older contract’s obsolete ceremony/start times. Entrance songs and the first-dance song are private DJ/team information and should not be displayed on guest pages before their cues.",
+    summary:"Reception cue sheet for Michael Lancaster / Colorado DJ. Current reception timing supersedes the older contract’s obsolete ceremony/start times. Entrance songs, first-dance music and cake-cutting music stay on the private DJ/team sheet only.",
     timeline:[
       {time:"Before 4:30 PM",item:"Sound + uplight setup complete",note:"Contract provides DJ/MC, sound equipment, microphones and 12 uplights; setup term was 1.5 hours before event start."},
       {time:"5:00 PM",item:"Cocktail hour music",note:"Keep volume conversational."},
       {time:"5:50 PM",item:"Line up wedding party / confirm names",note:"Tammy coordinates physical lineup; DJ confirms pronunciation/order."},
       {time:"6:00 PM",item:"Wedding-party entrance",note:"Play Rock With You — Michael Jackson."},
       {time:"Immediately after party",item:"Announce Cory & Melinda",note:"Play Lil Boo Thang for couple entrance."},
-      {time:"6:05 PM",item:"First Dance",note:"Heartbeat — Carrie Underwood. Play as the couple’s first dance; no live singing or vocal-mix adjustment needed. Confirm photographer and Tammy are ready before starting."},
+      {time:"6:05 PM",item:"First Dance",note:"Made For Me — Muni Long. Confirm photographer and Tammy are ready before starting."},
       {time:"6:15 PM",item:"Hand mic to Frank Roberts",note:"Dinner blessing + brief father-of-the-bride remarks."},
       {time:"6:20 PM",item:"Dinner music",note:"Background level; coordinate buffet release with Tammy."},
       {time:"6:55–7:00 PM",item:"Formal toasts",note:"Shalee Adams → Michael Berghini → Miah & Londyn together."},
-      {time:"7:30 PM",item:"Cake / dessert transition",note:"Announce only when Tammy confirms cake area ready."},
+      {time:"7:30 PM",item:"Cake / dessert transition",note:"Announce only when Tammy confirms cake area ready. Cake-cutting song: How Sweet It Is (To Be Loved by You)."},
       {time:"7:40 PM",item:"Open dance floor",note:"No mother-son or father-daughter dances are planned."},
+      {time:"8:15 PM",item:"Anniversary Dance",note:"Invite all couples to the floor, then dismiss couples by years married until the longest-married couple remains."},
       {time:"9:30 PM",item:"Late-night snack announcement",note:"Do not name food until final menu is confirmed."},
       {time:"10:30 PM",item:"Private couple moment / last song",note:"Coordinate with Tammy before moving guests toward send-off."},
       {time:"10:40 PM",item:"Glow-stick send-off",note:"Final public cue."}
@@ -386,7 +389,9 @@ const defaultData = {
     reminders:[
       "Wedding party reception entrance song: Rock With You — Michael Jackson.",
       "Couple entrance: Lil Boo Thang.",
-      "First dance: Heartbeat — Carrie Underwood. Keep the song private until the 6:05 PM cue.",
+      "First dance: Made For Me — Muni Long. Keep the song private until the 6:05 PM cue.",
+      "Cake cutting: How Sweet It Is (To Be Loved by You).",
+      "Anniversary Dance at 8:15 PM: invite all couples out, then dismiss couples by years married until the longest-married couple remains.",
       "No mother-son or father-daughter dances are planned.",
       "Confirm exact pronunciation and entrance grouping before 5:50 PM.",
       "Keep speeches under about five minutes each where possible.",
@@ -470,6 +475,10 @@ export default async (req) => {
   if(process.env.WEDDING_PRIVATE_DATA){try{data=JSON.parse(process.env.WEDDING_PRIVATE_DATA)}catch{}}
   hydrateVendorLists(data,loadVendorContacts());
   data.accessLevel=isCouple?'couple':'team';
+  if(isCouple && data.money?.payments){
+    data.bride={...data.bride,payments:[...data.money.payments]};
+    data.groom={...data.groom,payments:[...data.money.payments]};
+  }
   if(!isCouple && data.money) delete data.money;
   return Response.json(data,{headers:{'cache-control':'no-store'}});
 };
