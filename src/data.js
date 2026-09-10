@@ -23,6 +23,8 @@ export const wedding = {
     venmo: '',
     boulderParking: 'https://bouldercolorado.gov/services/osmp-parking-permits-and-fees',
     parkMobile: 'https://app.parkmobile.io/zone/start',
+    cityParkParkingPdf: 'https://www.denvergov.org/files/assets/public/v/1/parks-and-recreation/documents/rentals-amp-permits/parkaccess_cityparkpavilion.pdf',
+    cityParkActivities: 'https://cityparkalliance.org/sports-activities/',
   },
 };
 
@@ -57,28 +59,28 @@ export const receptionMenu = {
     'Jerk chicken',
     'Rice and peas',
   ],
-  cocktail: 'Cocktail-hour hors d’oeuvres are still being finalized. Italian delivery from Maggiano’s is scheduled for 5:00 PM.',
+  cocktail: 'Cocktail-hour hors d’oeuvres are still being finalized.',
   dessert: 'Wedding cake and dessert follow dinner.',
 };
 
 export const gallery = [
-  ['IMG_5958.jpg', 'Mountain memories'],
-  ['IMG_7951.jpg', 'Date night energy'],
-  ['IMG_3247.jpg', 'One of many date-night selfies'],
-  ['IMG_8501.jpg', 'Just us'],
-  ['A3B71489.jpg', 'Colorado days'],
-  ['date-night-43D.jpg', 'Dressed up and still laughing'],
-  ['IMG_5274.jpg', 'Adventure together'],
-  ['adventure-2B47.jpg', 'Colorado keeps giving us reasons to explore'],
-  ['IMG_6615.jpg', 'Cheers to us'],
-  ['IMG_7194.jpg', 'Another night, another memory'],
-  ['CRI_9149.jpg', 'Our crew'],
-  ['IMG_4258.jpg', 'Golden Colorado days'],
-  ['IMG_3342.jpg', 'Adventure together'],
-  ['IMG_1089.jpg', 'Mountain memories'],
-  ['IMG_6754.jpg', 'Cozy crew'],
-  ['IMG_7935.jpg', 'Road-trip energy'],
-  ['IMG_0842.jpg', 'Colorado sunset'],
+  ['IMG_5958.webp', 'Mountain memories'],
+  ['IMG_7951.webp', 'Date night energy'],
+  ['IMG_3247.webp', 'One of many date-night selfies'],
+  ['IMG_8501.webp', 'Just us'],
+  ['A3B71489.webp', 'Colorado days'],
+  ['date-night-43D.webp', 'Dressed up and still laughing'],
+  ['IMG_5274.webp', 'Adventure together'],
+  ['adventure-2B47.webp', 'Colorado keeps giving us reasons to explore'],
+  ['IMG_6615.webp', 'Cheers to us'],
+  ['IMG_7194.webp', 'Another night, another memory'],
+  ['CRI_9149.webp', 'Our crew'],
+  ['IMG_4258.webp', 'Golden Colorado days'],
+  ['IMG_3342.webp', 'Adventure together'],
+  ['IMG_1089.webp', 'Mountain memories'],
+  ['IMG_6754.webp', 'Cozy crew'],
+  ['IMG_7935.webp', 'Road-trip energy'],
+  ['IMG_0842.webp', 'Colorado sunset'],
 ];
 
 export const weekend = {
@@ -136,35 +138,19 @@ export const weddingParty = {
 export const thankYou = `To our family and friends — thank you for showing up for us, traveling with us, laughing with us, and celebrating the family we are building. Life together has taken us through so many Colorado adventures, and the people we love have been part of every chapter. Thank you for loving Miah and Londyn, welcoming Cory and Melinda as a team, and making this day feel bigger than a wedding — it feels like home. We hope you eat, dance, take too many pictures, leave us a message, and make a memory with us. With all our love, Cory & Melinda.`;
 
 
-export const seatingChart = {
-  image: '/images/city-park-pavilion-seating-chart.webp',
-  note: 'If you do not see your name, Table 9 is for you.',
-  tables: [
-    { number: 1, place: 'Lookout Mountain', image:'/images/table-signs/table-1.webp', guests: ['Shalee Adams', 'Cam Adams', 'Kristen Hill', 'Andrew Hill', 'Cooper', 'Crystal Marrero', 'Jen Marrero', 'Clarissa Romero', 'Plus One (Romero)'] },
-    { number: 2, place: 'Pikes Peak', image:'/images/table-signs/table-2.webp', guests: ['Amber Antenor', 'Nemy Antenor', 'Brooke Antenor', 'Isaac Antenor', 'Shiloah Antenor', 'Olive Antenor', 'Moriah Antenor', 'Melissa Ashley'] },
-    { number: 3, place: 'Mt. Blue Sky', image:'/images/table-signs/table-3.webp', guests: ['Danielle Hedges', 'Jeremy Hedges', 'Bailey Hedges', 'Elise Hedges', 'Madeline Hedges', 'Adrian', 'Jeremy Limerick'] },
-    { number: 4, place: 'Durango & the Animas River', image:'/images/table-signs/table-4.webp', guests: ['Frank Roberts', 'Martha Roberts', 'Kelly Reckel', 'Destiny Reckel', 'Michelle Reckel', "Michelle's Husband", 'Kid 1 (Reckel)', 'Steve Floyd', 'Julie'] },
-    { number: 5, place: 'Red Rocks', image:'/images/table-signs/table-5.webp', guests: ['Ellen Gardner', 'Richard Gardner', 'Jackson Greenhaw', 'Jenny Tilghman', 'Jay Tilghman', 'Justin Tilghman', 'Patricia Roberts'] },
-    { number: 6, place: 'Great Sand Dunes', image:'/images/table-signs/table-6.webp', guests: ['Bertram Generlette', 'Patricia Generlette', 'Elliot Lee', 'Plus 1 (Elliot Lee)', 'Beverly Chandler', 'Emmanuel Chandler'] },
-    { number: 7, place: 'Garden of the Gods', image:'/images/table-signs/table-7.webp', guests: ['Victor Madubuko', 'Obi Madubuko', 'Kid 1 (Madubuko)', 'Kid 2 (Madubuko)', 'Angie Lee', 'Steven Lee', 'Plus 1 (Steven Lee)'] },
-    { number: 8, place: "St. Mary's Glacier", image:'/images/table-signs/table-8.webp', guests: ['Dillon', 'Laura', 'Jonathan Roberts', 'Calee', 'Cameron', 'Michael Berghini', 'Madyson Berghini', 'Miah', 'Londyn'] },
-    { number: 9, place: 'Royal Gorge', image:'/images/table-signs/table-9.webp', guests: ['Open / Unassigned'], fallback: true },
-  ],
-};
-
 
 export const guestFaq = [
   ['What time should I arrive?', 'Plan to arrive around 2:45 PM. Prelude music begins at 3:00 PM and the ceremony begins at 3:30 PM. Mountain parking is limited, so earlier is better than rushed.'],
   ['Where do I park for the ceremony?', 'Sunrise Amphitheater is on Flagstaff Mountain. Parking is limited and not guaranteed, so carpool when possible and allow extra time.'],
   ['Do I need to pay for mountain parking?', 'Vehicles not registered in Boulder County need a $5 daily OSMP parking permit. ParkMobile zone 24700 is the easiest option to remember.'],
   ['What should I wear or bring?', 'Bring a light layer for the mountain, wear shoes you are comfortable walking in, and open your directions before heading up Flagstaff Road in case cell service gets spotty.'],
-  ['What are the restroom facilities like?', 'Sunrise Amphitheater has pit-latrine restrooms and no changing rooms.'],
+  ['What are the ceremony restroom facilities like?', 'Sunrise Amphitheater has pit-latrine restrooms and no changing rooms.'],
   ['What happens after the ceremony?', 'Most guests can begin heading to City Park Pavilion after the ceremony. Family and wedding-party photos will continue on the mountain until about 4:35 PM. Official cocktail hour begins at 5:00 PM.'],
   ['How long is the drive to the reception?', 'Plan roughly an hour between Flagstaff Mountain and City Park Pavilion, with extra time for Monday traffic and getting down the mountain.'],
-  ['Where do I park for the reception?', 'Event staff advised us that guests may park in the lot beside City Park Pavilion and, if needed, may leave vehicles there overnight to avoid drinking and driving. Please use only legal designated spaces and retrieve your vehicle the following day.'],
-  ['Is reception seating assigned?', 'Tables are assigned, but individual seats are not. Use Find My Table in the app or the seating chart at the Pavilion.'],
-  ["What if my name isn't on the seating chart?", 'Table 9 is intentionally available as the fallback table.'],
+  ['Where do I park for the reception?', 'Denver Parks & Recreation says City Park Pavilion parking is first come, first served. The easiest access is from the east side using the E 23rd Ave. or E 22nd Ave. entrances, and surrounding residential parking is also an option. Venue staff advised us that guests may leave a vehicle in the Pavilion lot overnight if needed rather than drive after drinking.'],
+  ['Where are the reception restrooms?', 'Restroom facilities are inside City Park Pavilion. The Directions page includes the Pavilion floor plan so you can see the layout.'],
+  ['What are the swan boats?', 'Ferril Lake is right beside City Park Pavilion. The Adventure Hub near the Pavilion offers pedal-boat and other lake rentals when available. Check same-day availability if you want a little City Park adventure.'],
   ['Are children welcome?', 'Yes. We are celebrating with family and children, and the app includes Junior Wedding Explorers activities for them.'],
-  ['Can I take and share photos?', 'Absolutely. Use the wedding disposable-camera link in the app to add your view of the day.'],
-  ['How can I leave Cory & Melinda a message?', 'Open Messages of Love to write a note or use the audio guestbook to leave a voice message.'],
+  ['Can I take and share photos?', 'Absolutely. The Add Your Wedding Photos button opens our digital disposable camera so you can share the day from your point of view.'],
+  ['How can I leave Cory & Melinda a message?', 'Use Messages of Love to write a note, or tap Leave Us a Voice Message to record something sweet, funny or unforgettable.'],
 ];
