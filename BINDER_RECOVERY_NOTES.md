@@ -9,15 +9,13 @@ Newer couple decisions supersede older generic binder versions.
 - Low, conversation-friendly blue/white floral styling
 - Bud vases, blue hobnail LED candle holders and floating LED cylinders
 - Dusty/soft-blue napkins and gold details
-- Use `decor-reception-vision.jpg` as the current visual direction
+- Use `decor-reception-vision.webp` as the current visual direction
 
-### Welcome + seating area
+### Welcome area
 - Welcome sign
-- Seating chart / Find Your Table
 - Guestbook, Disposable Camera and Messages of Love access
 - Card/gift area
 - Florals, greenery and warm LED candle accents
-- Use `decor-welcome-seating.jpg` as the current reference
 
 ### Sweetheart table — current final mockup
 The newest instruction supersedes the earlier heavy-greenery/head-table concept.
@@ -38,7 +36,7 @@ The newest instruction supersedes the earlier heavy-greenery/head-table concept.
 Use the written binder plan in the protected Reception Coordinator page. Photo booth is not currently planned.
 
 ### Decoration boxes
-Pack by zone and label each box for Tammy: Sweetheart; Welcome + Seating; Guest Tables; Cake + Dessert; Bar + Signs; Buffet; Kids; Emergency/Extras.
+Pack by zone and label each box for Tammy: Sweetheart; Welcome Area; Guest Tables; Cake + Dessert; Bar + Signs; Buffet; Kids; Emergency/Extras.
 
 ## Bride floral binder — current
 

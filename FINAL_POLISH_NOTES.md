@@ -9,8 +9,7 @@ This build adds the developer + wedding-day improvements requested after the fin
 - Colorado-time “Happening Now” logic
 - Cached wedding-day weather requests
 - New-tab handling for outside links
-- Visual Find My Table results using the actual Colorado table-sign pages
-- Seating chart + coordinator image lightboxes
+- Coordinator image lightboxes
 - Optimized WebP versions of the heaviest planning images
 - Private Quick Mode timeline cards
 - Final Decisions + Open Items panel
@@ -19,3 +18,7 @@ This build adds the developer + wedding-day improvements requested after the fin
 - Officiant opening reflection/blessing addressed to everyone
 - Traditional vows only
 - Updated aesthetic styling for schedule, menu, story pages, FAQ, table finder and private binders
+
+
+## Photo + audio priority restoration
+The home, reception, and Messages pages again treat the digital disposable camera and audio guestbook as major guest actions with large, visually distinct calls to action.
