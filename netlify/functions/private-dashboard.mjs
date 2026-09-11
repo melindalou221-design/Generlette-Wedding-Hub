@@ -1,11 +1,11 @@
 const gettingReadyAddress = process.env.WEDDING_GETTING_READY_ADDRESS || 'Arvada getting-ready location';
 
 const defaultData = {
-  lastUpdated:"September 10, 2026",
+  lastUpdated:"September 11, 2026",
   commandCenter:{
     ceremony:{label:"Ceremony",time:"3:30 PM",venue:"Sunrise Amphitheater",window:"2:00–5:00 PM",lead:"Nessa Dover"},
     reception:{label:"Reception",time:"5:00 PM cocktails",venue:"City Park Pavilion",window:"Venue clear by 11:00 PM",lead:"Tammy Murrie"},
-    music:{label:"DJ / MC",time:"6:00 PM entrances",venue:"City Park Pavilion",window:"First dance 6:05 PM",lead:"Michael Lancaster"},
+    music:{label:"DJ / MC",time:"6:00 PM entrances",venue:"City Park Pavilion",window:"First song 6:05 PM",lead:"Michael Lancaster"},
     travel:{label:"Travel Buffer",time:"50–65 min",venue:"Flagstaff Mountain → Denver",window:"Recheck Monday traffic day-of",lead:"Couple + coordinators"}
   },
   masterChecklist:[
@@ -66,10 +66,10 @@ const defaultData = {
       {role:"Cocktail-Hour Hors d’oeuvres",name:"Vendor/delivery still unresolved",status:"Needs vendor / delivery plan",arrival:"Target 4:40–4:50 PM",contactKey:"horsdoeuvres",notes:"Finalize menu, vendor and handoff location."}
     ],
     actionItems:[
-      "Add missing business/contact information for Christina, magician, Italian food, Jamaican food and hors d’oeuvres.",
+      "Add missing direct contact information for Christian, the magician and the cocktail-hour hors d’oeuvres vendor once finalized.",
       "Confirm exact Vio + Gio arrival times and contact method.",
       "Confirm photographer invoice/event date is corrected from 09/26/2026 to the wedding date 09/28/2026.",
-      "Finalize Jamaican caterer, cocktail-hour hors d’oeuvres and hot-food holding/serving plan.",
+      "Finalize cocktail-hour hors d’oeuvres and confirm the hot-food holding/serving plan for Maggiano’s and Kool Jamaican Kitchen.",
       "Add private contacts in Netlify WEDDING_VENDOR_CONTACTS rather than committing phone numbers or emails to GitHub.",
       "For every day-of vendor, confirm final arrival time, exact setup location, primary contact method and who receives them onsite."
     ]
@@ -100,7 +100,7 @@ const defaultData = {
       `Getting-ready location: ${gettingReadyAddress}. Share only with the wedding team / people who need it; do not place it on guest-facing pages.` ,
       "Sunday rehearsal: meet at Chautauqua Park at 4:30 PM, then Sunrise Amphitheater around 6:00 PM.",
       "Honeymoon: Costa Rica. Flight is at 5:00 AM the morning after the wedding; confirm airport, check-in and departure-from-lodging time during wedding week.",
-      "Confirm Christina’s makeup arrival/start time and final services.",
+      "Confirm Christian’s makeup arrival/start time and final services.",
       "Confirm Olivia M. Photography invoice/event date is corrected from 09/26/2026 to the wedding date 09/28/2026.",
       "Use the included Wedding Flower Ordering Guide as the controlling count sheet for bouquets, flower-girl corsages and boutonnières; recheck counts against the final wedding-party roster before purchasing."
     ],
@@ -165,7 +165,7 @@ const defaultData = {
       {time:"4:05–4:35 PM",item:"Photos",note:"Depart for Denver immediately after required portraits."},
       {time:"5:50 PM",item:"Reception entrance lineup",note:"Be ready for the couple entrance; song details stay on the DJ sheet."},
       {time:"6:00 PM",item:"Grand entrance",note:""},
-      {time:"6:05 PM",item:"First dance",note:"Song choice stays on the private DJ sheet."}
+      {time:"6:05 PM",item:"First song",note:"Song choice stays on the private DJ sheet."}
     ],
     reminders:[
       "Eat, hydrate and keep your phone charged.",
@@ -251,18 +251,19 @@ const defaultData = {
   },
   reception: {
     title:"Reception Coordinator · Tammy Murrie",
-    summary:"Tammy Murrie · Colorado Acclaimed Weddings · reception setup/cleanup. Early arrivals may enter around 4:45 PM; official cocktail hour 5:00 PM; entrance 6:00 PM; first dance 6:05 PM; dinner 6:20 PM.",
+    summary:"Tammy Murrie · Colorado Acclaimed Weddings · reception setup/cleanup. Early arrivals may enter around 4:45 PM; official cocktail hour 5:00 PM; entrance 6:00 PM; first song 6:05 PM; dinner 6:20 PM.",
     timeline:[
       {time:"2:00 PM",item:"Reception setup underway",note:"Guest tables, sweetheart table, welcome area, cake/dessert, bar, buffet, kids area, signs and lighting."},
       {time:"4:30 PM",item:"Full-room check",note:"Table signs, guestbook, camera/audio-message links, candles, bar signage and guest-memory prompts."},
       {time:"4:40–4:50 PM",item:"Cocktail hors d’oeuvres target arrival",note:"Delivery/vendor still needs to be finalized."},
       {time:"4:45 PM",item:"Early guest arrival window",note:"Open if setup/bar team is ready."},
-      {time:"5:00 PM",item:"Official cocktail hour",note:"Bar + hors d’oeuvres + magician/guest entertainment as scheduled."},
+      {time:"5:00 PM",item:"Official cocktail hour",note:"Bar + hors d’oeuvres. Guest-facing app invites guests to Sopris Garden, west of the Pavilion, for a magic surprise; keep the performer/details as the surprise."},
+      {time:"5:10 PM",item:"Sopris Garden magic surprise",note:"Confirm magician is staged/ready at Sopris Garden and guest flow can move there without blocking Pavilion setup."},
       {time:"5:00 PM",item:"Maggiano’s delivery",note:"Receive Italian delivery, hold hot as needed and stage buffet for dinner service."},
       {time:"5:30 PM",item:"Check couple ETA",note:"Adjust entrance only if mountain traffic is heavy."},
       {time:"5:50 PM",item:"Wedding-party entrance lineup",note:"DJ confirms the private entrance-song cues; Tammy confirms people/order."},
       {time:"6:00 PM",item:"Grand entrance",note:"DJ owns the private entrance-song cues; Tammy owns lineup and release."},
-      {time:"6:05 PM",item:"First dance",note:"DJ starts the private first-dance track; Tammy clears the dance floor and confirms photographer is ready."},
+      {time:"6:05 PM",item:"First song",note:"DJ starts the private first-song track; Tammy clears the dance floor and confirms photographer is ready."},
       {time:"6:15 PM",item:"Dinner blessing + remarks",note:"Frank Roberts, Melinda’s dad."},
       {time:"6:20 PM",item:"Dinner begins",note:"Italian buffet + Jamaican food if secured."},
       {time:"6:55–7:00 PM",item:"Toasts",note:"Shalee Adams → Michael Berghini → Miah & Londyn together."},
@@ -281,7 +282,8 @@ const defaultData = {
       "City Park guest parking: Denver Parks & Recreation says Pavilion parking is first come, first served; easiest vehicle access is from E 23rd Ave. or E 22nd Ave. The guest app links the official Denver access map.",
       "Venue-staff safety note: guests were advised they may leave a vehicle in the Pavilion lot overnight if needed rather than drive after drinking. Do not present that as text from the Denver parking PDF; it is venue guidance.",
       "Pavilion restrooms: direct guests to the restroom facilities inside the Pavilion; the guest app includes the provided Pavilion floor plan.",
-      "Ferril Lake / swan boats: Adventure Hub rentals are near the Pavilion. Guests may ask about them; direct them to same-day availability rather than promising rental hours.",
+      "Ferril Lake / swan boats: Adventure Hub rentals are near the Pavilion. Wedding-day fall hours are listed as 3:30–8:00 PM, last rental 7:00 PM; direct guests to the official page for same-day status and weather closures.",
+      "Sopris Garden is west of City Park Pavilion. During cocktail hour, direct interested guests there for the planned magic surprise without overexplaining the performer or routine.",
       "Confirm kids table, dessert area, guestbook, and especially the disposable-camera and Messages of Love links/QRs are visible and prominent.",
       "Confirm DJ has the private couple-song playback/microphone plan before guests arrive.",
       "Stage glow sticks before the final hour without announcing them too early.",
@@ -346,7 +348,7 @@ const defaultData = {
       {role:"Reception Coordinator / Setup / Cleanup",name:"Tammy Murrie · Colorado Acclaimed Weddings",arrival:"Setup before guests",status:"Confirmed",contactKey:"tammy"},
       {role:"Bartender",name:"Alfredo Junior",arrival:"Before 5:00 PM",status:"Confirmed",contactKey:"bartender"},
       {role:"DJ / MC",name:"Michael Lancaster · Colorado DJ",arrival:"Setup target about 1.5 hrs before reception program",status:"Confirmed",contactKey:"dj"},
-      {role:"Magician",name:"Name/contact still needed",arrival:"Confirm cocktail/reception set time",status:"Details incomplete",contactKey:"magician"},
+      {role:"Magician",name:"Name/contact still needed",arrival:"Cocktail hour · Sopris Garden timing to confirm",status:"Details incomplete",contactKey:"magician"},
       {role:"Photographer",name:"Olivia M. Photography / O.M Creative LLC",arrival:"Per final 5-hour coverage",status:"Confirmed",contactKey:"photographer"},
       {role:"Hair",name:"Sara D Hair",arrival:"Bride prep",status:"Confirmed",contactKey:"hair"},
       {role:"Makeup",name:"Christian",arrival:"Confirm final start time",status:"Confirmed",contactKey:"makeup"},
@@ -357,14 +359,14 @@ const defaultData = {
   },
   dj:{
     title:"Print Sheet · DJ / MC",
-    summary:"Reception cue sheet for Michael Lancaster / Colorado DJ. Current reception timing supersedes the older contract’s obsolete ceremony/start times. Entrance songs, first-dance music and cake-cutting music stay on the private DJ/team sheet only.",
+    summary:"Reception cue sheet for Michael Lancaster / Colorado DJ. Current reception timing supersedes the older contract’s obsolete ceremony/start times. Wedding-party entrance, couple entrance and first-song titles stay on the DJ sheet only and must not appear on guest pages or coordinator sheets. Cake-cutting music also stays private.",
     timeline:[
       {time:"Before 4:30 PM",item:"Sound + uplight setup complete",note:"Contract provides DJ/MC, sound equipment, microphones and 12 uplights; setup term was 1.5 hours before event start."},
       {time:"5:00 PM",item:"Cocktail hour music",note:"Keep volume conversational."},
       {time:"5:50 PM",item:"Line up wedding party / confirm names",note:"Tammy coordinates physical lineup; DJ confirms pronunciation/order."},
       {time:"6:00 PM",item:"Wedding-party entrance",note:"Play Rock With You — Michael Jackson."},
       {time:"Immediately after party",item:"Announce Cory & Melinda",note:"Play Lil Boo Thang for couple entrance."},
-      {time:"6:05 PM",item:"First Dance",note:"Made For Me — Muni Long. Confirm photographer and Tammy are ready before starting."},
+      {time:"6:05 PM",item:"First Song",note:"Heartbeat — Carrie Underwood. Cory & Melinda sing together using the original Apple Music track as backing; lower Carrie Underwood’s lead vocal slightly if the playback setup allows while keeping the original track audible. Confirm photographer and Tammy are ready before starting."},
       {time:"6:15 PM",item:"Hand mic to Frank Roberts",note:"Dinner blessing + brief father-of-the-bride remarks."},
       {time:"6:20 PM",item:"Dinner music",note:"Background level; coordinate buffet release with Tammy."},
       {time:"6:55–7:00 PM",item:"Formal toasts",note:"Shalee Adams → Michael Berghini → Miah & Londyn together."},
@@ -389,7 +391,7 @@ const defaultData = {
     reminders:[
       "Wedding party reception entrance song: Rock With You — Michael Jackson.",
       "Couple entrance: Lil Boo Thang.",
-      "First dance: Made For Me — Muni Long. Keep the song private until the 6:05 PM cue.",
+      "First song: Heartbeat — Carrie Underwood. Cory & Melinda sing together; use the original Apple Music track as backing and lower Carrie Underwood’s lead vocal slightly if possible. Keep the song private until the 6:05 PM cue.",
       "Cake cutting: How Sweet It Is (To Be Loved by You).",
       "Anniversary Dance at 8:15 PM: invite all couples out, then dismiss couples by years married until the longest-married couple remains.",
       "No mother-son or father-daughter dances are planned.",
