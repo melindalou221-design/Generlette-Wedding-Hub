@@ -38,7 +38,7 @@ export const schedule = [
   ['4:05 PM', 'Guests Depart for Denver', 'Family and wedding party remain briefly for photos · reception at City Park Pavilion'],
   ['5:00 PM', 'Cocktail Hour', 'City Park Pavilion · early arrivals may enter around 4:45 PM if setup is complete · stroll to Sopris Garden for a magic surprise ✨'],
   ['6:00 PM', 'Grand Entrance', 'The wedding party and newlyweds join the celebration'],
-  ['6:05 PM', 'First Song', 'Cory & Melinda have something special planned · song choice stays a surprise until the moment'],
+  ['6:05 PM', 'First Dance', 'Cory & Melinda take the floor · the song stays a surprise until the moment'],
   ['6:15 PM', 'Dinner Blessing + Remarks', 'Frank Roberts · father of the bride'],
   ['6:20 PM', 'Dinner', ''],
   ['6:55 PM', 'Speeches & Toasts', 'Shalee Adams → Michael Berghini → Miah & Londyn together'],
@@ -61,7 +61,7 @@ export const receptionMenu = {
     'Jerk chicken',
     'Rice and peas',
   ],
-  cocktail: 'Cocktail-hour hors d’oeuvres are still being finalized.',
+  cocktail: 'Hors d’oeuvres will be served during cocktail hour, out on the Garden Side.',
   dessert: 'Wedding cake and dessert follow dinner.',
 };
 
@@ -87,15 +87,64 @@ export const gallery = [
 
 export const weekend = {
   rehearsal: [
-    {time:'4:30 PM', title:'Meet at Chautauqua Park', note:'Wedding party + family rehearsal evening. Meet, regroup and get everyone together before heading up the mountain.'},
-    {time:'Around 6:00 PM', title:'Sunrise Amphitheater rehearsal', note:'Walk the processional, ceremony positions and key cues. Rehearsal dinner details can be added here once finalized.'},
+    {time:'4:30 PM', title:'Meet at Chautauqua Park', note:'Wedding party + family regroup before heading up the mountain. Give yourself extra time — the Chautauqua lot fills fast.'},
+    {time:'Around 6:00 PM', title:'Sunrise Amphitheater rehearsal', note:'Walk the processional, ceremony positions and the key cues with Nessa and Cory\u2019s dad.'},
+    {time:'After the rehearsal', title:'Rehearsal dinner', note:'Dinner together once we come back down the mountain. Cory & Melinda will send the restaurant, time and address straight to the wedding party \u2014 watch your texts.'},
   ],
+  partyDay: [
+    {time:'9:30 AM', title:'Arrive for hair + makeup', note:'Please be there by 9:30 AM so nobody is rushed. Come with clean, dry hair and wear a button-up or something that will not pull over your head later. The address is texted to the wedding party only.'},
+    {time:'11:30 AM', title:'Lunch + reset', note:'Real food and water \u2014 it is a long day and Colorado is dry. Bring snacks you actually like.'},
+    {time:'12:30 PM', title:'Getting-ready photos', note:'Dresses, suits, shoes, rings and details. Keep bags and clutter out of the background.'},
+    {time:'1:15 PM', title:'Everyone gets dressed', note:'Fully dressed with final touch-ups done before we load the cars.'},
+    {time:'2:00 PM', title:'Leave for Flagstaff Mountain', note:'Plan 50\u201360 minutes. Carpool where you can \u2014 parking at Sunrise Amphitheater is tight (about 10 regular + 3 ADA spaces).'},
+    {time:'2:45 PM', title:'Be at Sunrise Amphitheater', note:'This is the hard deadline. Guests start arriving at the same time, so stay out of the main sightline and find Nessa.'},
+    {time:'3:15 PM', title:'Processional lineup', note:'Nessa runs the lineup and confirms the music cues. Phones away from here on.'},
+    {time:'3:30 PM', title:'Ceremony begins', note:'Sunrise Amphitheater, Flagstaff Mountain, Boulder.'},
+    {time:'4:05\u20134:35 PM', title:'Family + wedding-party photos', note:'Wedding party stays on the mountain for photos while guests head down to Denver.'},
+    {time:'~5:30 PM', title:'Arrive at City Park Pavilion', note:'2001 Steele Street, Denver. Freshen up, grab a drink, find your seat.'},
+    {time:'5:50 PM', title:'Reception entrance lineup', note:'Find Tammy or Michael (DJ). Wedding party enters first, then Cory & Melinda.'},
+    {time:'6:00 PM', title:'Grand entrance', note:'Then dinner, toasts and the dance floor.'},
+  ],
+  partyNotes: [
+    'Bring a layer. The ceremony is at 7,000+ feet and it gets cold and windy fast once the sun drops behind the ridge.',
+    'Drink more water than feels necessary. Altitude plus a long day is what gets people, not the drinks.',
+    'Cell service on Flagstaff Road is spotty. Screenshot this page and your directions before you drive up.',
+    'Shoes: the amphitheater is stone and gravel. Bring something comfortable for standing and walking.',
+    'Vehicles not registered in Boulder County need a $5 daily OSMP parking permit \u2014 pay in ParkMobile (zone 24700) before you lose signal.',
+    'If anything changes or you are running late, call Nessa (ceremony) or Tammy (reception) rather than Cory or Melinda.',
+  ],
+  activities: {
+    intro: 'In town for the wedding and have a free day? Here is what we would send our own family to do. Almost everything below is free \u2014 we noted the few that are not.',
+    denver: [
+      {name:'Red Rocks Park & Amphitheatre', cost:'Free', detail:'The most Colorado thing you can do in an afternoon. Giant red sandstone monoliths, hiking trails and the famous amphitheater \u2014 free to walk in and climb the stairs whenever there is no concert. About 30 minutes west of downtown.', maps:'Red Rocks Park and Amphitheatre Morrison Colorado'},
+      {name:'City Park + Ferril Lake', cost:'Free', detail:'Where the reception is. Come back in daylight for the lake loop, the Denver skyline-and-mountains view, and the Rose Garden. Paddle and swan boats are rentable at the Adventure Hub.', maps:'City Park Denver Colorado'},
+      {name:'RiNo Art District murals', cost:'Free', detail:'An open-air street-art gallery. Walk Larimer and Walnut between roughly 25th and 31st and the murals just keep coming. Great coffee and breweries mixed in.', maps:'River North Art District Denver Colorado'},
+      {name:'Denver Union Station', cost:'Free', detail:'A gorgeous restored train hall you can just sit in. Order a drink, people-watch in the Great Hall, or use the free 16th Street shuttle from here to get around downtown.', maps:'Denver Union Station'},
+      {name:'Colorado State Capitol', cost:'Free', detail:'Free guided tours run weekday mornings and afternoons, including the climb up to the dome for the best free view in the city. Stand on the step marked exactly one mile high.', maps:'Colorado State Capitol Denver'},
+      {name:'Confluence Park + Cherry Creek Trail', cost:'Free', detail:'Where Denver started. Easy flat walking or biking right downtown, and people actually tube the river here when it is warm.', maps:'Confluence Park Denver Colorado'},
+      {name:'Denver Museum of Nature & Science', cost:'Paid', detail:'Right next door to the reception venue in City Park. Dinosaurs, gems and a planetarium \u2014 an easy win if you have kids with you and a rainy morning.', maps:'Denver Museum of Nature and Science'},
+    ],
+    boulder: [
+      {name:'Pearl Street Mall', cost:'Free', detail:'Four car-free blocks of shops, patios and genuinely good street performers. The easiest afternoon in Boulder and great for a group with mixed energy levels.', maps:'Pearl Street Mall Boulder Colorado'},
+      {name:'Chautauqua Park', cost:'Free', detail:'The classic Flatirons view, straight out of a postcard. The meadow loop is short and mostly flat if you do not want a real hike; the Flatirons trails climb hard from there. Go early \u2014 the lot fills.', maps:'Chautauqua Park Boulder Colorado'},
+      {name:'NCAR Mesa Lab', cost:'Free', detail:'A dramatic I. M. Pei building on a mesa above town with free hands-on weather exhibits, big views and easy trails right outside the door. Underrated and almost never crowded.', maps:'NCAR Mesa Laboratory Boulder Colorado'},
+      {name:'Boulder Farmers Market', cost:'Free to browse', detail:'Saturdays through November on 13th Street. Produce, breakfast burritos, live music and the whole town showing up. Perfect Saturday-morning plan the weekend before the wedding.', maps:'Boulder Farmers Market 13th Street Boulder Colorado'},
+      {name:'Boulder Creek Path', cost:'Free', detail:'A flat 5+ mile paved path running right through the middle of town along the creek. Walk it from Pearl Street and you are immediately somewhere pretty.', maps:'Boulder Creek Path Boulder Colorado'},
+      {name:'Dushanbe Teahouse', cost:'Free to admire', detail:'A hand-carved Persian teahouse that was a gift from Boulder\u2019s sister city in Tajikistan. Worth stepping inside just to look up at the ceiling, even if you do not stay for tea.', maps:'Boulder Dushanbe Teahouse'},
+      {name:'Celestial Seasonings tea tour', cost:'About $6', detail:'A 45-minute factory tour, Tuesday through Saturday, ending in the legendary Mint Room. Free samples and a very strange, very memorable smell. Call ahead to confirm times.', maps:'Celestial Seasonings Boulder Colorado'},
+    ],
+    tips: [
+      'Denver to Boulder is about 45 minutes without traffic, and the two are easy to combine in one day.',
+      'Drink water and take the first day slow. A mile of altitude hits most visitors harder than they expect.',
+      'Late September weather swings hard \u2014 70s and sunny at lunch, 40s after dark. Layers, always.',
+      'Check the official visitor calendars below before you travel; Denver and Boulder both have festivals and free events most weekends in the fall.',
+    ],
+  },
   honeymoon: {
     destination:'Costa Rica',
-    publicNote:'After one incredible Colorado wedding, we’re trading the mountains for palm trees and heading to Costa Rica the very next morning for our honeymoon.',
+    publicNote:'After one incredible Colorado wedding, we\u2019re trading the mountains for palm trees and heading to Costa Rica the very next morning for our honeymoon.',
   },
 };
-
 export const tablePlaces = [
   ['Lookout Mountain','Front Range views and one of Colorado’s classic overlooks.'],
   ['Pikes Peak','The famous 14,115-foot peak above Colorado Springs.'],

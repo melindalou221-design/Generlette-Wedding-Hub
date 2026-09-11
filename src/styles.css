@@ -242,8 +242,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .venue-photo-card .image-button img{aspect-ratio:16/9;object-fit:cover}
 .venue-photo-card:nth-child(2) .image-button img{aspect-ratio:auto;object-fit:contain;background:#fff}
 .official-map-card{overflow:hidden}
-.official-map-frame-wrap{margin:18px 0;border:1px solid rgba(10,49,85,.15);border-radius:18px;overflow:hidden;background:#eef3f5}
-.official-map-frame{display:block;width:100%;height:620px;border:0;background:#fff}
+.arrow-map{margin:18px 0;border:2px solid rgba(10,49,85,.18);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 10px 26px rgba(10,49,85,.12)}
+.arrow-map .image-button{display:block;width:100%;padding:0;border:0;background:none}
+.arrow-map .image-button img{display:block;width:100%;height:auto;background:#fff}
+.map-steps{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:10px}
+.map-steps li{display:flex;gap:14px;align-items:flex-start;background:#fffdf7;border:1px solid rgba(10,49,85,.12);border-radius:16px;padding:13px 15px}
+.map-step-badge{flex:0 0 auto;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#f2b134;color:var(--navy);font-weight:900;font-size:1.15rem;border:2px solid var(--navy)}
+.map-step-badge.arrow{background:var(--navy);color:#f2b134}
+.map-steps b{display:block;color:var(--navy);font-size:1.02rem}
+.map-steps span{color:#536270;font-size:.9rem}
 .staff-note{margin-top:18px;padding:14px 16px;border-left:4px solid var(--gold);border-radius:0 14px 14px 0;background:#fff8e8}
 .swan-card{background:linear-gradient(145deg,#edf6fb,#fffdf7);border-color:#bdd5e4}
 .swan-card h3{font-size:1.65rem}
@@ -262,11 +269,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .reception-parking ul{margin-bottom:0}
 @media(max-width:850px){
   .pavilion-visual-grid,.table-place-grid{grid-template-columns:1fr 1fr}
-  .official-map-frame{height:520px}
 }
 @media(max-width:600px){
   .pavilion-visual-grid,.table-place-grid{grid-template-columns:1fr}
-  .official-map-frame{height:440px}
   .story-journey{grid-template-columns:1fr}
   .story-journey>div:not(.card){transform:rotate(90deg)}
 }
@@ -623,3 +628,134 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     letter-spacing:.07em;
   }
 }
+
+/* ==========================================================================
+   Bigger, bolder bottom navigation
+   - Floating dock lifted above the bottom edge so the "Powered by Netlify"
+     badge can never sit on top of the nav buttons.
+   - Larger tap targets, larger icons + labels, clear active state.
+   ========================================================================== */
+:root{
+  --dock-lift: 68px;      /* clearance reserved for the Netlify badge */
+  --dock-height: 88px;
+}
+
+.app-shell{
+  padding-bottom: calc(var(--dock-height) + var(--dock-lift) + env(safe-area-inset-bottom, 0px) + 22px) !important;
+}
+
+.bottom-nav{
+  position: fixed;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  bottom: calc(var(--dock-lift) + env(safe-area-inset-bottom, 0px));
+  width: min(720px, calc(100% - 20px));
+  height: var(--dock-height);
+  padding: 7px 8px !important;
+  gap: 4px;
+  border: 2px solid rgba(10, 49, 85, .14);
+  border-top: 2px solid rgba(10, 49, 85, .14);
+  border-radius: 24px;
+  background: #fffdf7 !important;
+  box-shadow: 0 -2px 0 rgba(242, 177, 52, .9), 0 16px 34px rgba(10, 49, 85, .26);
+  z-index: 900;
+}
+
+.bottom-nav a{
+  gap: 4px;
+  align-content: center;
+  border-radius: 18px;
+  font-size: .95rem;
+  font-weight: 900;
+  letter-spacing: .01em;
+  color: #41505d;
+  line-height: 1.05;
+  transition: background .18s ease, color .18s ease, transform .18s ease;
+}
+
+.bottom-nav a:active{ transform: scale(.95) }
+
+.nav-icon{
+  font-size: 1.72rem;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.bottom-nav a.active{
+  background: var(--navy);
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(10, 49, 85, .3);
+}
+
+.bottom-nav a.active .nav-icon{ color: #f2d89d }
+
+/* Defensive: nudge any platform badge below the floating dock. */
+#netlify-badge,
+.netlify-badge,
+[id^="netlify-"][class*="badge"]{
+  bottom: 6px !important;
+  z-index: 880 !important;
+}
+
+@media (max-width: 380px){
+  .bottom-nav a{ font-size: .84rem; letter-spacing: -.01em }
+  .nav-icon{ font-size: 1.55rem }
+}
+
+@media print{
+  .bottom-nav{ display: none !important }
+  .app-shell{ padding-bottom: 0 !important }
+}
+
+/* Private sheet quick links (DJ playlist, vendor profiles) */
+.sheet-links{background:linear-gradient(150deg,#f2f8fc,#fffdf7);border-color:rgba(10,49,85,.18)}
+.sheet-links .actions{margin-top:12px}
+.sheet-link-notes{margin:14px 0 0;padding-left:18px;font-size:.86rem;color:#536270}
+.sheet-link-notes li{margin:5px 0}
+
+
+/* ---------------------------------------------------------------
+   Keep the platform badge fully clear of the floating dock. The
+   badge is injected by Netlify's HUD script, so rather than rely on
+   styling it, the dock sits in its own lane above the badge and the
+   last nav item never shares horizontal space with it.
+   --------------------------------------------------------------- */
+[class*="netlify"][class*="badge"],
+[id*="netlify"][id*="badge"],
+#netlify-hud,
+.netlify-hud{
+  bottom: 4px !important;
+  z-index: 850 !important;
+}
+
+/* Inline text link (not a button) */
+.inline-link{ color: var(--navy); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--gold); text-decoration-thickness: 2px }
+
+/* --- Wedding party schedule --- */
+.party-day-card{ border-color: rgba(242,177,52,.5) }
+.key-times{ list-style: none; margin: 0; padding: 0; display: grid; gap: 8px }
+.key-times li{ display: flex; align-items: baseline; gap: 14px; background: #fffdf7; border: 1px solid rgba(10,49,85,.12); border-radius: 14px; padding: 11px 14px }
+.key-times b{ flex: 0 0 88px; color: var(--navy); font-size: 1.06rem; font-variant-numeric: tabular-nums }
+.key-times span{ color: #4a5866; font-size: .93rem }
+
+/* --- Stamp hunt how-to-play --- */
+.how-to-play .play-steps{ margin: 10px 0 0; padding-left: 22px; display: grid; gap: 11px }
+.how-to-play .play-steps li{ color: #4a5866; line-height: 1.5 }
+.how-to-play .play-steps b{ color: var(--navy) }
+.play-reminder{ background: linear-gradient(150deg,#f2f8fc,#fffdf7); border-color: rgba(10,49,85,.18); padding: 15px 18px }
+.play-reminder b{ color: var(--navy); display: block; margin-bottom: 3px }
+.play-reminder span{ color: #536270; font-size: .9rem }
+
+/* --- Weekend activities --- */
+.activity-heading{ margin: 30px 0 14px; color: var(--navy); font-size: 1.45rem }
+.activity-grid{ display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)) }
+.activity-card{ background: #fffdf7; border: 1px solid rgba(10,49,85,.14); border-radius: 18px; padding: 17px 19px; box-shadow: 0 8px 20px rgba(10,49,85,.07); display: flex; flex-direction: column; gap: 9px }
+.activity-top{ display: flex; align-items: flex-start; justify-content: space-between; gap: 12px }
+.activity-top b{ color: var(--navy); font-size: 1.1rem; line-height: 1.25 }
+.activity-card p{ margin: 0; color: #4a5866; font-size: .94rem; line-height: 1.55; flex: 1 }
+.activity-card a{ color: var(--navy); font-weight: 800; font-size: .9rem; text-decoration: none; align-self: flex-start }
+.activity-card a:hover{ text-decoration: underline }
+.cost-pill{ flex: 0 0 auto; font-size: .72rem; font-weight: 900; letter-spacing: .04em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; white-space: nowrap }
+.cost-pill.free{ background: rgba(242,177,52,.22); color: #7a5510; border: 1px solid rgba(242,177,52,.55) }
+.cost-pill.paid{ background: rgba(10,49,85,.08); color: var(--navy); border: 1px solid rgba(10,49,85,.2) }
