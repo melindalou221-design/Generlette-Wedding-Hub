@@ -759,3 +759,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .cost-pill{ flex: 0 0 auto; font-size: .72rem; font-weight: 900; letter-spacing: .04em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; white-space: nowrap }
 .cost-pill.free{ background: rgba(242,177,52,.22); color: #7a5510; border: 1px solid rgba(242,177,52,.55) }
 .cost-pill.paid{ background: rgba(10,49,85,.08); color: var(--navy); border: 1px solid rgba(10,49,85,.2) }
+
+/* --- Happening that week (concerts, games, festivals) --- */
+.happening-day .badge{ margin-bottom: 4px }
+.happening-day h3{ margin: 0 0 4px }
+.happening-day .private-timeline time{ white-space: nowrap }
+.happening-day .private-timeline i{ font-style: normal; font-weight: 700; color: var(--navy) }
+.happening-warn{ margin: 10px 0 0; padding: 13px 15px; border-radius: 14px; background: #fff8e8; border: 1px solid rgba(242,177,52,.55); color: #5c4a22; font-size: .94rem; line-height: 1.55 }

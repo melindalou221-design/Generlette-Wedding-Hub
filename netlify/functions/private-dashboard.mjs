@@ -175,7 +175,8 @@ const defaultData = {
     summary:"Nessa Dover · Peaks and Promises Photography · ceremony coordination + content creation. Sunrise Amphitheater reservation: 2:00–5:00 PM; ceremony starts 3:30 PM.",
     timeline:[
       {time:"1:50 PM",item:"Nessa staged nearby",note:"Venue rental access starts at 2:00."},
-      {time:"2:00 PM",item:"Venue access + ceremony setup",note:"Signs, reserved seating, florals, roses, Daughter charms, ceremony supplies."},
+      {time:"2:00 PM",item:"Venue access + ceremony setup",note:"Welcome sign, bubbles, reserved seating, florals, the two altar roses, Daughter charms and ceremony supplies."},
+      {time:"2:10 PM",item:"Altar + front-of-house set",note:"Place the two roses at the altar for the mothers’ rose presentation. Set up the welcome sign at the front and put the bubbles out at the front where guests can pick them up on the way in."},
       {time:"2:20 PM",item:"Vio + Gio arrival / music check",note:"Confirm all processional song transitions and recessional cue."},
       {time:"2:35 PM",item:"Photo/content + setup check",note:"Confirm photographer/content positions do not block guest sightlines."},
       {time:"2:45 PM",item:"Guest arrival",note:"Parking is limited; keep guest path clear."},
@@ -225,7 +226,9 @@ const defaultData = {
     setup:[
       "No open flames or generators at Sunrise Amphitheater.",
       "Confirm $5 OSMP permit / ParkMobile zone 24700 parking messaging is visible.",
-      "Stage roses for mothers where they can be reached without crossing the ceremony space.",
+      "Place the two roses at the altar so Cory and Melinda can pick them up for the mothers’ rose presentation without crossing the ceremony space.",
+      "Set up the welcome sign at the front where guests arrive.",
+      "Set up the bubbles at the front so guests can grab them on the way in — count them out and keep them together rather than scattered along the seating.",
       "Stage both Daughter Pandora charms and any presentation boxes before guests arrive.",
       "Have vows, rings, tissues, water and marriage-license plan accounted for.",
       "Pit-latrine restrooms only; no changing rooms.",
@@ -242,10 +245,12 @@ const defaultData = {
   },
   reception: {
     title:"Reception Coordinator · Tammy Murrie",
-    summary:"Tammy Murrie · Colorado Acclaimed Weddings · reception setup/cleanup. Early arrivals may enter around 4:45 PM; official cocktail hour 5:00 PM; entrance 6:00 PM; first song 6:05 PM; dinner 6:20 PM.",
+    summary:"Tammy Murrie · Colorado Acclaimed Weddings · reception setup/cleanup. Vendor arrival deadlines: bartender 2:00 PM, DJ 3:30 PM, magician 4:30 PM. Early guest arrivals may enter around 4:45 PM; official cocktail hour 5:00 PM; entrance 6:00 PM; first song 6:05 PM; dinner 6:20 PM.",
     timeline:[
       {time:"2:00 PM",item:"Reception setup underway",note:"Guest tables, sweetheart table, welcome area, cake/dessert, bar, buffet, kids area, signs and lighting. Alfredo Junior (bartender) also arrives at 2:00 PM to build the bar."},
       {time:"2:00 PM",item:"Bartender arrives",note:"Alfredo Junior · 2:00 PM. Show him the bar location, ice/water access and the Something Blue / Something Old signage."},
+      {time:"3:30 PM",item:"DJ arrives",note:"Michael Lancaster · Colorado DJ — arrival deadline is 3:30 PM. Show him the dance-floor/DJ position on the final Pavilion layout, power and the microphone plan, then let him build sound and the 12 uplights so setup is finished before the 4:30 PM room check."},
+      {time:"4:30 PM",item:"Magician arrives",note:"Trust Me I’m a Magician (Westminster, CO) — arrival deadline is 4:30 PM. Walk him out to Sopris Garden, west of the Pavilion, so he is staged and ready before the 5:00 PM cocktail hour. Keep him out of the guest arrival path and keep the act a surprise."},
       {time:"4:30 PM",item:"Full-room check",note:"Table signs, guestbook, camera/audio-message links, candles, bar signage and guest-memory prompts."},
       {time:"4:40–4:50 PM",item:"Cocktail hors d’oeuvres arrive",note:"CONFIRMED. Receive and stage on the Garden Side high-top tables before guests arrive."},
       {time:"4:45 PM",item:"Early guest arrival window",note:"Open if setup/bar team is ready."},
@@ -277,6 +282,7 @@ const defaultData = {
       "Ferril Lake / swan boats: Adventure Hub rentals are near the Pavilion. Wedding-day fall hours are listed as 3:30–8:00 PM, last rental 7:00 PM; direct guests to the official page for same-day status and weather closures.",
       "Sopris Garden is west of City Park Pavilion. During cocktail hour, direct interested guests there for the planned magic surprise without overexplaining the performer or routine.",
       "Confirm kids table, dessert area, guestbook, and especially the disposable-camera and Messages of Love links/QRs are visible and prominent.",
+      "Vendor arrival deadlines to hold people to: bartender 2:00 PM, DJ 3:30 PM, magician 4:30 PM. If either the DJ or the magician has not arrived by his deadline, call him immediately rather than waiting.",
       "Confirm DJ has the private couple-song playback/microphone plan before guests arrive.",
       "Stage glow sticks before the final hour without announcing them too early.",
       "Decor will be packed in labeled boxes by setup zone. Suggested labels: Sweetheart Table; Welcome Area; Guest Tables; Cake + Dessert; Bar + Signs; Buffet; Kids Table; Emergency/Extras.",
@@ -330,9 +336,7 @@ const defaultData = {
         {label:"FINAL · Sweetheart table — build it exactly like this",file:"decor-sweetheart-final.jpg",path:"/images/decor-sweetheart-final.webp",status:"FINAL"},
         {label:"FINAL · Guest table setting — build every table like this",file:"decor-guest-seating-final.jpg",path:"/images/decor-guest-seating-final.webp",status:"FINAL"},
         {label:"FINAL · Full City Park Pavilion layout + seating chart",file:"city-park-pavilion-seating-chart.jpg",path:"/images/city-park-pavilion-seating-chart.webp",status:"FINAL"},
-        {label:"Earlier sweetheart-table mockup (superseded by the final photo)",file:"decor-sweetheart-table.png",path:"/images/decor-sweetheart-table.webp",status:"Reference only"},
-        {label:"Reception vision + guest-table mood reference",file:"decor-reception-vision.jpg",path:"/images/decor-reception-vision.webp",status:"Reference only"},
-        {label:"Reception shopping list",file:"decor-reception-shopping-list.jpg",path:"/images/decor-reception-shopping-list.webp",status:"Reference only"}
+        {label:"Earlier sweetheart-table mockup (superseded by the final photo)",file:"decor-sweetheart-table.png",path:"/images/decor-sweetheart-table.webp",status:"Reference only"}
       ]
     },
     food:[
@@ -345,8 +349,8 @@ const defaultData = {
     vendors:[
       {role:"Reception Coordinator / Setup / Cleanup",name:"Tammy Murrie · Colorado Acclaimed Weddings",arrival:"Setup before guests",status:"Confirmed",contactKey:"tammy"},
       {role:"Bartender",name:"Alfredo Junior",arrival:"2:00 PM",status:"Confirmed",contactKey:"bartender"},
-      {role:"DJ / MC",name:"Michael Lancaster · Colorado DJ",arrival:"Setup target about 1.5 hrs before reception program",status:"Confirmed",contactKey:"dj"},
-      {role:"Magician",name:"Trust Me I'm a Magician",arrival:"Cocktail hour · staged at Sopris Garden by 5:00 PM",status:"Confirmed",contactKey:"magician",link:"https://www.gigsalad.com/trust_me_im_a_magician_westminster",linkLabel:"Open GigSalad profile",notes:"Strolling close-up magic during cocktail hour at Sopris Garden. Based in Westminster, CO. Booked through GigSalad — use the GigSalad profile/messages for day-of contact until a direct number is added. Keep the act a surprise for guests."},
+      {role:"DJ / MC",name:"Michael Lancaster · Colorado DJ",arrival:"Arrives by 3:30 PM",status:"Confirmed",contactKey:"dj",notes:"Arrival deadline 3:30 PM so sound and the 12 uplights are finished before the 4:30 PM room check."},
+      {role:"Magician",name:"Trust Me I'm a Magician",arrival:"Arrives by 4:30 PM · staged at Sopris Garden by 5:00 PM",status:"Confirmed",contactKey:"magician",link:"https://www.gigsalad.com/trust_me_im_a_magician_westminster",linkLabel:"Open GigSalad profile",notes:"Strolling close-up magic during cocktail hour at Sopris Garden. Based in Westminster, CO. Booked through GigSalad — use the GigSalad profile/messages for day-of contact until a direct number is added. Keep the act a surprise for guests."},
       {role:"Photographer",name:"Olivia M. Photography / O.M Creative LLC",arrival:"Per final 5-hour coverage",status:"Confirmed",contactKey:"photographer"},
       {role:"Hair",name:"Sara D Hair",arrival:"Bride prep",status:"Confirmed",contactKey:"hair"},
       {role:"Makeup",name:"Christian",arrival:"Confirm final start time",status:"Confirmed",contactKey:"makeup"},
@@ -359,10 +363,10 @@ const defaultData = {
     title:"Print Sheet · DJ / MC",
     summary:"Reception cue sheet for Michael Lancaster / Colorado DJ. Current reception timing supersedes the older contract’s obsolete ceremony/start times. Wedding-party entrance, couple entrance and first-dance titles stay on the DJ sheet only and must not appear on guest pages or coordinator sheets. Cake-cutting music also stays private. The couple’s reception playlist is linked below.",
     links:[
-      {label:"Open the Spotify reception playlist",url:"https://open.spotify.com/playlist/5m91KD84Ju9VsD3LyuIYvv?si=f31d585af8534d88&pt=140d8e2f34d676b4803e6441f7aee342",note:"Cory & Melinda’s reception playlist — use it for cocktail hour, dinner and open dancing. Named cue songs below always take priority over playlist order."},
-      {label:"Trust Me I’m a Magician",url:"https://www.gigsalad.com/trust_me_im_a_magician_westminster",secondary:true,note:"Cocktail-hour magician at Sopris Garden — keep music conversational so the strolling magic can be heard."}
+      {label:"Open the Spotify reception playlist",url:"https://open.spotify.com/playlist/5m91KD84Ju9VsD3LyuIYvv?si=f31d585af8534d88&pt=140d8e2f34d676b4803e6441f7aee342",note:"Cory & Melinda’s reception playlist — use it for cocktail hour, dinner and open dancing. Named cue songs below always take priority over playlist order."}
     ],
     timeline:[
+      {time:"3:30 PM",item:"Arrive + load in at City Park Pavilion",note:"Arrival deadline agreed with Tammy is 3:30 PM. Check in with her for the DJ/dance-floor position, power and the microphone plan."},
       {time:"Before 4:30 PM",item:"Sound + uplight setup complete",note:"Contract provides DJ/MC, sound equipment, microphones and 12 uplights; setup term was 1.5 hours before event start."},
       {time:"5:00 PM",item:"Cocktail hour music",note:"Keep volume conversational."},
       {time:"5:50 PM",item:"Line up wedding party / confirm names",note:"Tammy coordinates physical lineup; DJ confirms pronunciation/order."},

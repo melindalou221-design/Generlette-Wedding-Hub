@@ -122,20 +122,20 @@ function WeddingPartySchedule(){return <><PageHero title="Wedding Party Schedule
   <Card className="paper-card">
     <span className="badge">FOR THE WEDDING PARTY + FAMILY</span>
     <h3>The two days that matter</h3>
-    <p>This page is for the people standing up with us and the immediate family. Guests only need the <Link to="/schedule" className="inline-link">wedding-day schedule</Link> \u2014 you need a little more.</p>
+    <p>This page is for the people standing up with us and the immediate family. Guests only need the <Link to="/schedule" className="inline-link">wedding-day schedule</Link> — you need a little more.</p>
     <p className="tiny">Getting-ready and rehearsal-dinner addresses are texted directly to the wedding party rather than posted here.</p>
   </Card>
 
   <Card>
-    <span className="badge">SUNDAY \u00b7 SEPTEMBER 27 \u00b7 REHEARSAL</span>
+    <span className="badge">SUNDAY · SEPTEMBER 27 · REHEARSAL</span>
     <h3>Rehearsal + rehearsal dinner</h3>
     <p>If you are in the ceremony, this evening is for you.</p>
     <div className="private-timeline public-weekend">{weekend.rehearsal.map(x=><div key={x.time}><time>{x.time}</time><div><b>{x.title}</b><span>{x.note}</span></div></div>)}</div>
   </Card>
 
   <Card className="party-day-card">
-    <span className="badge">MONDAY \u00b7 SEPTEMBER 28 \u00b7 WEDDING DAY</span>
-    <h3>Hair and makeup at 9:30 AM \u2014 then the mountain</h3>
+    <span className="badge">MONDAY · SEPTEMBER 28 · WEDDING DAY</span>
+    <h3>Hair and makeup at 9:30 AM — then the mountain</h3>
     <p>Two times to burn into your memory: <b>9:30 AM</b> for hair and makeup, and <b>2:45 PM</b> at Sunrise Amphitheater. Everything else has some give in it. Those two do not.</p>
     <div className="private-timeline public-weekend">{weekend.partyDay.map(x=><div key={x.time+x.title}><time>{x.time}</time><div><b>{x.title}</b><span>{x.note}</span></div></div>)}</div>
   </Card>
@@ -160,21 +160,41 @@ function WeddingPartySchedule(){return <><PageHero title="Wedding Party Schedule
     </Card>
   </div>
 
-  <Card className="honeymoon-banner"><span className="badge">AFTER THE WEDDING</span><h3>Next stop: Costa Rica \U0001f334</h3><p>{weekend.honeymoon.publicNote}</p><p className="tiny">We\u2019re keeping exact travel logistics private \u2014 but yes, it is a very quick turnaround after the glow-stick send-off.</p></Card>
+  <Card className="happening-day">
+    <span className="badge">WHAT ELSE IS GOING ON IN DENVER</span>
+    <h3>Two nights where traffic will fight you</h3>
+    <ul>
+      <li><b>Sunday the 27th — rehearsal night.</b> The Broncos host the Rams on Sunday Night Football at 6:20 PM, so downtown Denver and I-25 will be slow from about 4:00 PM. We are up on Flagstaff Mountain, but leave extra time if your route touches Denver.</li>
+      <li><b>Monday the 28th — wedding night.</b> There is an arena concert at Ball Arena at 6:00 PM, a few miles from City Park Pavilion. Add fifteen minutes coming down from the mountain to the reception.</li>
+    </ul>
+    <div className="actions"><AppLink to="/weekend-activities" className="secondary">See everything happening that week</AppLink></div>
+  </Card>
+
+  <Card className="honeymoon-banner"><span className="badge">AFTER THE WEDDING</span><h3>Next stop: Costa Rica 🌴</h3><p>{weekend.honeymoon.publicNote}</p><p className="tiny">We’re keeping exact travel logistics private — but yes, it is a very quick turnaround after the glow-stick send-off.</p></Card>
 
   <Card><h3>Need the rest of the details?</h3><div className="actions"><AppLink to="/schedule">Wedding-day schedule</AppLink><AppLink to="/directions" className="secondary">Directions</AppLink><AppLink to="/weekend-activities" className="secondary">Weekend activities</AppLink></div></Card>
 </section></>}
 
-function WeekendActivities(){const a=weekend.activities;const maps=q=>`https://maps.google.com/?q=${encodeURIComponent(q)}`;
-  const list=items=><div className="activity-grid">{items.map(x=><article className="activity-card" key={x.name}><div className="activity-top"><b>{x.name}</b><span className={'cost-pill '+(x.cost==='Paid'?'paid':'free')}>{x.cost}</span></div><p>{x.detail}</p><a href={maps(x.maps)} target="_blank" rel="noreferrer">Open in Maps \u2192</a></article>)}</div>;
+function WeekendActivities(){const a=weekend.activities;const h=weekend.happening;const maps=q=>`https://maps.google.com/?q=${encodeURIComponent(q)}`;
+  const list=items=><div className="activity-grid">{items.map(x=><article className="activity-card" key={x.name}><div className="activity-top"><b>{x.name}</b><span className={'cost-pill '+(x.cost==='Paid'?'paid':'free')}>{x.cost}</span></div><p>{x.detail}</p><a href={maps(x.maps)} target="_blank" rel="noreferrer">Open in Maps →</a></article>)}</div>;
   return <><PageHero title="Weekend Activities" sub="Free and fun things to do in Denver and Boulder while you are here"/><section className="page">
     <Card className="paper-card"><span className="badge">FOR OUR OUT-OF-TOWN PEOPLE</span><h3>Make a trip out of it</h3><p>{a.intro}</p></Card>
 
-    <h3 className="activity-heading">Denver \U0001f3d9\ufe0f</h3>
+    <h3 className="activity-heading">Denver 🏙️</h3>
     {list(a.denver)}
 
-    <h3 className="activity-heading">Boulder \U0001f3d4\ufe0f</h3>
+    <h3 className="activity-heading">Boulder 🏔️</h3>
     {list(a.boulder)}
+
+    <h3 className="activity-heading">Happening while you are here 🎟️</h3>
+    <Card className="paper-card"><span className="badge">SEPTEMBER 25 – 29</span><h3>Concerts, games and festivals that week</h3><p>{h.intro}</p></Card>
+    {h.days.map(d=><Card key={d.label} className="happening-day">
+      <span className="badge">{d.label}</span>
+      <h3>{d.heading}</h3>
+      {d.warn&&<p className="happening-warn">{d.warn}</p>}
+      <div className="private-timeline public-weekend">{d.events.map(e=><div key={e.name}><time>{e.time}</time><div><b>{e.name}</b><span><i>{e.where}</i> — {e.detail}</span></div></div>)}</div>
+    </Card>)}
+    <Card><span className="badge">ALSO WORTH KNOWING</span><h3>A few caveats on that list</h3><ul>{h.notes.map(x=><li key={x}>{x}</li>)}</ul><div className="actions">{h.links.map(l=><External key={l.url} href={l.url} className="secondary">{l.label}</External>)}</div></Card>
 
     <Card><span className="badge">BEFORE YOU GO</span><h3>A few practical notes</h3><ul>{a.tips.map(x=><li key={x}>{x}</li>)}</ul><div className="actions"><External href="https://www.denver.org/things-to-do/">Denver event calendar</External><External href="https://www.bouldercoloradousa.com/events/" className="secondary">Boulder event calendar</External></div></Card>
 
@@ -236,7 +256,7 @@ function CityParkPavilionGuide(){
         <li><span className="map-step-badge">1</span><div><b>Enter where the map says “Enter Here”</b><span>Come in on the east side of the park by the Museum of Nature &amp; Science, next to the Museum Parking Garage off Colorado Blvd.</span></div></li>
         <li><span className="map-step-badge arrow">➜</span><div><b>Follow the red arrows west</b><span>Stay on N Lake Roadway and curve around the top of Ferril Lake. The arrows on the map trace the exact route.</span></div></li>
         <li><span className="map-step-badge">2</span><div><b>Park at the “Guest Parking” marker</b><span>It is right beside the Pavilion. First come, first served.</span></div></li>
-        <li><span className="map-step-badge">\u2665</span><div><b>City Park Pavilion = “Wedding Reception Venue”</b><span>The circled building on the west side of Ferril Lake \u2014 2001 Steele Street, Denver.</span></div></li>
+        <li><span className="map-step-badge">♥</span><div><b>City Park Pavilion = “Wedding Reception Venue”</b><span>The circled building on the west side of Ferril Lake — 2001 Steele Street, Denver.</span></div></li>
       </ol>
       <div className="actions"><External href={`https://maps.google.com/?q=${encodeURIComponent(wedding.reception.mapsQuery)}`}>Navigate with Google Maps</External><External href={wedding.links.cityParkParkingPdf} className="secondary">Open official parking map</External></div>
       <p className="staff-note"><b>Overnight safety note:</b> We were advised by venue staff that guests may leave a vehicle in the Pavilion lot overnight if needed rather than drive after drinking. Please park legally and plan to retrieve it the following day.</p>
@@ -251,14 +271,14 @@ function VenueCard({kind,data}){const q=encodeURIComponent(data.mapsQuery);retur
 function ParkingCard(){return <Card className="parking"><span className="badge">FLAGSTAFF MOUNTAIN PARKING</span><h3>Pay before you head up</h3><p>Vehicles <b>not registered in Boulder County</b> need a <b>$5 daily OSMP permit</b>.</p><ul><li>ParkMobile zone: <b>24700</b></li><li>Pay in the ParkMobile app/web, or at self-service stations with exact cash/check.</li><li>Sunrise Amphitheater has about <b>10 regular + 3 ADA</b> spaces; parking is not guaranteed.</li><li>Flagstaff Road has a <b>30-foot vehicle-length limit</b>; shuttle parking is not guaranteed.</li><li>Cell service can be spotty, so paying before driving up is smart. Carpooling is strongly encouraged.</li></ul><div className="actions"><External href={wedding.links.parkMobile}>Open ParkMobile</External><External href={wedding.links.boulderParking} className="secondary">Official Boulder info</External></div></Card>}
 
 function Passport(){const [name,setName]=useState(()=>localStorage.getItem('wg-name')||'');const [stamps,setStamps]=useState(()=>JSON.parse(localStorage.getItem('wg-stamps')||'[]'));const [draft,setDraft]=useState(name);useEffect(()=>{localStorage.setItem('wg-stamps',JSON.stringify(stamps))},[stamps]);const toggle=i=>setStamps(s=>s.includes(i)?s.filter(x=>x!==i):[...s,i]);
-  if(!name)return <><PageHero title="Wedding Stamp Hunt \U0001f3af" sub="A little game to play during the wedding \u2014 collect all 8 stamps"/><section className="page">
+  if(!name)return <><PageHero title="Wedding Stamp Hunt 🎯" sub="A little game to play during the wedding — collect all 8 stamps"/><section className="page">
     <Card className="paper-card how-to-play">
       <span className="badge">HOW TO PLAY</span>
-      <h3>It\u2019s a scavenger hunt you play during the day</h3>
+      <h3>It’s a scavenger hunt you play during the day</h3>
       <ol className="play-steps">
-        <li><b>Put your name in below.</b> That\u2019s the whole signup \u2014 nothing is sent anywhere, it just saves on your own phone.</li>
-        <li><b>You\u2019ll get a card with 8 stamps</b>, each one a little thing to do at the wedding: dance, leave us a message, take a photo, meet someone new.</li>
-        <li><b>Did it? Tap the stamp.</b> Tap it again if you tapped it by accident. You are on the honour system \u2014 we are not checking.</li>
+        <li><b>Put your name in below.</b> That’s the whole signup — nothing is sent anywhere, it just saves on your own phone.</li>
+        <li><b>You’ll get a card with 8 stamps</b>, each one a little thing to do at the wedding: dance, leave us a message, take a photo, meet someone new.</li>
+        <li><b>Did it? Tap the stamp.</b> Tap it again if you tapped it by accident. You are on the honour system — we are not checking.</li>
         <li><b>Stamps unlock things</b> as you go: a hidden page about our girls at 4, a secret about us at 6, and what the late-night snack is at 7.</li>
         <li><b>Fill all 8</b> and show Cory or Melinda for a high-five. That is the prize. We never said it was a big prize.</li>
       </ol>
@@ -340,8 +360,8 @@ function VendorDirectory({vendors}){if(!vendors?.length)return null;const groups
 
 function PrivateSection({data}){if(!data)return <Card><h3>Section not configured</h3></Card>;return <div className="print-sheet"><div className="print-actions"><button className="button secondary" onClick={()=>window.print()}>Print / Save PDF</button></div><PrivateQuickCue timeline={data.timeline}/>{data.summary&&<Card className="paper-card"><p>{data.summary}</p></Card>}{data.links&&<Card className="sheet-links"><span className="badge">LINKS</span><h3>Open these on the day</h3><div className="actions">{data.links.map(l=><External key={l.url} href={l.url} className={l.secondary?'secondary':''}>{l.label}</External>)}</div><ul className="sheet-link-notes">{data.links.filter(l=>l.note).map(l=><li key={l.url}>{l.note}</li>)}</ul></Card>}{data.timeline&&<Card><h3>Timeline</h3><div className="private-timeline">{data.timeline.map(x=><div key={x.time+x.item}><time>{x.time}</time><div><b>{x.item}</b>{x.note&&<span>{x.note}</span>}</div></div>)}</div></Card>}{data.processional&&<Card><h3>Processional order</h3><ol className="pretty-list">{data.processional.map(x=><li key={x}>{x}</li>)}</ol></Card>}{data.music&&<Card><h3>Music cue sheet</h3><div className="cue-table">{data.music.map(x=><div key={x.cue}><b>{x.cue}</b><span>{x.song}</span><small>{x.who}</small></div>)}</div></Card>}{data.ceremonyOrder&&<Card><h3>Ceremony order</h3><ol className="pretty-list">{data.ceremonyOrder.map(x=><li key={x}>{x}</li>)}</ol></Card>}{data.introductions&&<Card><h3>Grand entrance introduction order</h3><ol className="pretty-list introduction-list">{data.introductions.map(x=><li key={x}>{x}</li>)}</ol></Card>}{data.speaking&&<Card className="officiant-card"><h3>Officiant speaking outline</h3><div className="speaking-sheet">{data.speaking.map(x=><section key={x.heading}><h4>{x.heading}</h4><p>{x.text}</p></section>)}</div></Card>}{data.decor&&<DecorBinder decor={data.decor}/>} {data.food&&<Card><h3>Food + delivery plan</h3>{data.food.map(x=><div className="vendor-row" key={x.item}><div><b>{x.item}</b><span>{x.detail}</span></div><div><span>{x.status}</span></div></div>)}</Card>}{data.florals&&<FloralBinder florals={data.florals}/>} {data.setup&&<Card><h3>Setup + reminders</h3><ul>{data.setup.map(x=><li key={x}>{x}</li>)}</ul></Card>}{data.vendors&&<VendorDirectory vendors={data.vendors}/>}{data.actionItems&&<Card><h3>Vendor / planning action items</h3><ul>{data.actionItems.map(x=><li key={x}>{x}</li>)}</ul></Card>}{data.payments&&<Card className="money-due"><h3>Money due / payment check</h3><ul>{data.payments.map(x=><li key={x}>{x}</li>)}</ul></Card>}{data.reminders&&<Card><h3>Reminders</h3><ul>{data.reminders.map(x=><li key={x}>{x}</li>)}</ul></Card>}</div>}
 
-function DecorBinder({decor}){const groups=[['Guest Tables',decor.guestTables],['Sweetheart Table',decor.sweetheart],['Welcome Area',decor.welcome],['Cake Table',decor.cake],['Buffet / Food Tables',decor.buffet]].filter(x=>x[1]);return <Card><h3>Reception décor setup binder</h3><div className="decor-grid">{groups.map(([title,items])=><section key={title}><h4>{title}</h4><ul>{items.map(x=><li key={x}>{x}</li>)}</ul></section>)}</div>{decor.inspirationImages&&<><h4>Current wedding-sign visual references</h4><div className="binder-images">{decor.inspirationImages.map(x=><figure key={x.path}><img src={x.path} alt={x.label} loading="lazy" decoding="async"/><figcaption>{x.label}</figcaption></figure>)}</div></>}{decor.visualAssets&&<><h4>Final setup photos + room layout</h4><div className="asset-grid">{decor.visualAssets.map(x=><VisualAsset asset={x} key={x.file}/>)}</div><p className="tiny">The images marked <b>FINAL</b> are the controlling references — build the sweetheart table and every guest table to match them, and use the full Pavilion layout + seating chart for table placement. The remaining images are earlier mood/shopping references only.</p></>}</Card>}
-function VisualAsset({asset}){return <div className="asset-slot">{asset.path?<ImageLightbox src={asset.path} alt={asset.label} className="asset-lightbox"/>:null}<b>{asset.label}</b><code>{asset.file}</code>{!asset.path&&asset.status&&<span>{asset.status}</span>}</div>}
+function DecorBinder({decor}){const groups=[['Guest Tables',decor.guestTables],['Sweetheart Table',decor.sweetheart],['Welcome Area',decor.welcome],['Cake Table',decor.cake],['Buffet / Food Tables',decor.buffet]].filter(x=>x[1]);return <Card><h3>Reception décor setup binder</h3><div className="decor-grid">{groups.map(([title,items])=><section key={title}><h4>{title}</h4><ul>{items.map(x=><li key={x}>{x}</li>)}</ul></section>)}</div>{decor.inspirationImages&&<><h4>Current wedding-sign visual references</h4><div className="binder-images">{decor.inspirationImages.map(x=><figure key={x.path}><img src={x.path} alt={x.label} loading="lazy" decoding="async"/><figcaption>{x.label}</figcaption></figure>)}</div></>}{decor.visualAssets&&<><h4>Final setup photos + room layout</h4><div className="asset-grid">{decor.visualAssets.map(x=><VisualAsset asset={x} key={x.file}/>)}</div><p className="tiny">The images marked <b>FINAL</b> are the controlling references — build the sweetheart table and every guest table to match them, and use the full Pavilion layout + seating chart for table placement. Anything marked <b>Reference only</b> is an earlier mockup that has been superseded.</p></>}</Card>}
+function VisualAsset({asset}){return <div className="asset-slot">{asset.path?<ImageLightbox src={asset.path} alt={asset.label} className="asset-lightbox"/>:null}<b>{asset.label}</b>{!asset.path&&asset.status&&<span>{asset.status}</span>}</div>}
 
 
 function FloralBinder({florals}){return <><Card><h3>{florals.title}</h3><p>{florals.sourceNote}</p>{florals.visualAssets&&<div className="asset-grid">{florals.visualAssets.map(x=><VisualAsset asset={x} key={x.file}/>)}</div>}</Card><Card><h3>Bridal bouquet ordering guide</h3><div className="order-table">{florals.bouquetOrder.map(([f,n,s])=><div key={f}><b>{f}</b><span>{n}</span><small>{s}</small></div>)}</div></Card><Card><h3>Prep + how-to</h3><h4>Flower prep</h4><ol>{florals.prep.map(x=><li key={x}>{x}</li>)}</ol><h4>Assembly</h4><ol>{florals.assembly.map(x=><li key={x}>{x}</li>)}</ol></Card><Card><h3>Boutonnières + corsages / wearables</h3><ul>{florals.wearables.map(x=><li key={x}>{x}</li>)}</ul></Card></>}
