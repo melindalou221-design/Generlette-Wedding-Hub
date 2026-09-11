@@ -766,3 +766,70 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .happening-day .private-timeline time{ white-space: nowrap }
 .happening-day .private-timeline i{ font-style: normal; font-weight: 700; color: var(--navy) }
 .happening-warn{ margin: 10px 0 0; padding: 13px 15px; border-radius: 14px; background: #fff8e8; border: 1px solid rgba(242,177,52,.55); color: #5c4a22; font-size: .94rem; line-height: 1.55 }
+
+/* ---------------------------------------------------------------------------
+   Engraved icon system (replaces emoji)
+   Single-weight line drawings that inherit the surrounding ink colour.
+   Stroke weight is tuned per size so the lines stay crisp, never spindly.
+--------------------------------------------------------------------------- */
+.icon{ width: 1.05em; height: 1.05em; display: inline-block; vertical-align: -.16em; flex: 0 0 auto; overflow: visible; stroke-width: 1.8 }
+
+/* Bottom navigation */
+.nav-icon{ display: grid; place-items: center; color: var(--gold); line-height: 1 }
+.nav-icon .icon{ width: 23px; height: 23px; vertical-align: 0; stroke-width: 1.55 }
+.bottom-nav a.active .nav-icon{ color: var(--navy) }
+.bottom-nav a.active .nav-icon .icon{ stroke-width: 1.9 }
+
+/* Header + menu chrome */
+.header-action .icon{ width: 1em; height: 1em; stroke-width: 2 }
+.menu-action .icon{ margin-left: 3px }
+.team-menu-link .icon{ width: .95em; height: .95em; color: var(--gold); stroke-width: 1.9 }
+.text-size-toggle .icon{ color: var(--gold) }
+.faq-toggle{ display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; border: 1px solid rgba(181,138,61,.5); color: var(--gold); flex: 0 0 auto }
+.faq-toggle .icon{ width: 14px; height: 14px; vertical-align: 0; stroke-width: 2.4 }
+.faq-item[open] .faq-toggle{ background: var(--navy); border-color: var(--navy); color: #f3d89d }
+.faq-item[open] .faq-toggle .icon{ transform: rotate(45deg) }
+
+/* Gold flourish in place of the old heart rule */
+.gold-heart,.mini-hero>span.hero-flourish{ display: block; color: var(--gold) }
+.gold-heart .icon,.hero-flourish .icon{ width: 100px; height: 16px; vertical-align: 0; stroke-width: 1.2 }
+.letter .gold-heart .icon{ width: 118px }
+
+/* Large action-tile icons: folding camera, rotary telephone, sealed letter */
+.memory-icon{ display: block; line-height: 1; margin-bottom: 14px }
+.memory-icon .icon{ width: 46px; height: 46px; vertical-align: 0; stroke-width: 1.2 }
+.feature-btn.camera .memory-icon{ color: #f3d89d }
+.feature-btn.phone .memory-icon{ color: var(--navy) }
+.feature-btn.note .memory-icon{ color: var(--gold) }
+
+/* Icons set beside headings */
+h1 .icon,h2 .icon,h3 .icon,h4 .icon,b .icon,strong .icon{ color: var(--gold) }
+.title-icon{ width: 1.2em; height: 1.2em; margin-right: .36em; vertical-align: -.2em; stroke-width: 1.6 }
+.activity-heading{ display: flex; align-items: center; gap: 11px }
+.activity-heading .icon{ width: 1.1em; height: 1.1em; color: var(--gold); vertical-align: 0; stroke-width: 1.45 }
+.icon-row{ display: flex; gap: 15px; align-items: center; color: var(--gold); margin: 12px 0 0 }
+.icon-row .icon{ width: 25px; height: 25px; vertical-align: 0; stroke-width: 1.35 }
+
+/* Checklists: stamp hunt + junior explorers */
+.stamp span,.explorer-list button span{ display: grid; place-items: center; font-size: 1rem }
+.stamp span .icon,.explorer-list button span .icon{ width: 25px; height: 25px; vertical-align: 0; color: #98a7b4; stroke-width: 1.45 }
+.stamp.earned span .icon{ color: var(--gold); stroke-width: 1.7 }
+.explorer-list button.done span .icon{ color: #4f7d5d; stroke-width: 1.7 }
+.explorer-badge .icon{ width: 1.5em; height: 1.5em; vertical-align: -.4em; margin-right: .34em; color: var(--gold); stroke-width: 1.5 }
+.complete .icon{ width: 1.3em; height: 1.3em; vertical-align: -.24em; color: #f3d89d; stroke-width: 1.3 }
+
+/* Map step badges + family traits */
+.map-step-badge .icon{ width: 21px; height: 21px; vertical-align: 0; stroke-width: 2 }
+.trait-row{ display: flex; align-items: center; flex-wrap: wrap; gap: 8px }
+.trait-row .icon{ width: 1.35em; height: 1.35em; color: var(--gold); vertical-align: 0; stroke-width: 1.5 }
+.trait-row span{ color: rgba(23,39,56,.42) }
+
+/* Buttons + countdown */
+.button .icon{ width: 1.1em; height: 1.1em }
+.countdown .icon{ width: 1.05em; height: 1.05em; color: #f3d89d }
+
+@media(max-width:720px){
+  .memory-icon .icon{ width: 40px; height: 40px; stroke-width: 1.3 }
+  .gold-heart .icon,.hero-flourish .icon{ width: 82px }
+  .letter .gold-heart .icon{ width: 96px }
+}
