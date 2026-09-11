@@ -63,3 +63,11 @@ This package was rebuilt as a merge of the earlier Wedding Hub versions rather t
 - TypeScript parser syntax check completed successfully for App.jsx, data.js and main.jsx.
 - Node syntax checks completed successfully for private-dashboard.mjs and public-config.mjs.
 - Full npm dependency installation could not be completed in this environment because npm install timed out; Netlify should perform the production Vite build after upload.
+
+
+## September 10 follow-up merge
+- Preserved the current master build from the uploaded `Generlette-Wedding-Hub-One-Zip-No-Seating-Chart` package.
+- Corrected Ferril Lake / swan-boat guest information to use Denver Parks & Recreation's official Adventure Hub page and current fall 2026 hours/rates.
+- Added a visible City Park destination map and strengthened the official Pavilion access-map placement.
+- Added swan-boat photography beside the existing City Park Pavilion reference imagery.
+- Fixed the mobile Reception memory cards so the camera and voice-message calls to action no longer appear as giant circles/ovals or clip their CTA text.

@@ -22,3 +22,11 @@ This build adds the developer + wedding-day improvements requested after the fin
 
 ## Photo + audio priority restoration
 The home, reception, and Messages pages again treat the digital disposable camera and audio guestbook as major guest actions with large, visually distinct calls to action.
+
+
+## City Park + reception mobile polish
+- Corrected the Swan Boat callout to the official Denver Adventure Hub source.
+- Added Monday wedding-day hours, last-rental timing, rate, capacity, payment methods and safety notes.
+- Added City Park/Pavilion map embed and direct directions buttons.
+- Added swan-boat imagery with a City Park Pavilion visual reference.
+- Fixed rounded-card specificity on photo/audio CTAs and reduced mobile card height so copy remains fully visible.

@@ -55,3 +55,12 @@ After changing environment variables, redeploy the site.
 - Netlify Functions: `netlify/functions`
 
 See `UPLOAD_TO_GITHUB.md` for upload instructions.
+
+
+## September 10 City Park + mobile reception update
+- Replaced the generic City Park activities link with Denver Parks & Recreation's official Adventure Hub rental page.
+- Added wedding-day swan-pedal-boat details for Monday, Sept. 28: 3:30–8:00 PM, last rental 7:00 PM, $35/hour for a 4-person swan, first-come/first-served, no reservation required, PFDs included.
+- Added a City Park/Pavilion map section plus direct Google Maps, Apple Maps and official Denver Pavilion access-map buttons.
+- Added City Park and swan-boat imagery to the guest directions section.
+- Reworked the reception photo/audio guestbook cards so they render as normal mobile cards instead of oversized pill/oval shapes.
+- Bumped the service-worker cache to v11 so the visual changes replace older cached styles after deployment.

@@ -24,3 +24,7 @@ Check these guest pages:
 - `/weather-parking`
 
 Then check `/day-of` with both the wedding-team code and the couple-only code.
+
+
+## September 10 City Park / mobile update
+Upload the full contents of this ZIP over the current repository so `src/App.jsx`, `src/data.js`, `src/styles.css`, and `public/sw.js` all update together. Netlify should redeploy automatically after the commit. If an older layout still appears on your phone after the deploy, fully close/reopen the browser tab or refresh once; this build bumps the service-worker cache to v11.
