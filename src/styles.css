@@ -294,3 +294,332 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .magic-surprise-card{background:linear-gradient(145deg,#fff9e9,#eef5fa);border-color:#d7bd82;position:relative;overflow:hidden}.magic-surprise-card:after{content:"✦";position:absolute;right:22px;top:16px;font-size:3rem;color:rgba(181,138,61,.22);transform:rotate(12deg)}.magic-surprise-card h3{font-size:1.65rem}.swan-photo-wrap{margin:14px 0 16px;border-radius:18px;overflow:hidden;background:#dce9f2;aspect-ratio:16/7}.swan-photo-wrap img{width:100%;height:100%;object-fit:cover;display:block}.swan-facts{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:14px 0}.swan-facts span{display:block;background:rgba(255,255,255,.74);border:1px solid rgba(10,49,85,.1);border-radius:12px;padding:11px;color:var(--navy)}
 @media(max-width:620px){.swan-facts{grid-template-columns:1fr}.swan-photo-wrap{aspect-ratio:4/3}.magic-surprise-card,.swan-card{padding:20px}}
 .swan-photo-credit{display:block;padding:.45rem .7rem;font-size:.72rem;color:var(--navy);text-decoration:none;opacity:.75}.swan-photo-credit:hover{text-decoration:underline}
+
+/* Sept 11 polish: elevated photo + audio guestbook action cards */
+.memory-action-grid .feature-btn,
+.memory-reception-grid .feature-btn,
+.stacked-memory-links .feature-btn{
+  min-height:0;
+  padding:22px 22px 20px!important;
+  border-radius:22px;
+  gap:0;
+  border:1px solid rgba(10,49,85,.12);
+  box-shadow:0 10px 28px rgba(17,39,59,.10);
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.memory-action-grid .feature-btn:hover,
+.memory-reception-grid .feature-btn:hover,
+.stacked-memory-links .feature-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 16px 34px rgba(17,39,59,.15);
+}
+.memory-action-grid .feature-btn:focus-visible,
+.memory-reception-grid .feature-btn:focus-visible,
+.stacked-memory-links .feature-btn:focus-visible{
+  outline:3px solid rgba(181,138,61,.55);
+  outline-offset:3px;
+}
+.memory-action-grid .feature-btn:before,
+.memory-reception-grid .feature-btn:before,
+.stacked-memory-links .feature-btn:before{
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+  margin-bottom:16px;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:.64rem;
+  line-height:1;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.memory-action-grid .feature-btn.camera:before,
+.memory-reception-grid .feature-btn.camera:before,
+.stacked-memory-links .feature-btn.camera:before{content:"Photo Guestbook"}
+.memory-action-grid .feature-btn.phone:before,
+.memory-reception-grid .feature-btn.phone:before,
+.stacked-memory-links .feature-btn.phone:before{content:"Audio Guestbook"}
+.memory-action-grid .feature-btn.note:before{content:"Love Note"}
+
+.memory-action-grid .feature-btn.camera,
+.memory-reception-grid .feature-btn.camera,
+.stacked-memory-links .feature-btn.camera{
+  background:linear-gradient(145deg,#092f52 0%,#154c75 100%);
+  color:#fff;
+  border-color:rgba(243,216,157,.30);
+}
+.memory-action-grid .feature-btn.camera:before,
+.memory-reception-grid .feature-btn.camera:before,
+.stacked-memory-links .feature-btn.camera:before{
+  color:#f7e2b6;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(247,226,182,.25);
+}
+.memory-action-grid .feature-btn.phone,
+.memory-reception-grid .feature-btn.phone,
+.stacked-memory-links .feature-btn.phone{
+  background:linear-gradient(145deg,#fffdf8 0%,#e7f1f7 100%);
+  color:var(--navy);
+  border-color:#b9d1e1;
+}
+.memory-action-grid .feature-btn.phone:before,
+.memory-reception-grid .feature-btn.phone:before,
+.stacked-memory-links .feature-btn.phone:before{
+  color:var(--navy);
+  background:rgba(10,49,85,.07);
+  border:1px solid rgba(10,49,85,.10);
+}
+.memory-action-grid .feature-btn.note{
+  background:linear-gradient(145deg,#fffdf8 0%,#fbf2dc 100%);
+  border-color:#dfc995;
+}
+.memory-action-grid .feature-btn.note:before{
+  color:#7b5c24;
+  background:rgba(181,138,61,.10);
+  border:1px solid rgba(181,138,61,.18);
+}
+.memory-action-grid .memory-icon,
+.memory-reception-grid .memory-icon,
+.stacked-memory-links .memory-icon{
+  display:grid;
+  place-items:center;
+  width:48px;
+  height:48px;
+  margin:0 0 14px;
+  border-radius:50%;
+  font-size:1.45rem;
+  line-height:1;
+}
+.feature-btn.camera .memory-icon{background:rgba(255,255,255,.12);box-shadow:inset 0 0 0 1px rgba(255,255,255,.10)}
+.feature-btn.phone .memory-icon{background:#fff;box-shadow:0 6px 16px rgba(10,49,85,.10),inset 0 0 0 1px rgba(10,49,85,.06)}
+.feature-btn.note .memory-icon{background:#fffaf0;box-shadow:0 6px 16px rgba(181,138,61,.10),inset 0 0 0 1px rgba(181,138,61,.10)}
+.memory-action-grid .feature-btn b,
+.memory-reception-grid .feature-btn b,
+.stacked-memory-links .feature-btn b{
+  font-family:Georgia,serif;
+  font-size:1.38rem;
+  font-weight:400;
+  line-height:1.15;
+  letter-spacing:-.01em;
+}
+.memory-action-grid .feature-btn small,
+.memory-reception-grid .feature-btn small,
+.stacked-memory-links .feature-btn small{
+  margin-top:8px;
+  font-size:.88rem;
+  line-height:1.48;
+}
+.feature-btn.camera small{color:rgba(255,255,255,.82)}
+.feature-btn.phone small,.feature-btn.note small{color:#556875}
+.memory-action-grid .memory-cta,
+.memory-reception-grid .memory-cta,
+.stacked-memory-links .memory-cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  align-self:flex-start;
+  margin-top:18px;
+  padding:10px 14px;
+  border-radius:999px;
+  font-size:.70rem;
+  line-height:1;
+  font-weight:900;
+  letter-spacing:.10em;
+  box-shadow:none;
+}
+.feature-btn.camera .memory-cta{
+  color:#092f52;
+  background:#f3d89d;
+}
+.feature-btn.phone .memory-cta{
+  color:#fff;
+  background:var(--navy);
+}
+.feature-btn.note .memory-cta{
+  color:#fff;
+  background:#9c742d;
+}
+.memory-primary:after{
+  width:120px;
+  height:120px;
+  right:-52px;
+  bottom:-58px;
+  opacity:.6;
+}
+.reception-memory-title h3{
+  margin-top:7px;
+  line-height:1.15;
+}
+@media(max-width:720px){
+  .memory-action-grid .feature-btn,
+  .memory-reception-grid .feature-btn,
+  .stacked-memory-links .feature-btn{
+    min-height:0;
+    padding:20px!important;
+    border-radius:20px;
+  }
+  .memory-action-grid .feature-btn b,
+  .memory-reception-grid .feature-btn b,
+  .stacked-memory-links .feature-btn b{font-size:1.28rem}
+  .memory-action-grid .feature-btn small,
+  .memory-reception-grid .feature-btn small,
+  .stacked-memory-links .feature-btn small{font-size:.84rem}
+  .memory-action-grid .memory-cta,
+  .memory-reception-grid .memory-cta,
+  .stacked-memory-links .memory-cta{width:100%;margin-top:16px;padding:11px 14px}
+}
+
+/* Sept 11 guestbook button refinement: mobile-safe cards, larger icons, clearer CTAs */
+.memory-priority .section-title h2{max-width:12ch;margin-inline:auto}
+.memory-priority .section-title p{max-width:760px}
+
+.memory-action-grid .feature-btn,
+.memory-reception-grid .feature-btn,
+.stacked-memory-links .feature-btn{
+  position:relative;
+  overflow:hidden;
+  display:flex!important;
+  flex-direction:column;
+  align-items:center!important;
+  justify-content:flex-start;
+  text-align:center;
+  min-height:290px;
+  padding:26px 22px 22px!important;
+  border-radius:28px;
+  text-decoration:none;
+}
+
+.memory-action-grid .feature-btn:before,
+.memory-reception-grid .feature-btn:before,
+.stacked-memory-links .feature-btn:before{
+  margin:0 auto 14px;
+}
+
+.memory-action-grid .memory-icon,
+.memory-reception-grid .memory-icon,
+.stacked-memory-links .memory-icon{
+  display:grid;
+  place-items:center;
+  width:94px;
+  height:94px;
+  margin:0 auto 16px;
+  border-radius:999px;
+  font-size:3.2rem;
+  line-height:1;
+  flex-shrink:0;
+}
+
+.feature-btn.camera .memory-icon{
+  background:rgba(255,255,255,.14);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);
+}
+.feature-btn.phone .memory-icon{
+  background:#fff;
+  box-shadow:0 10px 24px rgba(10,49,85,.12),inset 0 0 0 1px rgba(10,49,85,.06);
+}
+.feature-btn.note .memory-icon{
+  background:#fffaf0;
+  box-shadow:0 10px 24px rgba(181,138,61,.12),inset 0 0 0 1px rgba(181,138,61,.10);
+}
+
+.memory-action-grid .feature-btn b,
+.memory-reception-grid .feature-btn b,
+.stacked-memory-links .feature-btn b{
+  display:block;
+  width:100%;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:1.95rem;
+  font-weight:900;
+  line-height:1.08;
+  letter-spacing:-.03em;
+  color:inherit;
+  text-wrap:balance;
+}
+
+.memory-action-grid .feature-btn small,
+.memory-reception-grid .feature-btn small,
+.stacked-memory-links .feature-btn small{
+  display:block;
+  width:100%;
+  margin-top:14px;
+  font-size:1rem;
+  line-height:1.42;
+  max-width:28ch;
+}
+
+.memory-action-grid .memory-cta,
+.memory-reception-grid .memory-cta,
+.stacked-memory-links .memory-cta{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  min-height:54px;
+  margin-top:auto;
+  padding:14px 18px;
+  border-radius:16px;
+  font-size:.9rem;
+  line-height:1.1;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-weight:900;
+  text-align:center;
+}
+
+.feature-btn.camera .memory-cta{background:#f3d89d;color:#092f52}
+.feature-btn.phone .memory-cta{background:var(--navy);color:#fff}
+.feature-btn.note .memory-cta{background:#9c742d;color:#fff}
+
+.memory-primary:after{
+  content:"";
+  position:absolute;
+  inset:auto -34px -34px auto;
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  pointer-events:none;
+  opacity:.55;
+}
+.feature-btn.camera.memory-primary:after{background:rgba(255,255,255,.08)}
+.feature-btn.phone.memory-primary:after{background:rgba(10,49,85,.06)}
+.feature-btn.note:after{background:rgba(181,138,61,.06)}
+
+@media(max-width:720px){
+  .memory-action-grid .feature-btn,
+  .memory-reception-grid .feature-btn,
+  .stacked-memory-links .feature-btn{
+    min-height:270px;
+    padding:24px 18px 18px!important;
+    border-radius:26px;
+  }
+
+  .memory-action-grid .memory-icon,
+  .memory-reception-grid .memory-icon,
+  .stacked-memory-links .memory-icon{
+    width:84px;
+    height:84px;
+    font-size:2.9rem;
+  }
+
+  .memory-action-grid .feature-btn b,
+  .memory-reception-grid .feature-btn b,
+  .stacked-memory-links .feature-btn b{
+    font-size:1.7rem;
+  }
+
+  .memory-action-grid .feature-btn small,
+  .memory-reception-grid .feature-btn small,
+  .stacked-memory-links .feature-btn small{
+    font-size:.98rem;
+    max-width:none;
+  }
+
+  .memory-action-grid .memory-cta,
+  .memory-reception-grid .memory-cta,
+  .stacked-memory-links .memory-cta{
+    min-height:52px;
+    font-size:.84rem;
+    letter-spacing:.07em;
+  }
+}
