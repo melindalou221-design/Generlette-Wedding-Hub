@@ -2,21 +2,22 @@
 
 Cory & Melinda’s interactive wedding hub for Monday, September 28, 2026.
 
-## Current master build
-This package is a merge of the prior Wedding Hub versions rather than a replacement. See `MASTER_MERGE_AUDIT.md` and `APP_AUDIT.md` for the regression check.
+## September 11 restored master build
+This build was made directly from the latest ZIP supplied by Melinda and then checked against the prior Wedding Hub requests before packaging. It is a merge, not a rollback to an older app. See `FINAL_REQUEST_AUDIT.md` for the regression checklist.
 
 ### Guest experience
 - Sticky Back + Menu navigation and mobile quick nav
 - Wedding-day schedule / Happening Now
 - Know Before You Go, directions, weather and parking
-- Official Denver Parks City Park Pavilion access map
-- Pavilion floor plan with inside-restroom guidance
-- Ferril Lake / swan-pedal-boat information
-- Strong Add Your Wedding Photos + Leave a Voice Message actions
+- Official Denver Parks City Park Pavilion access map + Pavilion floor plan
+- City Park Pavilion photo and official Ferril Lake / Adventure Hub swan-boat information
+- Sopris Garden cocktail-hour “magic surprise” prompt
+- Photo-sharing + voice-message actions with mobile-safe cards
 - Full guest food menu
 - Wedding Passport, kids activities and Colorado trivia
-- Our Story + First Date
-- Our Crew + Our People
+- No guest-facing **Our Story** or **First Date** page
+- **Our Girls** page, titled **The Heart of Our Family**
+- **Wedding Party** page
 - Signature drinks, dessert, written messages, honeymoon and gifts pages
 - Install/offline support
 
@@ -35,7 +36,7 @@ Protected routes include:
 The private binder contains the full vendor directory, bride/groom timelines, floral binder, ceremony processional/music cues, Nessa and Tammy operational pages, reception décor binder, DJ cue sheet with named introductions, Bertram’s detailed officiant script, and couple-only money reminders.
 
 ## Important privacy behavior
-Guest pages do not reveal the private reception song titles. Payment amounts are not sent to normal wedding-team access. The separate `WEDDING_COUPLE_PASSCODE` enables couple-only money information.
+Guest pages do **not** reveal the wedding-party entrance song, couple entrance song, or First Song title. Those cues live in the private DJ sheet. Payment amounts are not sent to normal wedding-team access. The separate `WEDDING_COUPLE_PASSCODE` enables couple-only money information and adds the payment checklist to the Bride and Groom views.
 
 ## Netlify environment variables
 Configure these in Netlify rather than committing real values:
@@ -55,12 +56,3 @@ After changing environment variables, redeploy the site.
 - Netlify Functions: `netlify/functions`
 
 See `UPLOAD_TO_GITHUB.md` for upload instructions.
-
-
-## September 10 City Park + mobile reception update
-- Replaced the generic City Park activities link with Denver Parks & Recreation's official Adventure Hub rental page.
-- Added wedding-day swan-pedal-boat details for Monday, Sept. 28: 3:30–8:00 PM, last rental 7:00 PM, $35/hour for a 4-person swan, first-come/first-served, no reservation required, PFDs included.
-- Added a City Park/Pavilion map section plus direct Google Maps, Apple Maps and official Denver Pavilion access-map buttons.
-- Added City Park and swan-boat imagery to the guest directions section.
-- Reworked the reception photo/audio guestbook cards so they render as normal mobile cards instead of oversized pill/oval shapes.
-- Bumped the service-worker cache to v11 so the visual changes replace older cached styles after deployment.

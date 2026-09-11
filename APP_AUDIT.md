@@ -1,50 +1,39 @@
-# Wedding Hub Master Audit — September 10, 2026
+# Wedding Hub Master Audit — September 11, 2026
 
-This is the consolidated build. It was checked against the earlier GitHub-ready, binder-update, navigation-speed, parking-map, and photo/audio-priority packages so newer changes would not erase older requested features.
+The current build was checked against the latest supplied master ZIP and the accumulated Wedding Hub requests. The detailed checklist is in `FINAL_REQUEST_AUDIT.md`.
 
 ## Guest-facing
-- Cory & Melinda branding, date, Colorado editorial/scrapbook styling
+- Cory & Melinda branding, date and Colorado editorial/scrapbook styling
 - Sticky Back + Menu header and five-item mobile quick navigation
-- Strong Photo + Audio Guestbook actions on Home, Reception and Messages of Love
-- Know Before You Go FAQ
-- Wedding Weekend + Costa Rica honeymoon pages
-- Day-of schedule + Denver-time Happening Now card
+- Strong Photo + Audio Guestbook actions with mobile-safe sizing
+- Know Before You Go FAQ, directions, weather and parking
 - Ceremony page with traditional vows only, mothers’ roses, family joining and Daughter charms
-- Reception food menu visible to guests; private music titles hidden
-- Anniversary Dance at 8:15 PM
-- Directions to both venues
-- Official Denver Parks City Park Pavilion access/parking PDF embedded + linked
-- Pavilion exterior/garden reference and supplied floor plan, including inside-Pavilion restroom guidance
-- Ferril Lake / Adventure Hub swan-pedal-boat information restored
-- Weather + Boulder parking / ParkMobile guidance
-- Wedding Passport, Colorado trivia, Junior Wedding Explorers and Catch the Bouquet
-- Our Story + detailed funny First Date page restored
-- Our Crew + Our People with Patricia Roberts and Patricia Generlette
-- Signature drinks / dessert content
-- Messages of Love written-note form
-- Gifts & Well Wishes / honeymoon-fund page
-- Installable/offline shell support and guest-alert function
-- Image lightboxes and lazy-loaded media
+- Reception food menu visible to guests; private reception song titles hidden
+- Sopris Garden “magic surprise” prompt during cocktail hour
+- Official City Park Pavilion access map, floor plan and venue photo
+- Official Ferril Lake / Adventure Hub Swan Boat information
+- Wedding Passport, Colorado trivia and Junior Wedding Explorers
+- No guest-facing Our Story or First Date page
+- Our Girls page titled “The Heart of Our Family”
+- Wedding Party page with Patricia Roberts and Patricia Generlette
+- Signature drinks, Messages of Love, gifts/honeymoon and late-night snack
+- Installable/offline shell support
 
 ## Private wedding-team area
-- Day-of Command Center with role tabs
-- Vendor Directory
+- Day-of Command Center + dedicated Vendor Directory
 - Bride and Groom pages
 - Ceremony Coordinator / Nessa page
-- Reception Coordinator / Tammy page + décor binder
-- DJ / MC printable sheet with every named wedding-party introduction
+- Reception Coordinator / Tammy page + décor binder + Sopris Garden magician cue
+- DJ / MC printable sheet with every named wedding-party introduction and private song cues
 - Officiant / Bertram detailed speaking outline
-- Couple-only payment details; amounts are not returned to normal team access
-- Current food/vendor corrections: Christian, Maggiano’s 5:00 PM delivery, Kool Jamaican Kitchen
-- Current private DJ cues retained only in the private Netlify function
+- Couple-only payment details; normal team access does not receive amounts
+- Current vendors include Christian, Maggiano’s and Kool Jamaican Kitchen
 
 ## Superseded content intentionally excluded
-Older planning versions contained personal vows, parent dances, old reception timing and the older Heartbeat plan. Those are not restored because later decisions superseded them. The homemade City Park parking diagram and outdoor-restroom callouts were also removed.
-
-## Technical checks
-- Merged route set contains all useful routes found across the prior versions.
-- All currently referenced local image assets exist.
-- Public source contains no private reception song titles and no payment amounts.
-- JSX/JS syntax passed TypeScript parser validation.
-- Netlify functions passed Node syntax validation.
-- Full local npm install timed out in this environment, so Netlify should perform the production Vite build after upload.
+- Our Story and First Date guest pages
+- Generic guest labels “Our Crew” and “Our People”
+- Personal vows
+- Mother-son / father-daughter dance blocks
+- Old reception timing that predates the current 3:30 PM ceremony / 5:00 PM cocktail-hour plan
+- Guest-facing reception song titles
+- Homemade City Park parking diagram

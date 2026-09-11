@@ -1,30 +1,18 @@
-# Upload this master Wedding Hub to GitHub
+# Upload this Wedding Hub to GitHub
 
-Use the repository `Generlette-Wedding-Hub` and keep it **Private** because the project contains private wedding-team planning logic.
+This ZIP is the September 11 restored master build. It is based on the latest ZIP supplied by Melinda and includes the previous-request regression fixes.
 
-## Safest method
-1. Download and unzip the master package.
-2. In GitHub, open the repository root.
-3. Choose **Add file → Upload files**.
-4. Upload the **contents inside** the unzipped folder so `package.json`, `index.html`, `netlify.toml`, `src/`, `public/`, and `netlify/` remain at the repository root.
-5. Allow the changed files to replace the older copies.
-6. Commit to `main`.
-7. Wait for Netlify to redeploy.
-8. Confirm Netlify Functions includes both `private-dashboard` and `public-config`.
+1. Make sure the GitHub repository is **Private** before uploading because the server-side source contains vendor/planning information.
+2. Unzip this package.
+3. In the `Generlette-Wedding-Hub` repository, choose **Add file → Upload files**.
+4. Upload the **contents inside** the unzipped folder so `package.json`, `index.html`, `netlify.toml`, `src/`, `public/`, and `netlify/` are at the repository root.
+5. Commit to `main`. Netlify should redeploy automatically.
+6. If you changed environment variables, trigger a fresh Netlify deploy.
 
-Because this master merge adds new images, table-sign assets, PWA files and a second Netlify function, uploading the **full package** is safer than uploading only App.jsx/data.js/styles.css.
+## Netlify variables to keep
+- `WEDDING_PRIVATE_PASSCODE` — wedding-team access
+- `WEDDING_COUPLE_PASSCODE` — separate Cory/Melinda code; enables money/payment details
+- `WEDDING_GETTING_READY_ADDRESS` — private prep address
+- `WEDDING_VENDOR_CONTACTS` — private JSON contact data if used
 
-## After deploy
-Check these guest pages:
-- `/`
-- `/story`
-- `/first-date`
-- `/reception`
-- `/directions`
-- `/weather-parking`
-
-Then check `/day-of` with both the wedding-team code and the couple-only code.
-
-
-## September 10 City Park / mobile update
-Upload the full contents of this ZIP over the current repository so `src/App.jsx`, `src/data.js`, `src/styles.css`, and `public/sw.js` all update together. Netlify should redeploy automatically after the commit. If an older layout still appears on your phone after the deploy, fully close/reopen the browser tab or refresh once; this build bumps the service-worker cache to v11.
+After deployment, test `/`, `/family`, `/reception`, `/directions`, `/day-of`, `/day-of/vendors`, `/day-of/dj`, and `/day-of/officiant` on a phone.

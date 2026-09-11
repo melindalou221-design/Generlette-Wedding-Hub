@@ -11,6 +11,7 @@ Upload the contents of this ZIP into the root of the `Generlette-Wedding-Hub` re
 - `UPLOAD_TO_GITHUB.md`
 - `APP_AUDIT.md`
 - `MASTER_MERGE_AUDIT.md`
+- `FINAL_REQUEST_AUDIT.md`
 - `FINAL_POLISH_NOTES.md`
 - `BINDER_RECOVERY_NOTES.md`
 - `SEATING_VISIBILITY_NOTE.md`
