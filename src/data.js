@@ -24,7 +24,8 @@ export const wedding = {
     boulderParking: 'https://bouldercolorado.gov/services/osmp-parking-permits-and-fees',
     parkMobile: 'https://app.parkmobile.io/zone/start',
     cityParkParkingPdf: 'https://www.denvergov.org/files/assets/public/v/1/parks-and-recreation/documents/rentals-amp-permits/parkaccess_cityparkpavilion.pdf',
-    cityParkActivities: 'https://cityparkalliance.org/sports-activities/',
+    cityParkAdventureHub: 'https://denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Parks-Recreation/Recreation-Centers-Pools-Activities/Adventure-Hub-Bike-and-Boat-Rentals',
+    cityParkSwanPhoto: 'https://assets.simpleviewinc.com/simpleview/image/upload/c_fill%2Cf_jpg%2Ch_434%2Cq_65%2Cw_640/v1/clients/denver/boating_city_park_spring_summer_things_to_do_89e8f8f9-de32-45f7-83ff-0e82f5287fb0.jpg',
   },
 };
 
@@ -149,7 +150,7 @@ export const guestFaq = [
   ['How long is the drive to the reception?', 'Plan roughly an hour between Flagstaff Mountain and City Park Pavilion, with extra time for Monday traffic and getting down the mountain.'],
   ['Where do I park for the reception?', 'Denver Parks & Recreation says City Park Pavilion parking is first come, first served. The easiest access is from the east side using the E 23rd Ave. or E 22nd Ave. entrances, and surrounding residential parking is also an option. Venue staff advised us that guests may leave a vehicle in the Pavilion lot overnight if needed rather than drive after drinking.'],
   ['Where are the reception restrooms?', 'Restroom facilities are inside City Park Pavilion. The Directions page includes the Pavilion floor plan so you can see the layout.'],
-  ['What are the swan boats?', 'Ferril Lake is right beside City Park Pavilion. The Adventure Hub near the Pavilion offers pedal-boat and other lake rentals when available. Check same-day availability if you want a little City Park adventure.'],
+  ['What are the swan boats?', 'Ferril Lake is right beside City Park Pavilion. On Monday, September 28, Denver Parks & Recreation lists Adventure Hub fall hours as 3:30–8:00 PM, with the last rental issued one hour before close. Swan pedal boats seat up to four and are $35 per hour. Rentals are first-come, first-served with no reservation required; life jackets are included and weather can temporarily close the lake.'],
   ['Are children welcome?', 'Yes. We are celebrating with family and children, and the app includes Junior Wedding Explorers activities for them.'],
   ['Can I take and share photos?', 'Absolutely. The Add Your Wedding Photos button opens our digital disposable camera so you can share the day from your point of view.'],
   ['How can I leave Cory & Melinda a message?', 'Use Messages of Love to write a note, or tap Leave Us a Voice Message to record something sweet, funny or unforgettable.'],

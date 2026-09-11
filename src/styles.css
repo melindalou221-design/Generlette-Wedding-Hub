@@ -289,3 +289,184 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .stacked-memory-links{display:grid;gap:14px;margin-top:18px}
 .stacked-memory-links .feature-btn{min-height:170px}
 @media(max-width:720px){.memory-action-grid,.memory-reception-grid{grid-template-columns:1fr}.memory-action-grid .feature-btn,.memory-reception-grid .feature-btn{min-height:175px}.reception-memory-callout{padding:18px}.memory-priority .section-title h2{font-size:2rem}}
+
+
+/* September 2026 City Park + mobile reception polish */
+.button.feature-btn{
+  border-radius:20px;
+}
+.reception-memory-callout{
+  padding:20px;
+  border-radius:22px;
+}
+.memory-reception-grid{
+  gap:14px;
+}
+.memory-reception-grid .feature-btn{
+  min-height:150px;
+  border-radius:18px!important;
+  padding:20px!important;
+}
+.memory-reception-grid .memory-primary:after{
+  display:none;
+}
+.memory-reception-grid .memory-icon{
+  margin-bottom:10px;
+}
+.memory-reception-grid .memory-cta{
+  display:block;
+  width:100%;
+  max-width:100%;
+  padding-top:14px;
+  font-size:.72rem;
+  letter-spacing:.09em;
+  overflow-wrap:anywhere;
+}
+.swan-card{
+  overflow:hidden;
+}
+.swan-card-grid{
+  display:grid;
+  grid-template-columns:minmax(240px,.9fr) minmax(0,1.35fr);
+  gap:22px;
+  align-items:stretch;
+}
+.swan-photo-wrap{
+  margin:-24px 0 -24px -24px;
+  min-height:100%;
+  background:#dce9f2;
+  display:flex;
+  flex-direction:column;
+}
+.swan-photo{
+  width:100%;
+  min-height:330px;
+  height:100%;
+  object-fit:cover;
+  flex:1;
+}
+.photo-credit{
+  display:block;
+  padding:8px 12px;
+  background:rgba(255,253,247,.96);
+  color:#65717a;
+  font-size:.68rem;
+  line-height:1.35;
+}
+.swan-facts{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin:16px 0;
+}
+.swan-facts>div{
+  padding:11px 12px;
+  border:1px solid rgba(10,49,85,.12);
+  border-radius:14px;
+  background:rgba(255,255,255,.72);
+}
+.swan-facts b,
+.swan-facts span{
+  display:block;
+}
+.swan-facts b{
+  color:var(--navy);
+  font-size:.78rem;
+}
+.swan-facts span{
+  margin-top:3px;
+  color:#536270;
+  font-size:.83rem;
+}
+.city-park-feature-photo{
+  display:block;
+  width:100%;
+  aspect-ratio:16/10;
+  object-fit:cover;
+  border-radius:16px;
+  margin-top:10px;
+}
+.city-map-card{
+  background:linear-gradient(155deg,#fffdf7,#eef5fa);
+}
+.city-map-frame-wrap{
+  margin:18px 0;
+  border:1px solid rgba(10,49,85,.15);
+  border-radius:18px;
+  overflow:hidden;
+  background:#eef3f5;
+}
+.city-map-frame{
+  display:block;
+  width:100%;
+  height:430px;
+  border:0;
+  background:#eef3f5;
+}
+.floorplan-card{
+  margin-bottom:0;
+}
+.floorplan-card .image-button img{
+  max-height:620px;
+  object-fit:contain;
+  background:#fff;
+}
+
+@media(max-width:720px){
+  .reception-memory-callout{
+    padding:16px;
+    margin-left:0;
+    margin-right:0;
+  }
+  .reception-memory-title{
+    margin-bottom:12px;
+  }
+  .reception-memory-title h3{
+    font-size:1.5rem;
+    line-height:1.15;
+  }
+  .memory-reception-grid .feature-btn{
+    min-height:auto;
+    padding:18px!important;
+  }
+  .memory-reception-grid .feature-btn b{
+    font-size:1.12rem;
+  }
+  .memory-reception-grid .feature-btn small{
+    font-size:.88rem;
+    line-height:1.45;
+  }
+  .swan-card-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+  .swan-photo-wrap{
+    margin:-24px -24px 0;
+  }
+  .swan-photo{
+    min-height:0;
+    height:auto;
+    aspect-ratio:16/10;
+  }
+  .swan-facts{
+    grid-template-columns:1fr;
+  }
+  .city-map-frame{
+    height:360px;
+  }
+}
+@media(max-width:430px){
+  .reception-memory-callout{
+    border-radius:18px;
+  }
+  .memory-reception-grid .feature-btn{
+    border-radius:16px!important;
+  }
+  .memory-reception-grid .memory-cta{
+    font-size:.68rem;
+    letter-spacing:.06em;
+  }
+  .city-map-frame{
+    height:320px;
+  }
+}

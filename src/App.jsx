@@ -129,40 +129,94 @@ function Reception(){return <><PageHero title="The Reception" sub="Cocktail hour
 function Directions(){return <><PageHero title="Directions" sub="Two stops. One very good day."/><section className="page two-col"><VenueCard kind="Ceremony" data={wedding.ceremony}/><VenueCard kind="Reception" data={wedding.reception}/></section><section className="page"><CityParkPavilionGuide/></section></>}
 
 function SwanBoatsCard(){
+  const cityParkQuery=encodeURIComponent('City Park Pavilion 2001 Steele Street Denver Colorado');
   return <Card className="swan-card">
-    <span className="badge">A LITTLE CITY PARK FUN</span>
-    <h3>Swan boats on Ferril Lake 🦢</h3>
-    <p>Ferril Lake is right beside the Pavilion. City Park’s Adventure Hub near the Pavilion offers pedal-boat and other lake rentals, so guests who have extra time can check same-day availability and take a little spin on the lake.</p>
-    <External href={wedding.links.cityParkActivities} className="secondary">Check City Park activities</External>
+    <div className="swan-card-grid">
+      <div className="swan-photo-wrap">
+        <img
+          className="swan-photo"
+          src={wedding.links.cityParkSwanPhoto}
+          alt="Swan pedal boat on Ferril Lake in Denver City Park"
+          loading="lazy"
+          decoding="async"
+          referrerPolicy="no-referrer"
+          onError={(e)=>{e.currentTarget.onerror=null;e.currentTarget.src='/images/city-park-pavilion-reference.webp'}}
+        />
+        <small className="photo-credit">City Park swan pedal boat · photo via VISIT DENVER</small>
+      </div>
+      <div>
+        <span className="badge">A LITTLE CITY PARK FUN</span>
+        <h3>Swan boats on Ferril Lake 🦢</h3>
+        <p>Ferril Lake is right beside City Park Pavilion, and Denver Parks & Recreation’s Adventure Hub rents the swan pedal boats guests see on the lake.</p>
+        <div className="swan-facts">
+          <div><b>Wedding-day hours</b><span>Monday, Sept. 28 · 3:30–8:00 PM</span></div>
+          <div><b>Last rental</b><span>7:00 PM · one hour before close</span></div>
+          <div><b>Swan pedal boat</b><span>$35/hour · seats up to 4</span></div>
+          <div><b>How to rent</b><span>Walk up · first come, first served · no reservation</span></div>
+          <div><b>Included</b><span>Life jackets / PFDs</span></div>
+          <div><b>Payment</b><span>Cash, credit card or Apple Pay</span></div>
+        </div>
+        <p className="tiny">Everyone signs a waiver. No alcohol or pets are allowed on rental boats, and the lake can temporarily close for weather or lightning.</p>
+        <div className="actions">
+          <External href={wedding.links.cityParkAdventureHub}>Official rental details</External>
+          <External href={`https://maps.google.com/?q=${cityParkQuery}`} className="secondary">Map to City Park</External>
+        </div>
+      </div>
+    </div>
   </Card>
 }
 
 function CityParkPavilionGuide(){
+  const cityParkQuery=encodeURIComponent(wedding.reception.mapsQuery);
+  const cityParkEmbed='https://www.google.com/maps?q=City+Park+Pavilion+2001+Steele+Street+Denver+CO+80206&output=embed';
   return <div className="city-park-guide">
-    <SectionTitle eyebrow="City Park Pavilion" title="Parking, Pavilion layout & Ferril Lake" sub="Real venue references — no homemade map."/>
+    <SectionTitle eyebrow="City Park Pavilion" title="Find the reception without the guesswork" sub="Real City Park photos, turn-by-turn map links, Denver’s official Pavilion access map and Ferril Lake details."/>
     <div className="pavilion-visual-grid">
       <Card className="venue-photo-card">
-        <span className="badge">THE RECEPTION VENUE</span>
+        <span className="badge">CITY PARK</span>
         <h3>City Park Pavilion</h3>
-        <ImageLightbox src="/images/city-park-pavilion-reference.webp" alt="City Park Pavilion exterior and gardens" caption="City Park Pavilion and surrounding landscaping"/>
+        <ImageLightbox src="/images/city-park-pavilion-reference.webp" alt="City Park Pavilion exterior and gardens" caption="City Park Pavilion · 2001 Steele Street, Denver"/>
       </Card>
       <Card className="venue-photo-card">
-        <span className="badge">INSIDE THE PAVILION</span>
-        <h3>Floor plan + restrooms</h3>
-        <p>The Pavilion floor plan shows restroom facilities inside the building, along with the main event space and concessions/kitchen area.</p>
-        <ImageLightbox src="/images/city-park-pavilion-floorplan.webp" alt="City Park Pavilion floor plan showing the event space, concessions kitchen, changing room, storage and restroom facilities" caption="Tap to enlarge the Pavilion floor plan"/>
+        <span className="badge">FERRIL LAKE</span>
+        <h3>The swan boats are right by the Pavilion</h3>
+        <img className="city-park-feature-photo" src={wedding.links.cityParkSwanPhoto} alt="Swan pedal boat on Ferril Lake in Denver City Park" loading="lazy" decoding="async" referrerPolicy="no-referrer" onError={(e)=>{e.currentTarget.onerror=null;e.currentTarget.src='/images/city-park-pavilion-reference.webp'}}/>
+        <small className="photo-credit">Swan pedal boat at City Park · photo via VISIT DENVER</small>
       </Card>
     </div>
+
+    <Card className="city-map-card">
+      <span className="badge">DRIVING TO THE RECEPTION</span>
+      <h3>City Park Pavilion · 2001 Steele Street</h3>
+      <p>Use the map below for the destination, then use Denver Parks & Recreation’s Pavilion access map for the best entrance and parking approach inside City Park.</p>
+      <div className="city-map-frame-wrap">
+        <iframe className="city-map-frame" src={cityParkEmbed} title="Map to City Park Pavilion in Denver" loading="lazy" referrerPolicy="no-referrer-when-downgrade"/>
+      </div>
+      <div className="actions">
+        <External href={`https://maps.google.com/?q=${cityParkQuery}`}>Google Maps</External>
+        <External href={`https://maps.apple.com/?q=${cityParkQuery}`} className="secondary">Apple Maps</External>
+        <External href={wedding.links.cityParkParkingPdf} className="secondary">Official Pavilion access map</External>
+      </div>
+    </Card>
+
     <Card className="official-map-card parking">
-      <span className="badge">OFFICIAL DENVER PARKING MAP</span>
-      <h3>Use Denver Parks & Recreation’s City Park Pavilion access map</h3>
-      <p>Denver’s map says parking is first come, first served. The easiest vehicle access is from the east side using the E 23rd Ave. or E 22nd Ave. entrances; surrounding residential parking is another walk-in option.</p>
+      <span className="badge">OFFICIAL DENVER PARKING + ACCESS MAP</span>
+      <h3>Use Denver Parks & Recreation’s City Park Pavilion map</h3>
+      <p>Denver’s map says parking is first come, first served. The easiest vehicle access is from the east side using the E. 23rd Ave. or E. 22nd Ave. entrances; surrounding residential parking is another walk-in option.</p>
       <div className="official-map-frame-wrap">
         <iframe className="official-map-frame" src={wedding.links.cityParkParkingPdf} title="Official Denver Parks City Park Pavilion access and parking map" loading="lazy"/>
       </div>
-      <div className="actions"><External href={wedding.links.cityParkParkingPdf}>Open official parking map</External></div>
+      <div className="actions"><External href={wedding.links.cityParkParkingPdf}>Open full official map</External></div>
       <p className="staff-note"><b>Overnight safety note:</b> We were advised by venue staff that guests may leave a vehicle in the Pavilion lot overnight if needed rather than drive after drinking. Please park legally and plan to retrieve it the following day.</p>
     </Card>
+
+    <Card className="venue-photo-card floorplan-card">
+      <span className="badge">INSIDE THE PAVILION</span>
+      <h3>Floor plan + restrooms</h3>
+      <p>The Pavilion floor plan shows restroom facilities inside the building, along with the main event space and concessions/kitchen area.</p>
+      <ImageLightbox src="/images/city-park-pavilion-floorplan.webp" alt="City Park Pavilion floor plan showing the event space, concessions kitchen, changing room, storage and restroom facilities" caption="Tap to enlarge the Pavilion floor plan"/>
+    </Card>
+
     <SwanBoatsCard/>
   </div>
 }
