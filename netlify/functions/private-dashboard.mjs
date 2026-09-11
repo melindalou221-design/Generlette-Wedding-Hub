@@ -24,11 +24,11 @@ const defaultData = {
     {item:"Vows",status:"FINAL - traditional",detail:"Repeat-after-me traditional vows only; no personal vow cards."},
     {item:"Sweetheart table",status:"FINAL direction",detail:"Hydrangea-forward blue/white florals, light greenery, gold Mr & Mrs sign, warm gold vine fairy lights on the front, restrained candles, no light backdrop."},
     {item:"Photo booth",status:"FINAL - not planned",detail:"Do not reserve space or decor for a photo booth."},
-    {item:"Rose presentation placement",status:"CONFIRM AT REHEARSAL",detail:"Current working placement is before the vows; older binder placed it after the kiss."},
+    {item:"Rose presentation placement",status:"FINAL - before the vows",detail:"Locked: the mother rose presentation happens before the vows. Disregard the older binder version that placed it after the kiss."},
     {item:"Jamaican caterer",status:"FINAL - vendor chosen",detail:"Kool Jamaican Kitchen for jerk chicken and rice and peas."},
-    {item:"Cocktail-hour hors d'oeuvres",status:"OPEN",detail:"Finalize menu, vendor, delivery and handoff."},
-    {item:"Late-night snack menu",status:"OPEN",detail:"9:30 PM timing is set; final food still needs confirmation."},
-    {item:"Photographer event date",status:"OPEN",detail:"Confirm invoice/coverage reflects Monday, September 28, 2026."}
+    {item:"Cocktail-hour hors d'oeuvres",status:"FINAL - confirmed",detail:"Hors d'oeuvres are locked in for the 5:00 PM cocktail hour. Target delivery and setup 4:40-4:50 PM."},
+    {item:"Late-night snack menu",status:"FINAL - confirmed (guest surprise)",detail:"Taco Bell at 9:30 PM. Keep this off every guest-facing page and out of every announcement until the 9:30 PM reveal."},
+    {item:"Photographer event date",status:"FINAL - confirmed",detail:"Coverage is confirmed for Monday, September 28, 2026."}
   ],
   money:{
     title:"Couple Only · Money + Payments",
@@ -54,24 +54,16 @@ const defaultData = {
       {role:"Violinist",name:"Vio",status:"Confirmed",arrival:"Target 2:20 PM for music check",contactKey:"vio",notes:"Ceremony musician; final arrival time to reconfirm."},
       {role:"Guitarist",name:"Gio",status:"Confirmed",arrival:"Target 2:20 PM for music check",contactKey:"gio",notes:"Ceremony musician; final arrival time to reconfirm."},
       {role:"Officiant",name:"Bertram Generlette · Cory’s dad",status:"Confirmed",arrival:"By 3:00 PM",contactKey:"bertram",notes:"Traditional vows; family joining; mother rose presentation; final blessing."},
-      {role:"Photographer",name:"Olivia M. Photography / O.M Creative LLC",status:"Confirmed",arrival:"Per final 5-hour coverage plan",contactKey:"photographer",notes:"Invoice on file shows 09/26/2026; couple should confirm correction to wedding date 09/28/2026."},
+      {role:"Photographer",name:"Olivia M. Photography / O.M Creative LLC",status:"Confirmed",arrival:"Per final 5-hour coverage plan",contactKey:"photographer",notes:"Event date confirmed for Monday, September 28, 2026. The earlier 09/26/2026 invoice date has been resolved."},
       {role:"Reception Coordinator / Setup / Cleanup",name:"Tammy Murrie · Colorado Acclaimed Weddings",status:"Confirmed",arrival:"Reception setup before guests",contactKey:"tammy",notes:"Receives décor boxes, stages reception, brings/stages cake, oversees cleanup."},
       {role:"DJ / MC",name:"Michael Lancaster · Colorado DJ",status:"Confirmed",arrival:"Setup target approximately 1.5 hours before reception program",contactKey:"dj",notes:"Use the current private DJ sheet, not the obsolete timing printed in the older contract."},
-      {role:"Bartender",name:"Alfredo Junior",status:"Confirmed",arrival:"Before 5:00 PM cocktail hour",contactKey:"bartender",notes:"Bar setup + Something Blue / Something Old service plan."},
-      {role:"Magician",name:"Name/contact still needed",status:"Booked / details incomplete",arrival:"Confirm cocktail-hour/reception set time",contactKey:"magician",notes:"Add exact name, contact and performance window."},
+      {role:"Bartender",name:"Alfredo Junior",status:"Confirmed",arrival:"2:00 PM arrival",contactKey:"bartender",notes:"Arrives at 2:00 PM with the setup crew. Bar setup + Something Blue / Something Old service plan; ready well before the 5:00 PM cocktail hour."},
+      {role:"Magician",name:"Trust Me I'm a Magician",status:"Confirmed",arrival:"Cocktail hour - staged at Sopris Garden by 5:00 PM",contactKey:"magician",link:"https://www.gigsalad.com/trust_me_im_a_magician_westminster",linkLabel:"GigSalad profile",notes:"Westminster, CO. Strolling magic during cocktail hour at Sopris Garden, just west of the Pavilion. Keep the performer a surprise on all guest-facing pages."},
       {role:"Hair",name:"Sara D Hair",status:"Confirmed",arrival:"Bride prep schedule",contactKey:"hair",notes:"Bridal hair, two bridesmaid services and one flower-girl service on invoice."},
       {role:"Makeup",name:"Christian",status:"Confirmed",arrival:"Confirm final start time",contactKey:"makeup",notes:"Makeup artist is Christian. Add direct contact and final start time in the private contacts configuration."},
       {role:"Italian Dinner",name:"Maggiano’s",status:"Confirmed",arrival:"5:00 PM delivery",contactKey:"italian",notes:"Grilled salmon, mashed potatoes, fettuccine Alfredo with Parmesan-crusted chicken, Caesar salad. Delivery is set for 5:00 PM."},
       {role:"Jamaican Dinner",name:"Kool Jamaican Kitchen",status:"Confirmed",arrival:"Before dinner service",contactKey:"jamaican",notes:"Jerk chicken + rice and peas."},
-      {role:"Cocktail-Hour Hors d’oeuvres",name:"Vendor/delivery still unresolved",status:"Needs vendor / delivery plan",arrival:"Target 4:40–4:50 PM",contactKey:"horsdoeuvres",notes:"Finalize menu, vendor and handoff location."}
-    ],
-    actionItems:[
-      "Add missing direct contact information for Christian, the magician and the cocktail-hour hors d’oeuvres vendor once finalized.",
-      "Confirm exact Vio + Gio arrival times and contact method.",
-      "Confirm photographer invoice/event date is corrected from 09/26/2026 to the wedding date 09/28/2026.",
-      "Finalize cocktail-hour hors d’oeuvres and confirm the hot-food holding/serving plan for Maggiano’s and Kool Jamaican Kitchen.",
-      "Add private contacts in Netlify WEDDING_VENDOR_CONTACTS rather than committing phone numbers or emails to GitHub.",
-      "For every day-of vendor, confirm final arrival time, exact setup location, primary contact method and who receives them onsite."
+      {role:"Cocktail-Hour Hors d’oeuvres",name:"Confirmed for cocktail hour",status:"Confirmed",arrival:"Target 4:40–4:50 PM",contactKey:"horsdoeuvres",notes:"Hors d’oeuvres are locked in for the 5:00 PM cocktail hour. Tammy receives and stages them on the Garden Side high-top tables."}
     ]
   },
   bride: {
@@ -101,7 +93,6 @@ const defaultData = {
       "Sunday rehearsal: meet at Chautauqua Park at 4:30 PM, then Sunrise Amphitheater around 6:00 PM.",
       "Honeymoon: Costa Rica. Flight is at 5:00 AM the morning after the wedding; confirm airport, check-in and departure-from-lodging time during wedding week.",
       "Confirm Christian’s makeup arrival/start time and final services.",
-      "Confirm Olivia M. Photography invoice/event date is corrected from 09/26/2026 to the wedding date 09/28/2026.",
       "Use the included Wedding Flower Ordering Guide as the controlling count sheet for bouquets, flower-girl corsages and boutonnières; recheck counts against the final wedding-party roster before purchasing."
     ],
     florals:{
@@ -253,12 +244,13 @@ const defaultData = {
     title:"Reception Coordinator · Tammy Murrie",
     summary:"Tammy Murrie · Colorado Acclaimed Weddings · reception setup/cleanup. Early arrivals may enter around 4:45 PM; official cocktail hour 5:00 PM; entrance 6:00 PM; first song 6:05 PM; dinner 6:20 PM.",
     timeline:[
-      {time:"2:00 PM",item:"Reception setup underway",note:"Guest tables, sweetheart table, welcome area, cake/dessert, bar, buffet, kids area, signs and lighting."},
+      {time:"2:00 PM",item:"Reception setup underway",note:"Guest tables, sweetheart table, welcome area, cake/dessert, bar, buffet, kids area, signs and lighting. Alfredo Junior (bartender) also arrives at 2:00 PM to build the bar."},
+      {time:"2:00 PM",item:"Bartender arrives",note:"Alfredo Junior · 2:00 PM. Show him the bar location, ice/water access and the Something Blue / Something Old signage."},
       {time:"4:30 PM",item:"Full-room check",note:"Table signs, guestbook, camera/audio-message links, candles, bar signage and guest-memory prompts."},
-      {time:"4:40–4:50 PM",item:"Cocktail hors d’oeuvres target arrival",note:"Delivery/vendor still needs to be finalized."},
+      {time:"4:40–4:50 PM",item:"Cocktail hors d’oeuvres arrive",note:"CONFIRMED. Receive and stage on the Garden Side high-top tables before guests arrive."},
       {time:"4:45 PM",item:"Early guest arrival window",note:"Open if setup/bar team is ready."},
       {time:"5:00 PM",item:"Official cocktail hour",note:"Bar + hors d’oeuvres. Guest-facing app invites guests to Sopris Garden, west of the Pavilion, for a magic surprise; keep the performer/details as the surprise."},
-      {time:"5:10 PM",item:"Sopris Garden magic surprise",note:"Confirm magician is staged/ready at Sopris Garden and guest flow can move there without blocking Pavilion setup."},
+      {time:"5:10 PM",item:"Sopris Garden magic surprise",note:"Trust Me I’m a Magician (Westminster, CO). Confirm he is staged/ready at Sopris Garden and guest flow can move there without blocking Pavilion setup. Keep the performer a surprise for guests."},
       {time:"5:00 PM",item:"Maggiano’s delivery",note:"Receive Italian delivery, hold hot as needed and stage buffet for dinner service."},
       {time:"5:30 PM",item:"Check couple ETA",note:"Adjust entrance only if mountain traffic is heavy."},
       {time:"5:50 PM",item:"Wedding-party entrance lineup",note:"DJ confirms the private entrance-song cues; Tammy confirms people/order."},
@@ -270,7 +262,7 @@ const defaultData = {
       {time:"7:30 PM",item:"Cake + dessert",note:"Tammy brings cake from the couple’s pickup to the venue and stages it."},
       {time:"7:40 PM",item:"Open dancing",note:""},
       {time:"8:15 PM",item:"Anniversary Dance",note:"Invite all couples to the floor, then dismiss couples by years married until the longest-married couple remains."},
-      {time:"9:30 PM",item:"Late-night snack",note:"Menu still finalizing; Passport secret reveal."},
+      {time:"9:30 PM",item:"Late-night snack — Taco Bell",note:"CONFIRMED: Taco Bell. Keep it covered and out of sight until 9:30 PM — this is a surprise for the guests. Do not say the name before the reveal."},
       {time:"10:30 PM",item:"Private couple moment / last song",note:"Begin guest send-off staging."},
       {time:"10:40 PM",item:"Glow-stick send-off",note:""},
       {time:"11:00 PM",item:"Venue clear",note:"Final cleanup/vendor sweep."}
@@ -288,19 +280,22 @@ const defaultData = {
       "Confirm DJ has the private couple-song playback/microphone plan before guests arrive.",
       "Stage glow sticks before the final hour without announcing them too early.",
       "Decor will be packed in labeled boxes by setup zone. Suggested labels: Sweetheart Table; Welcome Area; Guest Tables; Cake + Dessert; Bar + Signs; Buffet; Kids Table; Emergency/Extras.",
-      "As the wedding gets closer, add real setup photos to the coordinator binder so Tammy can match each boxed décor zone exactly.",
+      "FINAL setup photos are now in this binder: match the sweetheart table and the guest tables to the final photos below.",
+      "The FINAL City Park Pavilion layout + seating chart is in this binder. It shows 9 guest tables, the sweetheart table, dinner buffet, cake table, cards & gifts, water station, kids table, dance floor/DJ and the Garden Side hors d’oeuvres high-tops.",
+      "Late-night snack is Taco Bell at 9:30 PM and is a surprise — keep it hidden/covered and do not mention it to guests before the reveal.",
       "Photo booth is not currently planned; do not reserve setup space or décor for one unless the plan changes."
     ],
     decor:{
       guestTables:[
-        "8 round guest tables.",
+        "FINAL PHOTO: match every guest table to the final guest-table photo in this binder.",
+        "9 round guest tables per the final Pavilion layout (Table 9 is held as open / overflow).",
         "Per table: 5 bud vases; 2–3 blue hobnail LED candle holders; 1 floating LED candle cylinder.",
         "Flowers per table: 2 white roses; 1–2 white spray roses; 1–2 white carnations; baby’s-breath accents; 1–2 blue delphinium; 1 calla lily on every other table.",
         "Menu cards, dusty/soft-blue napkins, gold flatware and chargers.",
         "Keep arrangements low and conversation-friendly."
       ],
       sweetheart:[
-        "Use the included FINAL Sweetheart Table Mockup as the primary reference until an actual rehearsal/setup photo is added.",
+        "FINAL PHOTO: match the sweetheart table to the final sweetheart-table photo in this binder. That photo is the controlling reference.",
         "Gold ‘Mr & Mrs’ tabletop sign — not ‘The Generlettes’.",
         "Ivory/champagne textured linen with gold place-setting accents and gold Chiavari chairs.",
         "Hydrangea-forward florals: white + soft-blue hydrangeas, white roses and baby’s breath; only a few light-blue delphinium stems for airy height.",
@@ -309,7 +304,7 @@ const defaultData = {
         "Weave soft warm-gold vine fairy lights through the front greenery for the main romantic glow.",
         "Use a restrained candle mix: a few floating LED candle cylinders plus small gold/clear votives. Do not overcrowd the tabletop with candles.",
         "No light-wall/fairy-light backdrop behind the table; all fairy lights belong on the front greenery/table décor.",
-        "Final setup photo will replace/supplement the mockup once Cory & Melinda stage the actual décor before the wedding."
+        "Clear balloons with warm fairy lights anchor each end of the table, as shown in the final photo."
       ],
       welcome:[
         "Welcome sign and thank-you message at the entrance.",
@@ -332,48 +327,55 @@ const defaultData = {
         {label:"Kids Table sign",path:"/images/kids-sign.webp"}
       ],
       visualAssets:[
-        {label:"Reception vision + guest-table reference",file:"decor-reception-vision.jpg",path:"/images/decor-reception-vision.webp",status:"Included"},
-        {label:"FINAL sweetheart-table mockup · hydrangeas + gold vine fairy lights",file:"decor-sweetheart-table.png",path:"/images/decor-sweetheart-table.webp",status:"Included"},
-        {label:"Reception shopping list + layout reference",file:"decor-reception-shopping-list.jpg",path:"/images/decor-reception-shopping-list.webp",status:"Included"},
-        {label:"Final actual sweetheart-table setup photo · add closer to wedding",file:"final-sweetheart-setup.jpg",status:"Take a real photo after staging the decorations and add it here for Tammy."}
+        {label:"FINAL · Sweetheart table — build it exactly like this",file:"decor-sweetheart-final.jpg",path:"/images/decor-sweetheart-final.webp",status:"FINAL"},
+        {label:"FINAL · Guest table setting — build every table like this",file:"decor-guest-seating-final.jpg",path:"/images/decor-guest-seating-final.webp",status:"FINAL"},
+        {label:"FINAL · Full City Park Pavilion layout + seating chart",file:"city-park-pavilion-seating-chart.jpg",path:"/images/city-park-pavilion-seating-chart.webp",status:"FINAL"},
+        {label:"Earlier sweetheart-table mockup (superseded by the final photo)",file:"decor-sweetheart-table.png",path:"/images/decor-sweetheart-table.webp",status:"Reference only"},
+        {label:"Reception vision + guest-table mood reference",file:"decor-reception-vision.jpg",path:"/images/decor-reception-vision.webp",status:"Reference only"},
+        {label:"Reception shopping list",file:"decor-reception-shopping-list.jpg",path:"/images/decor-reception-shopping-list.webp",status:"Reference only"}
       ]
     },
     food:[
       {item:"Italian dinner",detail:"Maggiano’s · grilled salmon · mashed potatoes · fettuccine Alfredo with Parmesan-crusted chicken · Caesar salad",status:"5:00 PM delivery"},
       {item:"Jamaican dinner",detail:"Kool Jamaican Kitchen · jerk chicken · rice and peas",status:"Vendor chosen"},
-      {item:"Cocktail-hour hors d’oeuvres",detail:"Menu/delivery still unresolved",status:"Target delivery 4:40–4:50 PM"},
+      {item:"Cocktail-hour hors d’oeuvres",detail:"Served during the 5:00 PM cocktail hour · staged on the Garden Side high-top tables",status:"Confirmed · delivery 4:40–4:50 PM"},
+      {item:"Late-night snack",detail:"Taco Bell · SURPRISE — keep hidden and unannounced until the 9:30 PM reveal",status:"Confirmed · 9:30 PM"},
       {item:"Cake",detail:"Picked up by Cory & Melinda; Tammy brings it to City Park Pavilion",status:"Confirm pickup/storage/transport plan"}
     ],
     vendors:[
       {role:"Reception Coordinator / Setup / Cleanup",name:"Tammy Murrie · Colorado Acclaimed Weddings",arrival:"Setup before guests",status:"Confirmed",contactKey:"tammy"},
-      {role:"Bartender",name:"Alfredo Junior",arrival:"Before 5:00 PM",status:"Confirmed",contactKey:"bartender"},
+      {role:"Bartender",name:"Alfredo Junior",arrival:"2:00 PM",status:"Confirmed",contactKey:"bartender"},
       {role:"DJ / MC",name:"Michael Lancaster · Colorado DJ",arrival:"Setup target about 1.5 hrs before reception program",status:"Confirmed",contactKey:"dj"},
-      {role:"Magician",name:"Name/contact still needed",arrival:"Cocktail hour · Sopris Garden timing to confirm",status:"Details incomplete",contactKey:"magician"},
+      {role:"Magician",name:"Trust Me I'm a Magician",arrival:"Cocktail hour · staged at Sopris Garden by 5:00 PM",status:"Confirmed",contactKey:"magician",link:"https://www.gigsalad.com/trust_me_im_a_magician_westminster",linkLabel:"Open GigSalad profile",notes:"Strolling close-up magic during cocktail hour at Sopris Garden. Based in Westminster, CO. Booked through GigSalad — use the GigSalad profile/messages for day-of contact until a direct number is added. Keep the act a surprise for guests."},
       {role:"Photographer",name:"Olivia M. Photography / O.M Creative LLC",arrival:"Per final 5-hour coverage",status:"Confirmed",contactKey:"photographer"},
       {role:"Hair",name:"Sara D Hair",arrival:"Bride prep",status:"Confirmed",contactKey:"hair"},
       {role:"Makeup",name:"Christian",arrival:"Confirm final start time",status:"Confirmed",contactKey:"makeup"},
       {role:"Italian Food",name:"Maggiano’s",arrival:"5:00 PM delivery",status:"Confirmed",contactKey:"italian"},
       {role:"Jamaican Food",name:"Kool Jamaican Kitchen",arrival:"Before 6:00 PM",status:"Confirmed",contactKey:"jamaican"},
-      {role:"Cocktail-Hour Hors d’oeuvres",name:"Vendor/delivery still unresolved",arrival:"Target 4:40–4:50 PM",status:"Needs vendor / delivery plan",contactKey:"horsdoeuvres"}
+      {role:"Cocktail-Hour Hors d’oeuvres",name:"Confirmed for cocktail hour",arrival:"Target 4:40–4:50 PM",status:"Confirmed",contactKey:"horsdoeuvres"}
     ],
   },
   dj:{
     title:"Print Sheet · DJ / MC",
-    summary:"Reception cue sheet for Michael Lancaster / Colorado DJ. Current reception timing supersedes the older contract’s obsolete ceremony/start times. Wedding-party entrance, couple entrance and first-song titles stay on the DJ sheet only and must not appear on guest pages or coordinator sheets. Cake-cutting music also stays private.",
+    summary:"Reception cue sheet for Michael Lancaster / Colorado DJ. Current reception timing supersedes the older contract’s obsolete ceremony/start times. Wedding-party entrance, couple entrance and first-dance titles stay on the DJ sheet only and must not appear on guest pages or coordinator sheets. Cake-cutting music also stays private. The couple’s reception playlist is linked below.",
+    links:[
+      {label:"Open the Spotify reception playlist",url:"https://open.spotify.com/playlist/5m91KD84Ju9VsD3LyuIYvv?si=f31d585af8534d88&pt=140d8e2f34d676b4803e6441f7aee342",note:"Cory & Melinda’s reception playlist — use it for cocktail hour, dinner and open dancing. Named cue songs below always take priority over playlist order."},
+      {label:"Trust Me I’m a Magician",url:"https://www.gigsalad.com/trust_me_im_a_magician_westminster",secondary:true,note:"Cocktail-hour magician at Sopris Garden — keep music conversational so the strolling magic can be heard."}
+    ],
     timeline:[
       {time:"Before 4:30 PM",item:"Sound + uplight setup complete",note:"Contract provides DJ/MC, sound equipment, microphones and 12 uplights; setup term was 1.5 hours before event start."},
       {time:"5:00 PM",item:"Cocktail hour music",note:"Keep volume conversational."},
       {time:"5:50 PM",item:"Line up wedding party / confirm names",note:"Tammy coordinates physical lineup; DJ confirms pronunciation/order."},
       {time:"6:00 PM",item:"Wedding-party entrance",note:"Play Rock With You — Michael Jackson."},
       {time:"Immediately after party",item:"Announce Cory & Melinda",note:"Play Lil Boo Thang for couple entrance."},
-      {time:"6:05 PM",item:"First Song",note:"Heartbeat — Carrie Underwood. Cory & Melinda sing together using the original Apple Music track as backing; lower Carrie Underwood’s lead vocal slightly if the playback setup allows while keeping the original track audible. Confirm photographer and Tammy are ready before starting."},
+      {time:"6:05 PM",item:"First Dance",note:"“Made For Me” — Muni Long. Confirm photographer and Tammy are ready and the floor is clear before starting."},
       {time:"6:15 PM",item:"Hand mic to Frank Roberts",note:"Dinner blessing + brief father-of-the-bride remarks."},
       {time:"6:20 PM",item:"Dinner music",note:"Background level; coordinate buffet release with Tammy."},
       {time:"6:55–7:00 PM",item:"Formal toasts",note:"Shalee Adams → Michael Berghini → Miah & Londyn together."},
       {time:"7:30 PM",item:"Cake / dessert transition",note:"Announce only when Tammy confirms cake area ready. Cake-cutting song: How Sweet It Is (To Be Loved by You)."},
       {time:"7:40 PM",item:"Open dance floor",note:"No mother-son or father-daughter dances are planned."},
       {time:"8:15 PM",item:"Anniversary Dance",note:"Invite all couples to the floor, then dismiss couples by years married until the longest-married couple remains."},
-      {time:"9:30 PM",item:"Late-night snack announcement",note:"Do not name food until final menu is confirmed."},
+      {time:"9:30 PM",item:"Late-night snack announcement",note:"Late-night snack is Taco Bell — it is a SURPRISE. Do not say “Taco Bell” before this cue; announce that late-night snacks are out and let guests discover it."},
       {time:"10:30 PM",item:"Private couple moment / last song",note:"Coordinate with Tammy before moving guests toward send-off."},
       {time:"10:40 PM",item:"Glow-stick send-off",note:"Final public cue."}
     ],
@@ -391,7 +393,8 @@ const defaultData = {
     reminders:[
       "Wedding party reception entrance song: Rock With You — Michael Jackson.",
       "Couple entrance: Lil Boo Thang.",
-      "First song: Heartbeat — Carrie Underwood. Cory & Melinda sing together; use the original Apple Music track as backing and lower Carrie Underwood’s lead vocal slightly if possible. Keep the song private until the 6:05 PM cue.",
+      "First dance: “Made For Me” — Muni Long. Keep the song private until the 6:05 PM cue.",
+      "Reception playlist: https://open.spotify.com/playlist/5m91KD84Ju9VsD3LyuIYvv — use it for cocktail hour, dinner and open dancing. Named cue songs above override playlist order.",
       "Cake cutting: How Sweet It Is (To Be Loved by You).",
       "Anniversary Dance at 8:15 PM: invite all couples out, then dismiss couples by years married until the longest-married couple remains.",
       "No mother-son or father-daughter dances are planned.",
