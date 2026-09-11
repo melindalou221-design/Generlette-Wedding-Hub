@@ -9,7 +9,7 @@ Newer couple decisions supersede older generic binder versions.
 - Low, conversation-friendly blue/white floral styling
 - Bud vases, blue hobnail LED candle holders and floating LED cylinders
 - Dusty/soft-blue napkins and gold details
-- Use `decor-reception-vision.webp` as the current visual direction
+- Use the FINAL guest-table photo in the private décor binder as the controlling visual direction (the older reception vision and shopping-list reference images were retired at the couple's request)
 
 ### Welcome area
 - Welcome sign
