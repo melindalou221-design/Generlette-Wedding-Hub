@@ -1,12 +1,8 @@
 # Seating visibility
 
-Seating assignments are intentionally hidden in this build.
+Guest seating is now available through **Find My Table** (`/tables`, also a bottom-nav tab).
 
-- No Find My Table navigation item
-- No `/tables` route
-- No guest-name seating data in `src/data.js`
-- No seating-assignment FAQ entries
-- No seating-chart visual in the private coordinator binder
-- The old seating-board reference image is not included in the deployable `public` folder
-
-Colorado table-sign artwork is retained as unused design assets for later, but no guest-to-table assignments are displayed or bundled in the guest-facing source.
+- Guests type the first few letters of their first or last name and see their table number, table name and table-sign artwork.
+- The guest-to-table list lives only in `netlify/functions/find-table.mjs` and is served from `/api/find-table`. It is not bundled into the public app; a lookup needs at least two letters and returns only the matching names.
+- The full City Park Pavilion layout + seating chart image is kept in the private Reception Coordinator binder.
+- To change a seat, edit the `tables` list in `netlify/functions/find-table.mjs`.
