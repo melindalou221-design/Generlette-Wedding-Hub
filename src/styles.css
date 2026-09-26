@@ -835,8 +835,6 @@ h1 .icon,h2 .icon,h3 .icon,h4 .icon,b .icon,strong .icon{ color: var(--gold) }
 }
 
 /* Find My Table + rain note */
-.bottom-nav{grid-template-columns:repeat(6,1fr)}
-@media(max-width:380px){.bottom-nav a{font-size:.66rem}}
 .hero-actions{justify-content:center}
 .center-actions{justify-content:center}
 .rain-note-wrap{padding-bottom:0}
@@ -854,3 +852,46 @@ h1 .icon,h2 .icon,h3 .icon,h4 .icon,b .icon,strong .icon{ color: var(--gold) }
 .table-result b{display:block;font-family:Georgia,serif;font-size:1.9rem;font-weight:400;color:var(--navy);line-height:1.1}
 .table-result span{color:var(--gold);font-weight:700;font-size:.92rem}
 @media(max-width:430px){.table-result{grid-template-columns:110px 1fr;gap:12px}.table-result b{font-size:1.55rem}}
+
+/* Quick navigation lives in the sticky header now. The old floating bottom dock
+   covered page content and rode up over the on-screen keyboard on phones. */
+.app-shell{padding-bottom:0!important}
+.bottom-nav{display:none!important}
+.quick-nav{display:flex;justify-content:center;gap:6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;width:min(1120px,100%);margin:0 auto;padding:0 10px 8px}
+.quick-nav::-webkit-scrollbar{display:none}
+.quick-nav a{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:6px 13px;border-radius:999px;border:1px solid rgba(10,49,85,.14);background:#fff;color:var(--navy);text-decoration:none;font-weight:800;font-size:.86rem;white-space:nowrap}
+.quick-nav a .icon{width:17px;height:17px;color:var(--gold);stroke-width:1.8}
+.quick-nav a.active{background:var(--navy);border-color:var(--navy);color:#fff}
+.quick-nav a.active .icon{color:#f2d89d}
+@media(max-width:720px){.quick-nav{justify-content:flex-start}}
+@media print{.quick-nav{display:none!important}}
+
+/* Home hero: verse + first-event weather */
+.hero p.hero-verse{font-size:clamp(1.12rem,3.6vw,1.45rem);line-height:1.45;max-width:560px}
+.hero-verse em{display:inline-block;font-family:"Snell Roundhand","Segoe Script","Brush Script MT",Georgia,cursive;font-size:1.35em;color:#f3d89d;font-style:italic}
+.hero-weather{display:flex;flex-direction:column;gap:2px;width:fit-content;max-width:100%;margin-top:12px;padding:10px 16px;border:1px solid rgba(255,255,255,.45);border-radius:18px;background:rgba(10,49,85,.5);color:#fff;text-decoration:none;text-shadow:none}
+.hero-weather small{font-size:.66rem;letter-spacing:.16em;font-weight:900;color:#f3d89d}
+.hero-weather b{font-size:1.15rem}
+.hero-weather span{font-size:.84rem;opacity:.92}
+
+/* Home: ceremony -> reception path */
+.day-path-section{padding-bottom:0}
+.day-path{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:14px}
+.day-stop{display:flex;align-items:center;gap:14px;padding:18px;background:var(--paper);border:1px solid rgba(10,49,85,.14);border-radius:22px;box-shadow:var(--shadow);text-decoration:none;color:var(--ink);transition:.2s}
+.day-stop:hover{border-color:var(--gold);transform:translateY(-2px)}
+.day-stop>div{flex:1;min-width:0}
+.day-stop small{display:block;font-weight:800;font-size:.76rem;letter-spacing:.06em;color:#536270;text-transform:uppercase}
+.day-stop b{display:block;font-family:Georgia,serif;font-weight:400;font-size:1.45rem;color:var(--navy)}
+.day-stop span:not(.day-step){font-size:.9rem;color:#536270}
+.day-stop>.icon{width:30px;height:30px;color:var(--gold)}
+.day-step{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-weight:900}
+.day-path-link{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.day-path-link>span{font-size:.78rem;font-weight:800;color:var(--gold);letter-spacing:.04em}
+.day-path-link>span:before{content:"→";display:block;font-size:1.6rem;line-height:1;color:var(--gold)}
+.day-path-link .button{font-size:.84rem;padding:9px 14px}
+@media(max-width:720px){.day-path{grid-template-columns:1fr;gap:10px}.day-path-link>span:before{content:"↓"}}
+
+/* Ceremony -> Reception handoff */
+.next-stop{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;background:linear-gradient(150deg,#f2f8fc,#fffdf7);border-color:#bcd2e2}
+.next-stop p{margin:0}.next-stop .actions{margin-top:0}
+.prev-stop{display:inline-block;margin-top:14px;color:var(--navy);font-weight:800;font-size:.9rem;text-underline-offset:3px}
