@@ -286,23 +286,24 @@ const defaultData = {
       "Confirm DJ has the private couple-song playback/microphone plan before guests arrive.",
       "Stage glow sticks before the final hour without announcing them too early.",
       "Decor will be packed in labeled boxes by setup zone. Suggested labels: Sweetheart Table; Welcome Area; Guest Tables; Cake + Dessert; Bar + Signs; Buffet; Kids Table; Emergency/Extras.",
-      "FINAL setup photos are now in this binder: match the sweetheart table and the guest tables to the final photos below.",
+      "FINAL setup photos are now in this binder: match the guest tables, welcome/guestbook table, cake + dessert table, dinner buffet and hors d’oeuvres table to the final photos below.",
       "The FINAL City Park Pavilion layout + seating chart is in this binder. It shows 9 guest tables, the sweetheart table, dinner buffet, cake table, cards & gifts, water station, kids table, dance floor/DJ and the Garden Side hors d’oeuvres high-tops.",
       "Late-night snack is Taco Bell at 9:30 PM and is a surprise — keep it hidden/covered and do not mention it to guests before the reveal.",
+      "RAIN PLAN: If rain is in the forecast, guests have been told to check back on the wedding website on the day of for updates. Watch the forecast that morning and send any rain changes to Cory & Melinda so the guest page can be updated.",
       "Photo booth is not currently planned; do not reserve setup space or décor for one unless the plan changes."
     ],
     decor:{
       guestTables:[
         "FINAL PHOTO: match every guest table to the final guest-table photo in this binder.",
-        "9 round guest tables per the final Pavilion layout (Table 9 is held as open / overflow).",
+        "9 round guest tables per the final Pavilion layout + seating chart. Every table has assigned guests; an extra overflow / no-RSVP table can be added if needed.",
+        "Guests can look up their table in the wedding app (Find My Table) by typing the first few letters of their name — point anyone who asks there.",
         "Per table: 5 bud vases; 2–3 blue hobnail LED candle holders; 1 floating LED candle cylinder.",
         "Flowers per table: 2 white roses; 1–2 white spray roses; 1–2 white carnations; baby’s-breath accents; 1–2 blue delphinium; 1 calla lily on every other table.",
         "Menu cards, dusty/soft-blue napkins, gold flatware and chargers.",
         "Keep arrangements low and conversation-friendly."
       ],
       sweetheart:[
-        "FINAL PHOTO: match the sweetheart table to the final sweetheart-table photo in this binder. That photo is the controlling reference.",
-        "Gold ‘Mr & Mrs’ tabletop sign — not ‘The Generlettes’.",
+                "Gold ‘Mr & Mrs’ tabletop sign — not ‘The Generlettes’.",
         "Ivory/champagne textured linen with gold place-setting accents and gold Chiavari chairs.",
         "Hydrangea-forward florals: white + soft-blue hydrangeas, white roses and baby’s breath; only a few light-blue delphinium stems for airy height.",
         "Keep floral arrangements low enough for easy conversation and photographs.",
@@ -310,7 +311,7 @@ const defaultData = {
         "Weave soft warm-gold vine fairy lights through the front greenery for the main romantic glow.",
         "Use a restrained candle mix: a few floating LED candle cylinders plus small gold/clear votives. Do not overcrowd the tabletop with candles.",
         "No light-wall/fairy-light backdrop behind the table; all fairy lights belong on the front greenery/table décor.",
-        "Clear balloons with warm fairy lights anchor each end of the table, as shown in the final photo."
+        "Clear balloons with warm fairy lights anchor each end of the table."
       ],
       welcome:[
         "Welcome sign and thank-you message at the entrance.",
@@ -326,17 +327,13 @@ const defaultData = {
         "2–3 long food tables; 6–8 small bud vases total; 6 blue hobnail LED candles; 6 floating LED cylinders; minimal greenery runners; food labels/menu signage.",
         "Avoid large arrangements that interfere with serving."
       ],
-      inspirationImages:[
-        {label:"Something Blue sign",path:"/images/something-blue.webp"},
-        {label:"Something Old sign",path:"/images/something-old.webp"},
-        {label:"Desserts sign",path:"/images/desserts-sign.webp"},
-        {label:"Kids Table sign",path:"/images/kids-sign.webp"}
-      ],
       visualAssets:[
-        {label:"FINAL · Sweetheart table — build it exactly like this",file:"decor-sweetheart-final.jpg",path:"/images/decor-sweetheart-final.webp",status:"FINAL"},
-        {label:"FINAL · Guest table setting — build every table like this",file:"decor-guest-seating-final.jpg",path:"/images/decor-guest-seating-final.webp",status:"FINAL"},
-        {label:"FINAL · Full City Park Pavilion layout + seating chart",file:"city-park-pavilion-seating-chart.jpg",path:"/images/city-park-pavilion-seating-chart.webp",status:"FINAL"},
-        {label:"Earlier sweetheart-table mockup (superseded by the final photo)",file:"decor-sweetheart-table.png",path:"/images/decor-sweetheart-table.webp",status:"Reference only"}
+        {label:"FINAL · Guest table setting — build every table like this",file:"guest-table.webp",path:"/images/reception/guest-table.webp",status:"FINAL"},
+        {label:"FINAL · Welcome + guestbook table (use our real welcome sign — the sign wording in this photo is a placeholder)",file:"welcome-guestbook-table.webp",path:"/images/reception/welcome-guestbook-table.webp",status:"FINAL"},
+        {label:"FINAL · Cake + dessert table",file:"cake-dessert-table.webp",path:"/images/reception/cake-dessert-table.webp",status:"FINAL"},
+        {label:"FINAL · Dinner buffet",file:"dinner-buffet.webp",path:"/images/reception/dinner-buffet.webp",status:"FINAL"},
+        {label:"FINAL · Garden Side hors d’oeuvres table",file:"hors-doeuvres.webp",path:"/images/reception/hors-doeuvres.webp",status:"FINAL"},
+        {label:"FINAL · Full City Park Pavilion layout + seating chart",file:"pavilion-seating-chart.webp",path:"/images/reception/pavilion-seating-chart.webp",status:"FINAL"}
       ]
     },
     food:[
